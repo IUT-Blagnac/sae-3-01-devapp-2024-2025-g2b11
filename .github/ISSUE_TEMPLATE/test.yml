@@ -1,5 +1,5 @@
 # JMB 2022 -- Taken from https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
-name: "User Story"
+name: "User Story2"
 description: "Une User Story de l'application"
 title: "[US]: "
 labels: 
