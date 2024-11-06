@@ -1,44 +1,50 @@
-// JMB 2022 -- Taken from https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+# JMB 2022 -- Taken from https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+name: "User Story"
+description: "Une User Story de l'application"
+title: "[US]: "
+labels: 
+  - "us"
+body:
+  - type: input
+    id: us
+    attributes:
+      label: "User Story"
+      description: "Description de la story"
+      placeholder: "En tant que [Persona], je veux [feature], afin que [raison]."
+    validations:
+      required: true
 
-= User Story
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Importance"
+      description: "Quelle est l'importance de cette US pour le client?"
+      options:
+        - "Must (Default)"
+        - "Should"
+        - "Could"
+        - "Will"
+    validations:
+      required: true
 
-[NOTE]
-.Description de la User Story
-----
-En tant que [Persona], je veux [feature], afin que [raison].
-----
+  - type: textarea
+    id: acceptation
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Comment sera évaluée la satisfaction de cette US, jeux de tests si disponibles, ...."
 
-:title: [US]: Gestion des produits par l'administrateur
-:labels: ["us"]
+  - type: textarea
+    id: details
+    attributes:
+      label: "Détails"
+      description: "Donner des détails si possible."
 
-== Détails de la User Story
-
-.User Story
-----
-En tant qu'administrateur, je veux pouvoir ajouter, modifier ou supprimer des produits dans le catalogue, afin que je puisse maintenir à jour l'inventaire.
-----
-
-.Importance
-----
-Must
-----
-
-== Critères d'acceptation
-
-* L'administrateur peut ajouter un produit avec un nom, une description, un prix, une catégorie et une image.
-* L'administrateur peut modifier les informations d'un produit existant.
-* L'administrateur peut supprimer un produit de la liste.
-* Des validations sont en place pour les champs obligatoires, par exemple, le prix doit être un nombre positif.
-* Les modifications apportées sont immédiatement visibles dans le catalogue de produits.
-
-== Détails supplémentaires
-
-* Le formulaire d'ajout de produit doit comporter les champs suivants : nom, description, prix, catégorie, image.
-* La suppression d'un produit doit afficher une demande de confirmation avant de finaliser l'action.
-* Un retour visuel (ex : message de confirmation) doit être affiché pour chaque action (ajout, modification, suppression).
-
-== Tâches associées
-
-* [ ] Écrire un test
-* [ ] Coder
-* [ ] Écrire la doc
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Tâches associées"
+      description: "Voici la liste des tâches associées à cette US (pourra évoluer plus tard)"
+      options:
+        - label: "Écrire un test"
+        - label: "Coder"
+        - label: "Écrire la doc"
