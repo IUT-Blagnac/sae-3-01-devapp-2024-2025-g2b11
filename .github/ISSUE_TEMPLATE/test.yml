@@ -1,0 +1,44 @@
+// JMB 2022 -- Taken from https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+
+= User Story
+
+[NOTE]
+.Description de la User Story
+----
+En tant que [Persona], je veux [feature], afin que [raison].
+----
+
+:title: [US]: Gestion des produits par l'administrateur
+:labels: ["us"]
+
+== Détails de la User Story
+
+.User Story
+----
+En tant qu'administrateur, je veux pouvoir ajouter, modifier ou supprimer des produits dans le catalogue, afin que je puisse maintenir à jour l'inventaire.
+----
+
+.Importance
+----
+Must
+----
+
+== Critères d'acceptation
+
+* L'administrateur peut ajouter un produit avec un nom, une description, un prix, une catégorie et une image.
+* L'administrateur peut modifier les informations d'un produit existant.
+* L'administrateur peut supprimer un produit de la liste.
+* Des validations sont en place pour les champs obligatoires, par exemple, le prix doit être un nombre positif.
+* Les modifications apportées sont immédiatement visibles dans le catalogue de produits.
+
+== Détails supplémentaires
+
+* Le formulaire d'ajout de produit doit comporter les champs suivants : nom, description, prix, catégorie, image.
+* La suppression d'un produit doit afficher une demande de confirmation avant de finaliser l'action.
+* Un retour visuel (ex : message de confirmation) doit être affiché pour chaque action (ajout, modification, suppression).
+
+== Tâches associées
+
+* [ ] Écrire un test
+* [ ] Coder
+* [ ] Écrire la doc
