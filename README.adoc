@@ -55,7 +55,7 @@ Projet est réalisé par::
 - https://github.com/Joan-arch[Joan Casas]
 - https://github.com/Laloix23[Loïc Phrahkousonh]
 - https://github.com/AMAYZING31[Sidney Richards]
-...
+- https://github.com/ylaghdas[Yassine Laghdas]
 
 Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
 
