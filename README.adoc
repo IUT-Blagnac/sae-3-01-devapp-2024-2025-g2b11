@@ -19,6 +19,12 @@ Instructions
 
 === Documentation
 
+== Méthodologie Agile SCRUM
+
+### Durée des Sprints
+Chaque sprint dure **1 semaine** et se termine par une Sprint Review avec le Product Owner.
+
+
 == Gestion de projet et qualité
 
 Chaque sprint (semaine), une nouvelle version de l’application est livrée via une release sur GitHub.
