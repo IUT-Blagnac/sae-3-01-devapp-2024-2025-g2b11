@@ -1,0 +1,74 @@
+= Documentation du Projet
+:toc:
+
+== Backlog Produit
+
+Le Product Backlog contient toutes les **User Stories** nécessaires pour atteindre les objectifs du projet. 
+
+Chaque User Story comporte :
+
+- **Une estimation de charge de travail** : en heures 
+- **Une priorité** : Must, Should, Could ou Will
+- **Des critères d'acceptation** : pour garantir la complétion de chaque fonctionnalité.
+
+Le backlog est mis à jour régulièrement pour prendre en compte les nouvelles priorités et les feedbacks du Product Owner et des clients.
+
+Ce backlog liste les User stories avec leurs fonctionnalités à développer 
+
+User Stories : 
+
+  * Se connecter au site - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/11[US#2] 
+  
+  ** Voici les fonctionnalités attaché a cette user story : - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/18[Création de l'Interface du Formulaire de Connexion] et - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/19[Implémentation d'une Option de "Mot de Passe Oublié"] 
+
+  * Se connecter / se déconnecter (Cookies) - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/11[US#3]
+
+  **  Voici les fonctionnalités attaché a cette user story : - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/20[Mise en Place du Cookie de Session pour Connexion Automatique] et - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/21[Implémentation du Bouton de Déconnexion]
+
+  * Gérer le panier : - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/10[US#4]
+  **  Voici les fonctionnalités attaché a cette user story :  https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/22[F5] ,  https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/23[F6] , https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/24[F7]
+
+  * Ajouter un produit affiché dans le panier : - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/9[US#5]
+  **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/25[F8]
+
+  * Visualiser ses commandes passées : - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/8[US#6]
+  **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/26[F9]
+
+  * Visualiser le détail d’un produit. : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/7[US#7]
+   **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/27[F10] , https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/28[F11]
+   
+   * Tri de la liste de produits par prix croissant / décroissant : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/6[US#8]
+   **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/29[F12], 
+
+   * Visualiser la liste de produits correspondants à la recherche : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/5[US#9] 
+   **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/30[F13], https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/31[F14]
+
+   * Rechercher des produits par catégorie/sous-catégorie ou mot-clé ou regroupement : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/4[US#10]
+   **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/32[F15], 
+
+   * Création compte client : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/3[US#11]
+   **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/33[F16], https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/34[F17]
+
+   * Payer/commander son panier : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/12[US#12]
+
+    **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/35[F18], https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/36[F19], https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/37[F20]
+
+    * Ajouter un avis sur un article commandé : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/13[US#13]
+
+    **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/38[F21]
+
+    * Créer des articles : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/14[US#14]
+
+    **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/39[F22]
+
+    * Créer des catégories : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/15[US#15]
+
+    **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/40[F23]
+
+    * Modérer les avis : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/16[US#16]
+
+    **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/41[F24]
+
+    * Accéder/modifier les profils des utilisateurs : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/17[US#17]
+
+    **  Voici les fonctionnalités attaché a cette user story : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues/42[25]
