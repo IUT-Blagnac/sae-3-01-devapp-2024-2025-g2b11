@@ -68,6 +68,7 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.1[v0.0.1]
 - Lien vers la doc technique
 - Lien vers la doc utilisateur
+- Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/Product%20Backlog.adoc
 - Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
 - Tests unitaires et plans de test
 - Indicateurs de qualité du code (dette technique)
