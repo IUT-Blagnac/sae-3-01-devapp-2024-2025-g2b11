@@ -1,4 +1,4 @@
-= Documentation Backlog du Projet
+= Documentation Product Backlog du Projet
 :toc:
 :icons: font
 :numbered:
