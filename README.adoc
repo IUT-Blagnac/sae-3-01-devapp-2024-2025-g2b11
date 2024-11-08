@@ -1,6 +1,49 @@
+image::https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg["Open in Visual Studio Code", link="https://classroom.github.com/online_ide?assignment_repo_id=16973566&assignment_repo_type=AssignmentRepo"]
 = S3.A.01 - Développement appli 2024-2025
+:icons: font
+:models: models
+:experimental:
+:incremental:
+:numbered:
+:toc: macro
+:window: _blank
+:correction!:
 
-== Équipe
+// Useful definitions
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
+:icongit: icon:git[]
+:git: http://git-scm.com/[{icongit}]
+:plantuml: https://plantuml.com/fr/[plantUML]
+:vscode: https://code.visualstudio.com/[VS Code]
+
+ifndef::env-github[:icons: font]
+// Specific to GitHub
+ifdef::env-github[]
+:correction:
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+:icongit: Git
+endif::[]
+
+// /!\ A MODIFIER !!!
+:baseURL: https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11
+
+// Tags
+image:{baseURL}/actions/workflows/blank.yml/badge.svg[Bidon] 
+image:https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg[License: MPL-2.0, link="https://opensource.org/licenses/MPL-2.0"]
+//---------------------------------------------------------------
+
+
+
+WARNING: Ce dépôt présente le projet à développer dans le cadre de la S3.A.01 - Développement appli du BUT2 Informatique de l'IUT de Blagnac.
+
+toc::[]
+
+== Equipe
 
 Projet est réalisé par::
 - https://github.com/Ssauth[Thomas Aussenac]
@@ -9,32 +52,35 @@ Projet est réalisé par::
 - https://github.com/AMAYZING31[Sidney Richards]
 - https://github.com/ylaghdas[Yassine Laghdas]
 
-Tuteur enseignant de l'équipe : mailto:jean-michel.bruel@univ-tlse2.fr[Jean-Michel Bruel]
+Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
 
-== Réalisations
+== Réalisations 
 
-=== Installation et utilisation
+TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
-Instructions 
+== Gestion de projet & Qualité
 
-=== Documentation
+Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
+Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
 
-== Méthodologie Agile SCRUM
+De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
 
-### Durée des Sprints
-Chaque sprint dure **1 semaine** et se termine par une Sprint Review avec le Product Owner.
+- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.1.2[v0.1.2]
+- Lien vers la doc technique
+- Lien vers la doc utilisateur
+- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
+- Tests unitaires et plans de test
+- Indicateurs de qualité du code (dette technique)
+- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
+Voici un exemple d'évaluation :
 
-== Gestion de projet et qualité
+ifdef::env-github[]
+image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
+endif::[]
 
-Chaque sprint (semaine), une nouvelle version de l’application est livrée via une release sur GitHub.
-
-=== Version courante
-- Version actuelle : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-
-=== Suivi des User Stories
-- Lien vers les User Stories et leur statut https://github.com/orgs/IUT-Blagnac/projects/262/views/1
-
-=== Tests et qualité
-- Tests unitaires et plan de test à mettre en place et documenter.
-- Indicateurs de qualité du code (dette technique).
+ifndef::env-github[]
+++++
+<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image"></iframe>
+++++
+endif::[]
