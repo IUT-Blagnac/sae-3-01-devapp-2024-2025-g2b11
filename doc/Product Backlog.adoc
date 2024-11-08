@@ -1,5 +1,14 @@
-= Documentation du Projet
+= Documentation Backlog du Projet
 :toc:
+:icons: font
+:numbered:
+
+== Déroulement du Projet
+
+### Méthodologie Agile SCRUM
+
+Le projet est découpé en sprints. Chaque sprint représente 1 semaine et à chaque sprint les membres de notre équipe changerons de rôle (Scrum Master, Product Owner)
+
 
 == Backlog Produit
 
