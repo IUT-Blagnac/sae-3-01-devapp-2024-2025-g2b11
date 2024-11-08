@@ -46,9 +46,9 @@ toc::[]
 == Equipe
 
 Projet est réalisé par::
-- https://github.com/Ssauth[Thomas Aussenac]
+- https://github.com/Ssauth[Thomas Aussenac] (Product Owner)
 - https://github.com/Joan-arch[Joan Casas]
-- https://github.com/Laloix23[Loïc Phrakousonh]
+- https://github.com/Laloix23[Loïc Phrakousonh] (Scrum master)
 - https://github.com/AMAYZING31[Sidney Richards]
 - https://github.com/ylaghdas[Yassine Laghdas]
 
