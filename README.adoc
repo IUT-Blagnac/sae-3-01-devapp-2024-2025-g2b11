@@ -2,10 +2,10 @@
 
 == Équipe
 
-Projet réalisé par :
+Projet est réalisé par::
 - https://github.com/Ssauth[Thomas Aussenac]
 - https://github.com/Joan-arch[Joan Casas]
-- https://github.com/Laloix23[Loïc Phrahkousonh]
+- https://github.com/Laloix23[Loïc Phrakousonh]
 - https://github.com/AMAYZING31[Sidney Richards]
 - https://github.com/ylaghdas[Yassine Laghdas]
 
