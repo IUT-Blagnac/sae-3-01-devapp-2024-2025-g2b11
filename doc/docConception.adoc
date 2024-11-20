@@ -36,6 +36,115 @@ Le diagramme de séquence ci-dessous illustre le déroulement des interactions e
 
 image::diag/dss.png[Diagramme de Séquence Système]
 
-== Diagrammes des cas d'utilisation
+== Cas d'utilisation  
+
+=== **Must**  
+
+* **Création compte client**  
+
+Un visiteur peut s'inscrire sur le site en créant un compte utilisateur pour accéder aux fonctionnalités avancées.  
+
+image::diag/nouvelle-connexion.png[Création compte client]
+
+* **Accéder/Modifier les profils des utilisateurs**  
+
+L'administrateur peut gérer les comptes utilisateurs, notamment en désactivant ou en supprimant les comptes frauduleux.  
+
+image::diag/ADM-gérer-utilisateurs.png[Accéder/Modifier les profils des utilisateurs]
+
+* **Créer des catégories**  
+
+L'administrateur peut créer, modifier ou supprimer des catégories de produits afin d'organiser la boutique.  
+
+image::diag/ADM-gérer-catégorie.png[Créer des catégories]
+
+* **Créer des articles**  
+
+L'administrateur peut gérer le catalogue de produits, y compris ajouter de nouveaux articles, les mettre à jour ou les retirer.  
+
+image::diag/ADM-ams-produits.png[Créer des articles]
+
+* **Payer/commander son panier**  
+
+L'utilisateur peut valider et payer son panier pour finaliser l'achat.  
+
+image::diag/valider-panier.png[Payer/commander son panier]
+
+* **Se connecter au site**  
+
+L'utilisateur peut se connecter à son compte pour accéder à ses commandes et autres fonctionnalités.  
+
+image::diag/connexion-deconnexion.png[Se connecter au site]
+
+* **Gérer le panier**  
+
+L'utilisateur peut ajouter, modifier ou supprimer des produits dans son panier en préparation de l'achat.  
+
+image::diag/gérer-panier.png[Gérer le panier]
+
+* **Ajouter un produit affiché dans le panier**  
+
+L'utilisateur peut sélectionner un produit et l'ajouter à son panier avec une quantité choisie.  
+
+image::diag/ajouter-produit-panier.png[Ajouter un produit affiché dans le panier]
+
+* **Visualiser la liste des produits correspondants**  
+
+L'utilisateur peut consulter les produits disponibles dans une catégorie ou en résultat d'une recherche.  
+
+image::diag/recherche-produits.png[Visualiser la liste des produits correspondants]
 
 
+=== **Should**  
+
+* **Se connecter / se déconnecter (cookies)**  
+
+L'utilisateur peut se connecter à son compte grâce aux cookies pour maintenir sa session active.  
+
+image::diag/connexion-deconnexion.png[Se connecter / se déconnecter (cookies)]
+
+* **Rechercher des produits par catégorie/sous-catégorie ou mots-clés**  
+
+L'utilisateur peut rechercher un produit spécifique en utilisant des mots-clés ou en naviguant par catégorie.  
+
+image::diag/recherche-par-categorie.png[Rechercher des produits par catégorie/sous-catégorie ou mots-clés]
+
+* **Visualiser le détail d'un produit**  
+
+L'utilisateur peut voir les informations détaillées d'un produit, telles que sa description, ses photos et son prix.  
+
+image::diag/details-produits.png[Visualiser le détail d'un produit]
+
+* **Visualiser ses commandes passées**  
+
+L'utilisateur peut consulter l'historique des commandes effectuées sur le site.  
+
+image::diag/historique-produits.png[Visualiser ses commandes passées]
+
+=== **Could**  
+
+* **Modérer les avis**  
+
+L'administrateur peut modérer les avis publiés par les utilisateurs, en supprimant ou modifiant ceux qui ne respectent pas les normes.  
+
+image::diag/ADM-gérer-avis.png[Modérer les avis]
+
+* **Ajouter un avis sur un article commandé**  
+
+L'utilisateur peut publier un avis sur un produit après l'avoir acheté.  
+
+image::diag/visualiser-commande-ajouter-avis.png[Ajouter un avis sur un article commandé]
+
+* **Tri par prix croissant/décroissant**  
+
+L'utilisateur peut trier les produits affichés en fonction de leur prix, du moins cher au plus cher ou inversement.  
+
+image::diag/trier-par-prix.png[Tri par prix croissant/décroissant]
+
+=== **Will**  
+
+* **Système de fidélité**  
+
+L'administrateur peut gérer le système de points de fidélité attribués aux utilisateurs. Cela inclut l'ajout, la modification ou la suppression de points en fonction des interactions des utilisateurs.  
+
+image::diag/ADM-gérer-fidelite.png[Ajouter un système de fidélité]
