@@ -35,3 +35,7 @@ Le diagramme de séquence ci-dessous illustre le déroulement des interactions e
 * **Déconnexion** : L'utilisateur se déconnecte, et le système met fin à la session.
 
 image::diag/dss.png[Diagramme de Séquence Système]
+
+== Diagrammes des cas d'utilisation
+
+
