@@ -86,6 +86,7 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.1[v0.0.1]
 - Lien vers la doc technique
 - Lien vers la doc utilisateur
+- Lien vers le backlog du sprint : https://github.com/orgs/IUT-Blagnac/projects/262/views/1
 - Lien vers la doc de Conecepton : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docConception.adoc
 - Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/labels/User%20Story
 - Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
