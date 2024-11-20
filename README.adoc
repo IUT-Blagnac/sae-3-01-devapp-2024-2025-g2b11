@@ -94,6 +94,8 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
+Prochaine release le 24/11/2024
+
 Voici un exemple d'évaluation :
 
 ifdef::env-github[]
