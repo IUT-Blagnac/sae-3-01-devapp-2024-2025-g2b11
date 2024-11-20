@@ -1,1 +1,330 @@
+= Test - Simul8
+:toc:
+:toc-title: Table des matières
+:toclevels: 4
 
+== 1. Introduction
+Ce document liste les cas de test principaux en lien avec les différents diagrammes et fonctionnalités identifiés dans le système. Les tests sont regroupés en sections par grandes thématiques.
+
+== 2. Partie Admin
+
+=== 2.1 Connexion et Déconnexion
+
+- **Description :** Tester la fonctionnalité de connexion pour un administrateur.
+- **Cas de test :**
+
+|====
+|Cas de test 4+|Test-01-01-01
+|Titre 4+|Connexion administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut se connecter avec succès, tout en gérant les cookies de session.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Connexion_Admin.1 ^|Accéder à la page de connexion administrateur. ^|Le formulaire de connexion administrateur est affiché. ^|Aucune ^|OK
+^|Connexion_Admin.2 ^|Saisir un identifiant et un mot de passe d'administrateur valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion administrateur sont valides. ^|OK
+^|Connexion_Admin.3 ^|Cliquer sur le bouton "Se connecter comme admin". ^|L'administrateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides et l'utilisateur a un rôle administrateur. ^|OK
+^|Connexion_Admin.4 ^|Vérifier que le rôle administrateur est actif. ^|Le système confirme les privilèges administrateurs pour l'utilisateur connecté. ^|Une session administrateur est active. ^|OK
+^|Connexion_Admin.5 ^|Vérifier la session active via le cookie dans le navigateur. ^|Le cookie permet une reconnexion automatique si valide. ^|Une session est active avec les privilèges administrateurs. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité pour un administrateur de se connecter au système, avec la gestion correcte des cookies pour maintenir la session active.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-01-01-02
+|Titre 4+|Déconnexion administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut se déconnecter correctement et que la session est fermée.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Deconnexion_Admin.1 ^|Cliquer sur le bouton "Se déconnecter". ^|La session administrateur est fermée et le cookie est supprimé. ^|Une session administrateur est active. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité pour un administrateur de se déconnecter du système, en s'assurant que la session et le cookie sont correctement supprimés.
+|====
+
+
+=== 2.2 Gestion des Produits
+
+- **Description :** Tester les opérations CRUD sur les produits (ajouter, modifier, supprimer).
+- **Cas de test :**
+
+|====
+|Cas de test 4+|Test-01-02-01
+|Titre 4+|Gestion des produits par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut ajouter un produit dans la base de données.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Ajout_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|OK
+^|Ajout_Produit.2 ^|Cliquer sur "Ajouter un produit". ^|Le formulaire d'ajout de produit est affiché. ^|Aucune ^|OK
+^|Ajout_Produit.3 ^|Remplir les champs obligatoires (nom, description, prix, etc.) et valider. ^|Le nouveau produit est ajouté et apparaît dans la liste des produits, et est ajouté dans la base de données. ^|Les informations saisies sont valides. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide l'ajout d'un produit par l'administrateur, en s'assurant que le produit est bien enregistré dans la base de données et affiché correctement dans la liste des produits.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-01-02-02
+|Titre 4+|Modification des produits par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut modifier les informations d'un produit existant.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Modification_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|OK
+^|Modification_Produit.2 ^|Sélectionner un produit existant et cliquer sur "Modifier". ^|Le formulaire de modification du produit sélectionné est affiché. ^|Le produit existe dans la base de données. ^|OK
+^|Modification_Produit.3 ^|Modifier les informations nécessaires et valider. ^|Les modifications sont enregistrées dans la base de données, et la liste des produits est mise à jour. ^|Les informations saisies sont valides. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité de l'administrateur à modifier un produit, en vérifiant que les changements sont enregistrés correctement dans la base de données et affichés à jour dans l'interface utilisateur.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-01-02-03
+|Titre 4+|Suppression des produits par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut supprimer un produit de la base de données.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Suppression_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|OK
+^|Suppression_Produit.2 ^|Sélectionner un produit existant et cliquer sur "Supprimer". ^|Le produit est supprimé de la base de données, et il disparaît de la liste des produits. ^|Le produit existe dans la base de données. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité de l'administrateur à supprimer un produit, en vérifiant que la suppression est correctement appliquée dans la base de données et que le produit ne figure plus dans la liste.
+|====
+
+
+=== 2.3 Gestion des Commandes
+- **Fichier :** `ADM-gérer-commandes.png`
+- **Description :** Tester la gestion des commandes (visualisation, modification, suppression).
+- **Cas de test :**
+
+|====
+|Cas de test 4+|Test-03-01-01
+|Titre 4+|Consultation des commandes par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut consulter la liste des commandes existantes dans le système.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Consultation_Commande.1 ^|Accéder à la section "Consultation des commandes". ^|La liste des commandes s'affiche correctement avec toutes les informations nécessaires. ^|L'administrateur est connecté. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à consulter les commandes disponibles dans le système.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-03-01-02
+|Titre 4+|Mise à jour du statut d'une commande
+|Objectif 4+|Vérifier qu'un administrateur peut modifier le statut d'une commande dans le système.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Mise_à_jour_Commande.1 ^|Sélectionner une commande existante et modifier son statut. ^|Le statut de la commande est mis à jour et enregistré dans le système. ^|L'administrateur est connecté et une commande existe. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité de l'administrateur à changer le statut d'une commande.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-03-01-03
+|Titre 4+|Suppression d'une commande
+|Objectif 4+|Vérifier qu'un administrateur peut supprimer une commande du système.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Suppression_Commande.1 ^|Sélectionner une commande existante et cliquer sur "Supprimer". ^|La commande est supprimée du système et n'apparaît plus dans la liste des commandes. ^|L'administrateur est connecté et une commande existe. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité de l'administrateur à supprimer une commande du système.
+|====
+
+=== 2.4 Gestion des Avis
+- **Description :** Tester la gestion des avis utilisateurs sur les produits.
+- **Cas de test :**
+
+|====
+|Cas de test 4+|Test-01-04-01
+|Titre 4+|Consultation des avis produits par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut consulter les avis des produits.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Consulter_Avis.1 ^|Accéder à la section "Avis produits". ^|La liste des avis sur les produits est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consulter_Avis.2 ^|Sélectionner un produit pour voir ses avis. ^|Les avis spécifiques au produit sélectionné sont affichés. ^|Un produit avec des avis est disponible. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à consulter les avis utilisateurs sur les produits.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-01-04-02
+|Titre 4+|Suppression d'un avis produit par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut supprimer un avis utilisateur sur un produit.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Suppression_Avis.1 ^|Accéder à la section "Avis produits". ^|La liste des avis sur les produits est affichée. ^|L'administrateur est connecté. ^|OK
+^|Suppression_Avis.2 ^|Sélectionner un avis à supprimer et cliquer sur "Supprimer". ^|L'avis est supprimé de la liste des avis. ^|Un avis valide est disponible pour suppression. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à supprimer un avis utilisateur sur un produit.
+|====
+
+
+---
+
+
+|====
+|Cas de test 4+|Test-01-04-03
+|Titre 4+|Réponse à un avis produit par un administrateur
+|Objectif 4+|Vérifier qu'un administrateur peut répondre à un avis utilisateur sur un produit.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Reponse_Avis.1 ^|Accéder à la section "Avis produits". ^|La liste des avis sur les produits est affichée. ^|L'administrateur est connecté. ^|OK
+^|Reponse_Avis.2 ^|Sélectionner un avis et cliquer sur "Répondre". ^|Un champ de réponse est affiché pour rédiger une réponse. ^|Un avis est sélectionné. ^|OK
+^|Reponse_Avis.3 ^|Saisir une réponse et cliquer sur "Envoyer". ^|La réponse est ajoutée à l'avis et affichée sous celui-ci. ^|Une réponse est saisie. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à répondre à un avis utilisateur sur un produit.
+|====
+
+
+=== 2.5 Fidélité et Points
+- **Fichiers :** `ADM-gérer-fidelite.png`, `points-fidélités.png`
+- **Description :** Tester les fonctionnalités liées au programme de fidélité.
+- **Cas de test :**
+
+
+=== 2.6 Panier
+- **Fichiers :** `ajouter-produit-panier.png`, `gérer-panier.png`
+- **Description :** Tester les fonctionnalités du panier (ajout, modification, suppression).
+- **Cas de test :**
+  - **Test-07-01-01** : Vérifier qu'un utilisateur peut ajouter un produit au panier.
+  - **Test-07-01-02** : Vérifier qu'un utilisateur peut modifier la quantité d'un produit dans le panier.
+  - **Test-07-01-03** : Vérifier qu'un utilisateur peut supprimer un produit de son panier.
+
+=== 2.7 Gestion des Catégories
+- **Fichier :** `ADM-gérer-catégorie.png`
+- **Description :** Tester la gestion des catégories (ajout, modification, suppression).
+- **Cas de test :**
+  - **Test-08-01-01** : Vérifier qu'un administrateur peut ajouter une nouvelle catégorie.
+  - **Test-08-01-02** : Vérifier qu'un administrateur peut modifier une catégorie existante.
+  - **Test-08-01-03** : Vérifier qu'un administrateur peut supprimer une catégorie.
+
+=== 2.8 Historique des Produits et Ventes
+- **Fichiers :** `historique-produits.png`, `ADM-gérer-ventes.png`
+- **Description :** Tester la visualisation de l'historique des produits et des ventes.
+- **Cas de test :**
+  - **Test-09-01-01** : Vérifier qu'un administrateur peut consulter l'historique des ventes.
+  - **Test-09-01-02** : Vérifier qu'un administrateur peut consulter l'historique des produits modifiés.
+
+== 3. Partie Utilisateur
+
+=== 3.1. Connexion et Déconnexion
+- **Description :** Tester la fonctionnalité de connexion et déconnexion.
+- **Cas de test :**
+
+|====
+|Cas de test 4+|Test-02-01-01
+|Titre 4+|Connexion/Déconnexion utilisateur
+|Objectif 4+|Vérifier que l'utilisateur peut se connecter et se déconnecter avec succès.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Connexion.1 ^|Accéder à la page de connexion. ^|Le formulaire de connexion est affiché. ^|Aucune ^|OK
+^|Connexion.2 ^|Saisir un identifiant et un mot de passe valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion sont valides. ^|OK
+^|Connexion.3 ^|Cliquer sur le bouton "Se connecter". ^|L'utilisateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides. ^|OK
+^|Deconnexion.1 ^|Cliquer sur le bouton "Se déconnecter". ^|La session est fermée et le cookie est supprimé. ^|Une session utilisateur est active. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un utilisateur à se connecter et se déconnecter du système. Les cookies sont gérés correctement pour maintenir ou supprimer la session utilisateur.
+|====
+
+=== 3.2. Panier
+- **Fichier :** `ajouter-panier-utilisateur.png`
+- **Description :** Tester les fonctionnalités du panier pour un utilisateur connecté.
+- **Cas de test :**
+  - **Test-03-02-01** : Vérifier qu'un utilisateur peut ajouter un produit au panier.
+  - **Test-03-02-02** : Vérifier qu'un utilisateur peut modifier la quantité d'un produit dans le panier.
+  - **Test-03-02-03** : Vérifier qu'un utilisateur peut supprimer un produit du panier.
+
+
+=== 3.3. Ajouter un Produit au Panier
+- **Fichier :** `ajouter-produit-panier.png`
+- **Description :** Tester la fonctionnalité d'ajout de produit au panier.
+- **Cas de test :**
+  - **Test-03-03-01** : Vérifier qu'un utilisateur peut ajouter un produit au panier.
+  - **Test-03-03-02** : Vérifier qu'un utilisateur peut visualiser le produit ajouté dans le panier.
+  - **Test-03-03-03** : Vérifier que le produit ajouté au panier est bien comptabilisé.
+
+=== 3.4. Connexion et Déconnexion
+- **Fichier :** `connexion-deconnexion.png`
+- **Description :** Tester la fonctionnalité de connexion et déconnexion utilisateur.
+- **Cas de test :**
+  - **Test-03-04-01** : Vérifier qu'un utilisateur peut se connecter.
+  - **Test-03-04-02** : Vérifier qu'un utilisateur peut se déconnecter.
+
+=== 3.5. Détails Produit
+- **Fichier :** `details-produits.png`
+- **Description :** Tester la consultation des détails d'un produit.
+- **Cas de test :**
+  - **Test-03-05-01** : Vérifier qu'un utilisateur peut consulter les détails d'un produit.
+  - **Test-03-05-02** : Vérifier que les informations du produit (prix, description, etc.) sont correctement affichées.
+
+=== 3.6. Recherche et Tri
+- **Fichiers :**
+  - `recherche-par-categorie.png`
+  - `recherche-produits.png`
+  - `trier-par-prix.png`
+- **Description :** Tester la fonctionnalité de recherche de produits et le tri par catégorie et prix.
+- **Cas de test :**
+  - **Test-03-06-01** : Vérifier qu'un utilisateur peut rechercher un produit par catégorie.
+  - **Test-03-06-02** : Vérifier qu'un utilisateur peut rechercher un produit par nom.
+  - **Test-03-06-03** : Vérifier qu'un utilisateur peut trier les produits par prix (croissant/décroissant).
+
+=== 3.7. Visualisation de Commandes et Avis
+- **Fichier :** `visualiser-commande-ajouter-avis.png`
+- **Description :** Tester la visualisation des commandes et l'ajout d'un avis sur un produit.
+- **Cas de test :**
+  - **Test-03-07-01** : Vérifier qu'un utilisateur peut visualiser ses commandes passées.
+  - **Test-03-07-02** : Vérifier qu'un utilisateur peut ajouter un avis sur un produit acheté.
+  
+=== 3.8. Points de Fidélité
+- **Fichier :** `points-fidélités.png`
+- **Description :** Tester l'accumulation et l'utilisation des points de fidélité.
+- **Cas de test :**
+  - **Test-03-08-01** : Vérifier qu'un utilisateur accumule des points de fidélité après un achat.
+  - **Test-03-08-02** : Vérifier qu'un utilisateur peut consulter son solde de points de fidélité.
+
+=== 3.9. Historique des Produits Consultés
+- **Fichier :** `historique-produits.png`
+- **Description :** Tester la fonctionnalité d'historique des produits consultés par un utilisateur.
+- **Cas de test :**
+  - **Test-03-09-01** : Vérifier qu'un utilisateur peut consulter l'historique de ses produits consultés.
+
+== 4. Conclusion
+Les tests utilisateur permettent de valider les principales fonctionnalités qui garantissent une expérience d'achat fluide. Les différentes fonctionnalités comme la gestion du panier, la recherche et le tri des produits, ainsi que l'édition et la consultation des avis, sont toutes couvertes, assurant ainsi que l'utilisateur pourra naviguer et interagir efficacement avec la plateforme.
+
+
+
+|Cas de test 4+|Test-02-01-01
+|Titre 4+|Connexion/Déconnexion utilisateur
+|Objectif 4+|Vérifier que l'utilisateur peut se connecter et se déconnecter avec succès.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Connexion.1 ^|Accéder à la page de connexion. ^|Le formulaire de connexion est affiché. ^|Aucune ^|OK
+^|Connexion.2 ^|Saisir un identifiant et un mot de passe valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion sont valides. ^|OK
+^|Connexion.3 ^|Cliquer sur le bouton "Se connecter". ^|L'utilisateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides. ^|OK
