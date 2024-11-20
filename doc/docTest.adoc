@@ -204,33 +204,138 @@ Ce cas de test valide la capacité d'un administrateur à répondre à un avis u
 
 
 === 2.5 Fidélité et Points
-- **Fichiers :** `ADM-gérer-fidelite.png`, `points-fidélités.png`
 - **Description :** Tester les fonctionnalités liées au programme de fidélité.
-- **Cas de test :**
+
+|====
+|Cas de test 4+|Test-01-05-01
+|Titre 4+|Consultation des points de fidélité d'un utilisateur
+|Objectif 4+|Vérifier qu'un administrateur peut consulter les points de fidélité attribués à un utilisateur.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Consultation_Points.1 ^|Accéder à la section "Programme de fidélité". ^|La liste des utilisateurs avec leurs points de fidélité est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consultation_Points.2 ^|Sélectionner un utilisateur. ^|Les détails des points de fidélité de l'utilisateur sont affichés. ^|L'utilisateur a des points de fidélité attribués. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à consulter les points de fidélité d'un utilisateur spécifique.
+|====
+
+---
+
+|====
+|Cas de test 4+|Test-01-05-02
+|Titre 4+|Modification des points de fidélité d'un utilisateur
+|Objectif 4+|Vérifier qu'un administrateur peut modifier les points de fidélité d'un utilisateur dans le système.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Modification_Points.1 ^|Accéder à la section "Programme de fidélité". ^|La liste des utilisateurs avec leurs points de fidélité est affichée. ^|L'administrateur est connecté. ^|OK
+^|Modification_Points.2 ^|Sélectionner un utilisateur et cliquer sur "Modifier les points". ^|Le formulaire de modification des points de l'utilisateur est affiché. ^|L'utilisateur a des points de fidélité attribués. ^|OK
+^|Modification_Points.3 ^|Saisir une nouvelle valeur de points et valider. ^|Les points de l'utilisateur sont mis à jour et enregistrés dans le système. ^|Les informations saisies sont valides. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à modifier les points de fidélité d'un utilisateur dans le système.
+|====
 
 
-=== 2.6 Panier
-- **Fichiers :** `ajouter-produit-panier.png`, `gérer-panier.png`
-- **Description :** Tester les fonctionnalités du panier (ajout, modification, suppression).
-- **Cas de test :**
-  - **Test-07-01-01** : Vérifier qu'un utilisateur peut ajouter un produit au panier.
-  - **Test-07-01-02** : Vérifier qu'un utilisateur peut modifier la quantité d'un produit dans le panier.
-  - **Test-07-01-03** : Vérifier qu'un utilisateur peut supprimer un produit de son panier.
-
-=== 2.7 Gestion des Catégories
-- **Fichier :** `ADM-gérer-catégorie.png`
+=== 2.6 Gestion des Catégories
 - **Description :** Tester la gestion des catégories (ajout, modification, suppression).
-- **Cas de test :**
-  - **Test-08-01-01** : Vérifier qu'un administrateur peut ajouter une nouvelle catégorie.
-  - **Test-08-01-02** : Vérifier qu'un administrateur peut modifier une catégorie existante.
-  - **Test-08-01-03** : Vérifier qu'un administrateur peut supprimer une catégorie.
 
-=== 2.8 Historique des Produits et Ventes
-- **Fichiers :** `historique-produits.png`, `ADM-gérer-ventes.png`
+|====
+|Cas de test 4+|Test-01-06-01
+|Titre 4+|Création d'une catégorie
+|Objectif 4+|Vérifier qu'un administrateur peut ajouter une nouvelle catégorie.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Creation_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
+^|Creation_Categorie.2 ^|Cliquer sur "Créer une catégorie". ^|Le formulaire d'ajout de catégorie est affiché. ^|Aucune ^|OK
+^|Creation_Categorie.3 ^|Remplir les informations nécessaires et valider. ^|La nouvelle catégorie est ajoutée au système et apparaît dans la liste. ^|Les informations saisies sont valides. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à créer une catégorie dans le système.
+|====
+
+---
+
+|====
+|Cas de test 4+|Test-01-06-02
+|Titre 4+|Modification d'une catégorie
+|Objectif 4+|Vérifier qu'un administrateur peut modifier une catégorie existante.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Modification_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
+^|Modification_Categorie.2 ^|Sélectionner une catégorie existante et cliquer sur "Modifier". ^|Le formulaire de modification de catégorie est affiché. ^|Une catégorie existe dans le système. ^|OK
+^|Modification_Categorie.3 ^|Modifier les informations nécessaires et valider. ^|Les modifications sont enregistrées et apparaissent dans la liste. ^|Les informations modifiées sont valides. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à modifier une catégorie existante dans le système.
+|====
+
+---
+
+|====
+|Cas de test 4+|Test-01-06-03
+|Titre 4+|Suppression d'une catégorie
+|Objectif 4+|Vérifier qu'un administrateur peut supprimer une catégorie existante.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Suppression_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
+^|Suppression_Categorie.2 ^|Sélectionner une catégorie et cliquer sur "Supprimer". ^|Une boîte de confirmation est affichée. ^|Une catégorie existe dans le système. ^|OK
+^|Suppression_Categorie.3 ^|Confirmer la suppression. ^|La catégorie est supprimée du système et ne figure plus dans la liste. ^|La confirmation est validée. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à supprimer une catégorie dans le système.
+|====
+
+
+=== 2.7 Gestion des Ventes
 - **Description :** Tester la visualisation de l'historique des produits et des ventes.
-- **Cas de test :**
-  - **Test-09-01-01** : Vérifier qu'un administrateur peut consulter l'historique des ventes.
-  - **Test-09-01-02** : Vérifier qu'un administrateur peut consulter l'historique des produits modifiés.
+
+|====
+|Cas de test 4+|Test-01-07-01
+|Titre 4+|Consulter les ventes par produit
+|Objectif 4+|Vérifier qu'un administrateur peut consulter l'historique des ventes par produit.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Consultation_Ventes_Produit.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consultation_Ventes_Produit.2 ^|Sélectionner l'option "Consulter les ventes par produit". ^|La liste des produits avec leurs statistiques de vente est affichée. ^|Des ventes de produits existent dans le système. ^|OK
+^|Consultation_Ventes_Produit.3 ^|Rechercher un produit spécifique ou filtrer les résultats. ^|Les résultats sont mis à jour selon les critères de recherche ou de filtre. ^|Le critère de recherche ou de filtre est valide. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à visualiser les ventes classées par produit.
+|====
+
+---
+
+|====
+|Cas de test 4+|Test-01-07-02
+|Titre 4+|Consulter les ventes par catégorie
+|Objectif 4+|Vérifier qu'un administrateur peut consulter l'historique des ventes par catégorie.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Consultation_Ventes_Categorie.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consultation_Ventes_Categorie.2 ^|Sélectionner l'option "Consulter les ventes par catégorie". ^|La liste des catégories avec leurs statistiques de vente est affichée. ^|Des ventes enregistrées existent dans le système. ^|OK
+^|Consultation_Ventes_Categorie.3 ^|Rechercher une catégorie spécifique ou filtrer les résultats. ^|Les résultats sont mis à jour selon les critères de recherche ou de filtre. ^|Le critère de recherche ou de filtre est valide. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à visualiser les ventes classées par catégorie.
+|====
+
+---
+
+|====
+|Cas de test 4+|Test-01-07-03
+|Titre 4+|Exporter les données des ventes
+|Objectif 4+|Vérifier qu'un administrateur peut exporter les données des ventes sous forme de fichier.
+5+|
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|Exportation_Ventes.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|OK
+^|Exportation_Ventes.2 ^|Cliquer sur "Exporter les données des ventes". ^|Une boîte de dialogue pour choisir le format d'export (CSV, Excel, etc.) est affichée. ^|Des ventes enregistrées existent dans le système. ^|OK
+^|Exportation_Ventes.3 ^|Sélectionner le format d'export et valider. ^|Le fichier contenant les données des ventes est téléchargé. ^|Un format valide est choisi. ^|OK
+5+|
+5+|Commentaire :
+Ce cas de test valide la capacité d'un administrateur à exporter les données des ventes pour une analyse externe.
+|====
+
+
 
 == 3. Partie Utilisateur
 
