@@ -1,5 +1,7 @@
 image::https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg["Open in Visual Studio Code", link="https://classroom.github.com/online_ide?assignment_repo_id=16973566&assignment_repo_type=AssignmentRepo"]
+
 = S3.A.01 - Développement appli 2024-2025
+
 :icons: font
 :models: models
 :experimental:
@@ -58,6 +60,22 @@ Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.
 
 TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
+== Présentation de notre client : Simul8
+
+Simul8 est une entreprise spécialisée dans la production de maquettes à taille réelle, non fonctionnelles, mais extrêmement réalistes. Elle s’adresse principalement à des particuliers souhaitant posséder des objets rares ou coûteux sous forme de répliques abordables, ainsi qu’à des professionnels du cinéma ou du théâtre recherchant des décors à moindre coût. Leur slogan : "Fake it till you make it".
+
+=== Origines et Mission
+
+Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le bricolage et la création d’objets inaccessibles. L’entreprise, initialement basée dans le sud de la France, aspire aujourd'hui à se développer via sa nouvelle boutique en ligne.
+
+=== Équipe Dirigeante
+
+- Matthias Lionardo - PDG et fondateur
+- Lohan Serre - Directeur Général
+- Chefai Tristan - Directeur Marketing et Artistique
+- Ethan Besse - Directeur Logistique
+
+
 == Gestion de projet & Qualité
 
 Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
@@ -68,7 +86,8 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.1[v0.0.1]
 - Lien vers la doc technique
 - Lien vers la doc utilisateur
-- Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/Product%20Backlog.adoc
+- Lien vers la doc de Conecepton : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docConception.adoc
+- Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/labels/User%20Story
 - Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
 - Tests unitaires et plans de test
 - Indicateurs de qualité du code (dette technique)
