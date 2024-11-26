@@ -22,15 +22,15 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane minHeight="200.0" minWidth="200.0" prefHeight="472.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <top>    <!-- Titre de la page -->
-        <HBox alignment="CENTER">
+    <top>    <!-- Titre de la page -->
+        <HBox alignment="CENTER" padding="Insets(10, 10, 10, 10)">
             <Label text="Système IoT - Surveillance des capteurs" styleClass="title"/>
         </HBox>
     </top>
 
     <!-- Menu à gauche -->
     <left>
-        <VBox spacing="10" padding="10" styleClass="menu">
+        <VBox spacing="10" padding="Insets(10, 10, 10, 10)" styleClass="menu">
             <Label text="Informations Capteurs" styleClass="menu-title"/>
             <Button text="Capteurs Température" styleClass="menu-button"/>
             <Button text="Panneaux Solaires" styleClass="menu-button"/>
@@ -44,7 +44,7 @@
 
     <!-- Barres de boutons en bas -->
     <bottom>
-        <HBox spacing="10" alignment="CENTER" padding="10">
+        <HBox spacing="10" alignment="CENTER" padding="Insets(10, 10, 10, 10)">
             <Button text="Aide" styleClass="bottom-button"/>
             <Button text="Configurer" styleClass="bottom-button"/>
             <Button text="Quitter" styleClass="bottom-button"/>
