@@ -17,7 +17,7 @@
 
 <BorderPane minHeight="200.0" minWidth="200.0" prefHeight="472.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-      <MenuBar prefHeight="27.0" prefWidth="893.0" styleClass="menuLabel" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+      <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="592.0" styleClass="menuLabel" stylesheets="@../style.css" BorderPane.alignment="TOP_RIGHT">
         <menus>
           <Menu mnemonicParsing="false" text="Fichier">
             <items>
@@ -37,17 +37,23 @@
             </items>
           </Menu>
         </menus>
+         <opaqueInsets>
+            <Insets left="100.0" right="100.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets right="680.0" />
+         </padding>
       </MenuBar>
    </top>
    <left>
-      <VBox prefHeight="445.0" prefWidth="227.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="432.0" prefWidth="232.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listViewParties" maxWidth="1.7976931348623157E308" prefHeight="222.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-insets: 12; -fx-opacity: 55;" styleClass="menuLabel" />
+            <ListView fx:id="listViewParties" maxWidth="1.7976931348623157E308" prefHeight="232.0" prefWidth="185.0" style="-fx-background-radius: 10; -fx-background-insets: 12; -fx-opacity: 55;" styleClass="menuLabel" />
          </children>
       </VBox>
    </left>
    <center>
-      <GridPane alignment="CENTER" prefHeight="445.0" prefWidth="566.0" style="-fx-padding: 55;" styleClass="grid-pane" BorderPane.alignment="CENTER">
+      <GridPane alignment="CENTER" prefHeight="432.0" prefWidth="603.0" style="-fx-padding: 55;" styleClass="grid-pane" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.19996337890626" minWidth="10.0" prefWidth="235.19996337890626" />
         </columnConstraints>
@@ -62,7 +68,7 @@
                   <Font name="System Bold" size="41.0" />
                </font>
             </Label>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+            <VBox alignment="CENTER" prefHeight="107.0" prefWidth="261.0" spacing="10.0" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
