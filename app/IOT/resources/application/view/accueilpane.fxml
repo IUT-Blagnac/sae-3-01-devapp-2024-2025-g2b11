@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" fx:controller="application.controller.AccueilController">
+    <!-- Titre de la page -->
+    <top>
+        <HBox alignment="CENTER">
+            <Label text="Système IoT - Surveillance des capteurs" styleClass="title"/>
+        </HBox>
+    </top>
+
+    <!-- Menu à gauche -->
+    <left>
+        <VBox spacing="10" padding="10" styleClass="menu">
+            <Label text="Informations Capteurs" styleClass="menu-title"/>
+            <Button text="Capteurs Température" styleClass="menu-button"/>
+            <Button text="Panneaux Solaires" styleClass="menu-button"/>
+        </VBox>
+    </left>
+
+    <!-- Partie centrale pour afficher les données -->
+    <center>
+        <Text text="Bienvenue! Veuillez sélectionner un capteur." styleClass="center-text"/>
+    </center>
+
+    <!-- Barres de boutons en bas -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" padding="10">
+            <Button text="Aide" styleClass="bottom-button"/>
+            <Button text="Configurer" styleClass="bottom-button"/>
+            <Button text="Quitter" styleClass="bottom-button"/>
+        </HBox>
+    </bottom>
+
+    <!-- Barre de menus -->
+    <menus>
+        <MenuBar>
+            <Menu text="Fichier">
+                <MenuItem text="Nouvelle session"/>
+                <MenuItem text="Quitter"/>
+            </Menu>
+            <Menu text="Format">
+                <MenuItem text="Configurer l'affichage"/>
+            </Menu>
+            <Menu text="Aide">
+                <MenuItem text="Aide contextuelle"/>
+                <MenuItem text="À propos"/>
+            </Menu>
+        </MenuBar>
+    </menus>
+</BorderPane>
