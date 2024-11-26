@@ -30,7 +30,7 @@
 
     <!-- Menu à gauche -->
     <left>
-        <VBox spacing="10"  styleClass="menu">
+        <VBox spacing="10" styleClass="menu">
             <Label text="Informations Capteurs" styleClass="menu-title"/>
             <Button text="Capteurs Température" styleClass="menu-button"/>
             <Button text="Panneaux Solaires" styleClass="menu-button"/>
@@ -44,7 +44,7 @@
 
     <!-- Barres de boutons en bas -->
     <bottom>
-        <HBox spacing="10" alignment="CENTER" padding="Insets(10, 10, 10, 10)">
+        <HBox spacing="10" alignment="CENTER" padding="Insets {10, 10, 10, 10}">
             <Button text="Aide" styleClass="bottom-button"/>
             <Button text="Configurer" styleClass="bottom-button"/>
             <Button text="Quitter" styleClass="bottom-button"/>
