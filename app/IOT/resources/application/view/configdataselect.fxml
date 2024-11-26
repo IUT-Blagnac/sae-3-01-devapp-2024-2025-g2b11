@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="472.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+    <top>
+        <Label text="Configuration des données à afficher" style="-fx-font-size: 20px; -fx-padding: 10;" BorderPane.alignment="CENTER" />
+    </top>
+    
+    <center>
+        <VBox spacing="20" alignment="CENTER" BorderPane.alignment="CENTER">
+            <Label text="Choix des données à afficher : " style="-fx-font-size: 16px;"/>
+            
+            <!-- Groupe de boutons radio pour le choix des données -->
+            <ToggleGroup fx:id="dataChoiceGroup">
+                <RadioButton text="Panneaux Solaires" fx:id="solarPanelsRadio" />
+                <RadioButton text="Capteurs" fx:id="sensorsRadio" />
+                <RadioButton text="Les deux" fx:id="bothRadio" />
+            </ToggleGroup>
+            
+            <!-- Bouton "Choix salle" -->
+            <Button text="Choix salle" fx:id="chooseRoomButton" disable="true" prefWidth="200" />
+            
+            <!-- Espacement entre les éléments -->
+            <VBox spacing="10" alignment="CENTER">
+                <!-- Bouton Suivant -->
+                <Button text="Suivant" fx:id="nextButton" prefWidth="200" />
+                
+                <!-- Bouton Retour -->
+                <Button text="Retour" fx:id="backButton" prefWidth="200" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
