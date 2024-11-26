@@ -44,7 +44,7 @@
 
     <!-- Barres de boutons en bas -->
     <bottom>
-        <HBox spacing="10" alignment="CENTER" padding="Insets {10, 10, 10, 10}">
+        <HBox spacing="10" alignment="CENTER" padding="10, 10, 10, 10">
             <Button text="Aide" styleClass="bottom-button"/>
             <Button text="Configurer" styleClass="bottom-button"/>
             <Button text="Quitter" styleClass="bottom-button"/>
