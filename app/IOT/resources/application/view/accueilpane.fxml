@@ -1,55 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.Pos?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/style/style.css" fx:id="borderPane" fx:controller="projet.view.AccueilController">
-    <!-- Titre de la page -->
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="472.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox alignment="CENTER">
-            <Label text="Système IoT - Surveillance des capteurs" styleClass="title"/>
-        </HBox>
-    </top>
+      <MenuBar prefHeight="27.0" prefWidth="893.0" styleClass="menuLabel" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ActionPlay" text="Jouer" />
+              <MenuItem mnemonicParsing="false" onAction="#ActionOuvrirFichier" text="Importer votre grille" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#actionRegles" text="Règles" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionApropos" text="A propos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Fermer">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#actionQuitter" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="445.0" prefWidth="227.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listViewParties" maxWidth="1.7976931348623157E308" prefHeight="222.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-insets: 12; -fx-opacity: 55;" styleClass="menuLabel" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <GridPane alignment="CENTER" prefHeight="445.0" prefWidth="566.0" style="-fx-padding: 55;" styleClass="grid-pane" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.19996337890626" minWidth="10.0" prefWidth="235.19996337890626" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="59.0" prefWidth="286.0" styleClass="customlabel" text="Appli IOT">
+               <font>
+                  <Font name="System Bold" size="41.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <children>
+                  <GridPane prefHeight="41.0" prefWidth="236.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="106.0" text="Configurer" />
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="53.0" prefWidth="79.0" text="Infos" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="106.0" text="Quitter" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </center>
+   <stylesheets>
+      <URL value="@../style.css" />
+      <URL value="@../style/style.css" />
+   </stylesheets>
+    
 
-    <!-- Menu à gauche -->
-    <left>
-        <VBox spacing="10" padding="10" styleClass="menu">
-            <Label text="Informations Capteurs" styleClass="menu-title"/>
-            <Button text="Capteurs Température" styleClass="menu-button"/>
-            <Button text="Panneaux Solaires" styleClass="menu-button"/>
-        </VBox>
-    </left>
-
-    <!-- Partie centrale pour afficher les données -->
-    <center>
-        <Text text="Bienvenue! Veuillez sélectionner un capteur." styleClass="center-text"/>
-    </center>
-
-    <!-- Barres de boutons en bas -->
-    <bottom>
-        <HBox spacing="10" alignment="CENTER" padding="10">
-            <Button text="Aide" styleClass="bottom-button"/>
-            <Button text="Configurer" styleClass="bottom-button"/>
-            <Button text="Quitter" styleClass="bottom-button"/>
-        </HBox>
-    </bottom>
-
-    <!-- Barre de menus -->
-    <menus>
-        <MenuBar>
-            <Menu text="Fichier">
-                <MenuItem text="Nouvelle session"/>
-                <MenuItem text="Quitter"/>
-            </Menu>
-            <Menu text="Format">
-                <MenuItem text="Configurer l'affichage"/>
-            </Menu>
-            <Menu text="Aide">
-                <MenuItem text="Aide contextuelle"/>
-                <MenuItem text="À propos"/>
-            </Menu>
-        </MenuBar>
-    </menus>
+    
 </BorderPane>
