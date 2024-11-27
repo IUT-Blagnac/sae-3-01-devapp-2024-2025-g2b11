@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import Data.Capteur;
+import Data.GestionData;
 
 import java.io.File;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Main {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-            SensorData sensorData = objectMapper.readValue(new File("data.json"), SensorData.class);
+            GestionData sensorData = objectMapper.readValue(new File("nvfichier.json"), GestionData.class);
 
             // Afficher la dernière entrée des capteurs
             Map<String, List<Capteur>> capteursAM = sensorData.getCapteursAM();
