@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -73,29 +74,21 @@
                   <Insets />
                </GridPane.margin>
                <children>
-                  <GridPane prefHeight="41.0" prefWidth="236.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <HBox prefHeight="100.0" prefWidth="264.0">
                      <children>
-                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="106.0" text="Configurer" />
-                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="53.0" prefWidth="79.0" text="Infos" GridPane.columnIndex="1">
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="138.0" text="Configurer" />
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="100.0" text="Infos">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="106.0" text="Quitter" GridPane.columnIndex="2">
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="39.0" prefWidth="106.0" text="Quitter">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
                      </children>
-                  </GridPane>
+                  </HBox>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2" />
