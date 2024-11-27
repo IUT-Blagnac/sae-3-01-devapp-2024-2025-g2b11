@@ -16,19 +16,21 @@ public class Reader {
     public static void main(String[] args) {
         getData();
     }
+
+
     public static void getData(){
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
 
-            GestionData jsonData = objectMapper.readValue(new File("nvfichier.json"), GestionData.class);
+            GestionData jsonData = objectMapper.readValue(new File("dataJSON.json"), GestionData.class);
 
             Map<String, List<Capteur>> capteursAM = jsonData.getCapteursAM();
             for (Map.Entry<String, List<Capteur>> entry : capteursAM.entrySet()) {
                 String roomName = entry.getKey();
                 List<Capteur> mesureCapteur = entry.getValue();
 
-                if (!mesureCapteur.isEmpty()) {
+                if (!mesureCapteur.isEmpty() && roomName.equals("E208")) {
                     Capteur lastMesure = mesureCapteur.get(mesureCapteur.size() - 1);  // Dernière mesure
                     System.out.println(roomName +": "+ lastMesure);
                 }
@@ -36,20 +38,15 @@ public class Reader {
             //System.out.println(capteursAM);
             
 
-            // Afficher la dernière entrée des panneaux solaires
-            // Map<String, List<PanneauSolaire>> panneau = jsonData.getPanneaux();
-           
-            // System.out.println(panneau);
+            System.out.println("\nPanneaux solaires : ");
+            List<PanneauSolaire> donneesPanneau = jsonData.getPanneaux();
+            // for (PanneauSolaire panneau : donneesPanneau) {
+            //     System.out.println(panneau);
+            // }    
 
-            // for (Map.Entry<String, List<PanneauSolaire>> entry : panneau.entrySet()) {
-            //     String roomName = entry.getKey();
-            //     List<PanneauSolaire> elemListePann = entry.getValue();
+            System.out.println(donneesPanneau.get(donneesPanneau.size()-1));
 
-            //     if (!elemListePann.isEmpty()) {
-            //         PanneauSolaire lastMesure = elemListePann.get(elemListePann.size() - 1);  // Dernière mesure
-            //         System.out.println(roomName +": "+ lastMesure);
-            //     }
-            // }
+
 
         } catch (Exception e) {
             e.printStackTrace();
