@@ -89,7 +89,8 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Lien vers le backlog du sprint : https://github.com/orgs/IUT-Blagnac/projects/262/views/1
 - Lien vers la doc de Conception : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docConception.adoc
 - Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/labels/User%20Story
-- Tests unitaires et plans de test : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docTest.adoc
+- Tests unitaires et plans de test : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/cahier_de_recette.adoc
+- link:doc/diag/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
