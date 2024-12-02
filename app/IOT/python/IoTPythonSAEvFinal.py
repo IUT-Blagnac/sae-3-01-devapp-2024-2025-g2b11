@@ -5,14 +5,12 @@ import os
 import datetime
 import time
 
-donneesSolaire = []
-donnees =[]
-salles = []
 
 def read_config(chemin):
     config = configparser.ConfigParser()
     config.read(chemin)
     return config
+
 
 def load_json_file(fichier):
     if os.path.exists(fichier):
@@ -135,55 +133,60 @@ def on_connect(client, userdata, flags, reason_code, properties=None):
                 print(topic.strip()+salle+'/data')
         else :
             mqttc.subscribe(topic.strip())
-            
-
-
-fichconfig = read_config("config.ini")
-
-mqttServer = fichconfig['MQTT']['broker']
-port = int(fichconfig['MQTT']['port'])
-topic_subscribe = fichconfig['MQTT']['topic_subscribe'].split(',')
-
-donnees = fichconfig['DATA']['types'].split(',')
-donneesSolaire = fichconfig['DATA']['typesSolaire'].split(',')
-salles = fichconfig['DATA']['salles'].split(',')
-frequence_sauvegarde= int(fichconfig['DATA']['frequency'])
-
-fichjson = fichconfig['OUTPUT']['json_file']
-alertjson = fichconfig['OUTPUT']['alert_file']
-
-
-s_temperature = int(fichconfig['ALERTE']['seuil_temperature'])
-s_co2 = int(fichconfig['ALERTE']['seuil_co2'])
-s_humidite = int(fichconfig['ALERTE']['seuil_humidity'])
-s_power = float(fichconfig['ALERTE']['seuil_power'])
-s_energy = int(fichconfig['ALERTE']['seuil_energy'])
-
-dictfreq= load_json_file(fichjson)
-dictalert = load_json_file(alertjson)
-
-if salles[0] == '' or salles[0].upper() =='ALL':
-    salles[0] = '+' 
 
 
 
-mqttc = mqtt.Client()
-mqttc.connect(mqttServer, port, keepalive=60)
-mqttc.on_connect = on_connect
-mqttc.on_message = on_message
-mqttc.loop_start() #exécute la réception des messages MQTT dans un thread au lieu de loop_forever()
-dernier_sauvegarde= datetime.datetime.now()
-
-
-
-while True:
-    maintenant = datetime.datetime.now()
-    delta = (maintenant - dernier_sauvegarde).total_seconds()
+def main():
+    fichconfig = read_config("config.ini")
     
-    if delta >= frequence_sauvegarde:
-        sauvegarder()
-        print(f"Sauvegarde effectuée à {maintenant}")        
-        dernier_sauvegarde = maintenant
-    time.sleep(1)  
-    
+    global mqttc, topic_subscribe, donnees, donneesSolaire, salles
+    global frequence_sauvegarde, fichjson, alertjson
+    global s_temperature, s_co2, s_humidite, s_power, s_energy
+    global dictfreq, dictalert
 
+    mqttServer = fichconfig['MQTT']['broker']
+    port = int(fichconfig['MQTT']['port'])
+    topic_subscribe = fichconfig['MQTT']['topic_subscribe'].split(',')
+
+    donnees = fichconfig['DATA']['types'].split(',')
+    donneesSolaire = fichconfig['DATA']['typesSolaire'].split(',')
+    salles = fichconfig['DATA']['salles'].split(',')
+    frequence_sauvegarde = int(fichconfig['DATA']['frequency'])
+
+    fichjson = fichconfig['OUTPUT']['json_file']
+    alertjson = fichconfig['OUTPUT']['alert_file']
+
+    s_temperature = int(fichconfig['ALERTE']['seuil_temperature'])
+    s_co2 = int(fichconfig['ALERTE']['seuil_co2'])
+    s_humidite = int(fichconfig['ALERTE']['seuil_humidity'])
+    s_power = float(fichconfig['ALERTE']['seuil_power'])
+    s_energy = int(fichconfig['ALERTE']['seuil_energy'])
+
+    dictfreq = load_json_file(fichjson)
+    dictalert = load_json_file(alertjson)
+
+    if salles[0] == '' or salles[0].upper() == 'ALL':
+        salles[0] = '+'
+
+    mqttc = mqtt.Client()
+    mqttc.connect(mqttServer, port, keepalive=60)
+    mqttc.on_connect = on_connect
+    mqttc.on_message = on_message
+    mqttc.loop_start()  # exécute la réception des messages MQTT dans un thread
+
+    dernier_sauvegarde = datetime.datetime.now()
+
+    while True:
+        maintenant = datetime.datetime.now()
+        delta = (maintenant - dernier_sauvegarde).total_seconds()
+
+        if delta >= frequence_sauvegarde:
+            sauvegarder()
+            print(f"Sauvegarde effectuée à {maintenant}")
+            dernier_sauvegarde = maintenant
+
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    main()
