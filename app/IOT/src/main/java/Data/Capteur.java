@@ -1,6 +1,7 @@
 package Data;
 
 public class Capteur{
+
     public float temperature;
     public float humidity;
     public int activity;
@@ -10,11 +11,13 @@ public class Capteur{
     public int infrared;
     public int infrared_and_visible;
     public float pressure;
+
     public String name;
     public String devEUI;
     public String room;
     public int floor;
     public String Building;
+
 
     @Override
     public String toString() {
