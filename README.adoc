@@ -83,7 +83,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - Lien vers la doc utilisateur
 - https://github.com/orgs/IUT-Blagnac/projects/262/views/1[Lien vers le backlog du sprint]
 - link:doc/BD/docConception.adoc[Lien vers la doc de Conception] 
-- link:doc/GestionDeProjet/Product%20Backlog.adoc[Lien vers le product backlog]
+- link:https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues?q=is%3Aopen+is%3Aissue+label%3A%22User+Story%22[Lien vers le product backlog]
 - link:doc/PHP/cahier_de_recette.adoc[Lien vers le cahier de recette] 
 - link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
 
