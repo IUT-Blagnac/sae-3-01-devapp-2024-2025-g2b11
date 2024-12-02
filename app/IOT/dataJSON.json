@@ -1,0 +1,180 @@
+{
+    "Capteurs AM": {
+        "amphi1": [
+            {
+                "temperature": 22.1,
+                "humidity": 47,
+                "co2": 467,
+                "room": "amphi1"
+            }
+        ],
+        "E208": [
+            {
+                "temperature": 20.7,
+                "humidity": 54,
+                "co2": 1129,
+                "room": "E208"
+            }
+        ],
+        "E210": [
+            {
+                "temperature": 22.7,
+                "humidity": 51.5,
+                "co2": 1143,
+                "room": "E210"
+            }
+        ],
+        "E101": [
+            {
+                "temperature": 24,
+                "humidity": 47.5,
+                "co2": 1253,
+                "room": "E101"
+            }
+        ],
+        "hall-amphi": [
+            {
+                "temperature": 19.2,
+                "humidity": 53.5,
+                "co2": 482,
+                "room": "hall-amphi"
+            }
+        ],
+        "C006": [
+            {
+                "temperature": 20,
+                "humidity": 56.5,
+                "co2": 1180,
+                "room": "C006"
+            }
+        ],
+        "B110": [
+            {
+                "temperature": 23.8,
+                "humidity": 50.5,
+                "co2": 1481,
+                "room": "B110"
+            }
+        ],
+        "E102": [
+            {
+                "temperature": 24.9,
+                "humidity": 44,
+                "co2": 958,
+                "room": "E102"
+            }
+        ],
+        "hall-entrée-principale": [
+            {
+                "temperature": 19.6,
+                "humidity": 52,
+                "co2": 470,
+                "room": "hall-entrée-principale"
+            }
+        ],
+        "E004": [
+            {
+                "temperature": 22.2,
+                "humidity": 47,
+                "co2": 496,
+                "room": "E004"
+            }
+        ],
+        "E106": [
+            {
+                "temperature": 21.9,
+                "humidity": 51.5,
+                "co2": 1203,
+                "room": "E106"
+            }
+        ],
+        "B001": [
+            {
+                "temperature": 22.2,
+                "humidity": 50,
+                "co2": 1050,
+                "room": "B001"
+            }
+        ],
+        "Local-velo": [
+            {
+                "temperature": 19.2,
+                "humidity": 58.5,
+                "co2": 456,
+                "room": "Local-velo"
+            }
+        ],
+        "C004": [
+            {
+                "temperature": 19.6,
+                "humidity": 56.5,
+                "co2": 1142,
+                "room": "C004"
+            }
+        ],
+        "Foyer-personnels": [
+            {
+                "temperature": 22.1,
+                "humidity": 53.5,
+                "co2": 1453,
+                "room": "Foyer-personnels"
+            }
+        ]
+    },
+    "PanneauSolaire": [
+        {
+            "lastUpdateTime": "2024-11-27 15:47:33",
+            "lifeTimeData": {
+                "energy": 3380646
+            },
+            "currentPower": {
+                "power": 162.58311
+            }
+        },
+        {
+            "lastUpdateTime": "2024-11-27 16:02:56",
+            "lifeTimeData": {
+                "energy": 3380646
+            },
+            "currentPower": {
+                "power": 162.58311
+            }
+        },
+        {
+            "lastUpdateTime": "2024-11-27 16:02:56",
+            "lifeTimeData": {
+                "energy": 3380646
+            },
+            "currentPower": {
+                "power": 162.58311
+            }
+        },
+        {
+            "lastUpdateTime": "2024-11-27 16:02:56",
+            "lifeTimeData": {
+                "energy": 3380646
+            },
+            "currentPower": {
+                "power": 162.58311
+            }
+        },
+        {
+            "lastUpdateTime": "2024-11-27 16:02:56",
+            "lifeTimeData": {
+                "energy": 3380659
+            },
+            "currentPower": {
+                "power": 153.73965
+            }
+        },
+        {
+            "lastUpdateTime": "2024-11-27 16:02:56",
+            "lifeTimeData": {
+                "energy": 3380659
+            },
+            "currentPower": {
+                "power": 153.73965
+            }
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "Capteurs AM": {
+        "C102": [
+            {
+                "temperature": 18.3,
+                "humidity": 54.5,
+                "co2": 504,
+                "room": "C102"
+            },
+            {
+                "temperature": 18.3,
+                "humidity": 54.5,
+                "co2": 503,
+                "room": "C102"
+            },
+            {
+                "temperature": 18.3,
+                "humidity": 55,
+                "co2": 503,
+                "room": "C102"
+            },
+            {
+                "temperature": 18.3,
+                "humidity": 55,
+                "co2": 501,
+                "room": "C102"
+            },
+            {
+                "temperature": 18.2,
+                "humidity": 49,
+                "co2": 464,
+                "devEUI": "24e124128c143581",
+                "room": "C102"
+            },
+            {
+                "temperature": 99.3,
+                "humidity": 140,
+                "co2": 4256,
+                "devEUI": "24e124128c143581",
+                "room": "C102"
+            }
+        ],
+        "E007": [
+            {
+                "temperature": 22.1,
+                "humidity": 52,
+                "co2": 975,
+                "room": "E007"
+            },
+            {
+                "temperature": 22.2,
+                "humidity": 52,
+                "co2": 1028,
+                "room": "E007"
+            },
+            {
+                "temperature": 22.3,
+                "humidity": 51.5,
+                "co2": 1013,
+                "room": "E007"
+            },
+            {
+                "temperature": 22.1,
+                "humidity": 50,
+                "co2": 830,
+                "room": "E007"
+            }
+        ]
+    },
+    "Panneaux": {
+        "Panneaux-Solaire": [
+            {
+                "lastUpdateTime": "2024-11-21 11:32:33",
+                "lifeTimeData": {
+                    "energy": 3316610
+                }
+            },
+            {
+                "lastUpdateTime": "2024-11-21 11:32:33",
+                "lifeTimeData": {
+                    "energy": 3316610
+                }
+            },
+            {
+                "lastUpdateTime": "2024-99-21 11:32:33",
+                "lifeTimeData": {
+                    "energy": 999999999
+                }
+            }
+        ]
+    }
+}

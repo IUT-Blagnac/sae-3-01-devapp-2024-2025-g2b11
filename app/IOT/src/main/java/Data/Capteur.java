@@ -2,7 +2,6 @@ package Data;
 
 public class Capteur{
 
-
     public float temperature;
     public float humidity;
     public int activity;
@@ -18,4 +17,26 @@ public class Capteur{
     public String room;
     public int floor;
     public String Building;
+
+
+    @Override
+    public String toString() {
+    return "Données capteur{" +
+            "temperature=" + temperature +
+            ", humidity=" + humidity +
+            ", activity=" + activity +
+            ", co2=" + co2 +
+            ", tvoc=" + tvoc +
+            ", illumination=" + illumination +
+            ", infrared=" + infrared +
+            ", infrared_and_visible=" + infrared_and_visible +
+            ", pressure=" + pressure +
+            ", name='" + name + '\'' +
+            ", devEUI='" + devEUI + '\'' +
+            ", room='" + room + '\'' +
+            ", floor=" + floor +
+            ", Building='" + Building + '\'' +
+            '}';
+}
+
 }
