@@ -1,4 +1,4 @@
-= Test - Simul8
+= Cahier de recette - Simul8
 :toc:
 :toc-title: Table des matières
 :toclevels: 4
