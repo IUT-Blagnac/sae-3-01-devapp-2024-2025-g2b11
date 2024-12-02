@@ -1,0 +1,207 @@
+{
+    "Capteurs AM": {
+        "co2Alert": {
+            "B108": [
+                {
+                    "temperature": 20.3,
+                    "humidity": 57,
+                    "co2": 1974,
+                    "room": "B108",
+                    "jour": "02-12-2024",
+                    "heure": "14:46:57"
+                }
+            ],
+            "B203": [
+                {
+                    "temperature": 20,
+                    "humidity": 58.5,
+                    "co2": 1605,
+                    "room": "B203",
+                    "jour": "02-12-2024",
+                    "heure": "14:47:58"
+                }
+            ],
+            "B103": [
+                {
+                    "temperature": 21.3,
+                    "humidity": 53.5,
+                    "co2": 2112,
+                    "room": "B103",
+                    "jour": "02-12-2024",
+                    "heure": "14:48:26"
+                }
+            ],
+            "B110": [
+                {
+                    "temperature": 21.4,
+                    "humidity": 56.5,
+                    "co2": 1761,
+                    "room": "B110",
+                    "jour": "02-12-2024",
+                    "heure": "14:49:59"
+                }
+            ],
+            "B106": [
+                {
+                    "temperature": 21.6,
+                    "humidity": 58.5,
+                    "co2": 1972,
+                    "room": "B106",
+                    "jour": "02-12-2024",
+                    "heure": "14:50:30"
+                }
+            ],
+            "C004": [
+                {
+                    "temperature": 19.5,
+                    "humidity": 60.5,
+                    "co2": 1519,
+                    "room": "C004",
+                    "jour": "02-12-2024",
+                    "heure": "14:51:19"
+                }
+            ],
+            "B202": [
+                {
+                    "temperature": 20.5,
+                    "humidity": 62,
+                    "co2": 2226,
+                    "room": "B202",
+                    "jour": "02-12-2024",
+                    "heure": "14:51:27"
+                }
+            ],
+            "B002": [
+                {
+                    "temperature": 19.3,
+                    "humidity": 56,
+                    "co2": 2125,
+                    "room": "B002",
+                    "jour": "02-12-2024",
+                    "heure": "14:52:27"
+                }
+            ],
+            "B234": [
+                {
+                    "temperature": 23.3,
+                    "humidity": 51,
+                    "co2": 1744,
+                    "room": "B234",
+                    "jour": "02-12-2024",
+                    "heure": "14:53:01"
+                }
+            ],
+            "B113": [
+                {
+                    "temperature": 21.4,
+                    "humidity": 65.5,
+                    "co2": 3286,
+                    "room": "B113",
+                    "jour": "02-12-2024",
+                    "heure": "14:53:53"
+                }
+            ]
+        },
+        "temperatureAlert": {
+            "E100": [
+                {
+                    "temperature": 25.1,
+                    "humidity": 40.5,
+                    "co2": 654,
+                    "room": "E100",
+                    "jour": "02-12-2024",
+                    "heure": "14:49:27"
+                }
+            ],
+            "Foyer-etudiants-entrée": [
+                {
+                    "temperature": 49.7,
+                    "humidity": 62,
+                    "co2": 896,
+                    "room": "Foyer-etudiants-entrée",
+                    "jour": "02-12-2024",
+                    "heure": "14:52:58"
+                },
+                {
+                    "temperature": 49.7,
+                    "humidity": 62,
+                    "co2": 896,
+                    "room": "Foyer-etudiants-entrée",
+                    "jour": "02-12-2024",
+                    "heure": "14:53:01"
+                }
+            ]
+        },
+        "humiditeAlert": {
+            "hall-amphi": [
+                {
+                    "temperature": 19.3,
+                    "humidity": 60.5,
+                    "co2": 674,
+                    "room": "hall-amphi",
+                    "jour": "02-12-2024",
+                    "heure": "14:49:30"
+                }
+            ],
+            "C004": [
+                {
+                    "temperature": 19.5,
+                    "humidity": 60.5,
+                    "co2": 1519,
+                    "room": "C004",
+                    "jour": "02-12-2024",
+                    "heure": "14:51:19"
+                }
+            ],
+            "Local-velo": [
+                {
+                    "temperature": 13,
+                    "humidity": 92,
+                    "co2": 478,
+                    "room": "Local-velo",
+                    "jour": "02-12-2024",
+                    "heure": "14:51:22"
+                }
+            ],
+            "B202": [
+                {
+                    "temperature": 20.5,
+                    "humidity": 62,
+                    "co2": 2226,
+                    "room": "B202",
+                    "jour": "02-12-2024",
+                    "heure": "14:51:27"
+                }
+            ],
+            "Foyer-etudiants-entrée": [
+                {
+                    "temperature": 49.7,
+                    "humidity": 62,
+                    "co2": 896,
+                    "room": "Foyer-etudiants-entrée",
+                    "jour": "02-12-2024",
+                    "heure": "14:52:58"
+                },
+                {
+                    "temperature": 49.7,
+                    "humidity": 62,
+                    "co2": 896,
+                    "room": "Foyer-etudiants-entrée",
+                    "jour": "02-12-2024",
+                    "heure": "14:53:01"
+                }
+            ],
+            "B113": [
+                {
+                    "temperature": 21.4,
+                    "humidity": 65.5,
+                    "co2": 3286,
+                    "room": "B113",
+                    "jour": "02-12-2024",
+                    "heure": "14:53:53"
+                }
+            ]
+        }
+    },
+    "PanneauSolaire": []
+}

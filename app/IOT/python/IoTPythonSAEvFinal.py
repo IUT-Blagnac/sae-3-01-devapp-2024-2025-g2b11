@@ -12,7 +12,7 @@ def read_config(chemin):
     return config
 
 
-def load_json_file(fichier):
+def load_json_file(fichier)->dict:
     if os.path.exists(fichier):
         with open(fichier, "r",encoding="utf-8") as file:
             return json.load(file)
@@ -94,7 +94,7 @@ def filtredonneesCapteur(data):
         alert=True
     
     if alert : 
-        print("==================== c'est une alerte ================\n\n")
+        print("Alerte salle ",salle, " : ", jour, heure)
         di2["jour"] = jour
         di2["heure"] = heure
         di2["room"] = salle
