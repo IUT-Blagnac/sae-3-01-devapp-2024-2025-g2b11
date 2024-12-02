@@ -78,21 +78,15 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 
 == Gestion de projet & Qualité
 
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
-
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
-
 - Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.3[v0.0.3]
 - Lien vers la doc technique
 - Lien vers la doc utilisateur
-- Lien vers le backlog du sprint : https://github.com/orgs/IUT-Blagnac/projects/262/views/1
-- Lien vers la doc de Conception : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docConception.adoc
-- Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/labels/User%20Story
-- Tests unitaires et plans de test : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/cahier_de_recette.adoc
-- link:doc/diag/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+- https://github.com/orgs/IUT-Blagnac/projects/262/views/1[Lien vers le backlog du sprint]
+- link:doc/BD/docConception.adoc[Lien vers la doc de Conception] 
+- link:doc/GestionDeProjet/Product%20Backlog.adoc[Lien vers le product backlog]
+- link:doc/PHP/cahier_de_recette.adoc[Lien vers le cahier de recette] 
+- link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
+
 
 Prochaine release le 24/11/2024
 
