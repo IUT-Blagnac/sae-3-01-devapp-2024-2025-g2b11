@@ -90,7 +90,15 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 
 Prochaine release le 24/11/2024
 
-Voici un exemple d'évaluation :
+== Evaluation communication
+
+=== Retour semaine 48
+
+ODJ et CR non fait
+Note 0/3
+
+
+=== Voici un exemple d'évaluation :
 
 ifdef::env-github[]
 image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
