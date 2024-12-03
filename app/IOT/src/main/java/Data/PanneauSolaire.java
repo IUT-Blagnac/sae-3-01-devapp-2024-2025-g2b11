@@ -14,16 +14,16 @@ public class PanneauSolaire {
     public Map<String, Integer> lifeTimeData;  // Pour gérer les données imbriquées
 
     @JsonProperty("lastYearData")
-    public Map<String, Integer> lastYearData;  // Pour gérer les données imbriquées
+    public Map<String, Integer> lastYearData;  
 
     @JsonProperty("lastMonthData")
-    public Map<String, Integer> lastMonthData;  // Pour gérer les données imbriquées
+    public Map<String, Integer> lastMonthData;  
 
     @JsonProperty("lastDayData")
-    public Map<String, Integer> lastDayData;  // Pour gérer les données imbriquées
+    public Map<String, Integer> lastDayData;  
 
     @JsonProperty("currentPower")
-    public Map<String, Float> currentPower;  // Pour gérer les données imbriquées
+    public Map<String, Float> currentPower;  
 
     @JsonProperty("measuredBy")
     public String measuredBy;
