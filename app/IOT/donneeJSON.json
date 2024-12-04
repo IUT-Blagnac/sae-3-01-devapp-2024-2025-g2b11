@@ -1,0 +1,183 @@
+{
+    "Capteurs AM": {
+        "amphi1": [
+            {
+                "temperature": 19.6,
+                "humidity": 43,
+                "co2": 451,
+                "room": "amphi1"
+            },
+            {
+                "temperature": 19.7,
+                "humidity": 42.5,
+                "co2": 452,
+                "room": "amphi1"
+            }
+        ],
+        "E208": [
+            {
+                "temperature": 19.6,
+                "humidity": 41,
+                "co2": 716,
+                "room": "E208"
+            },
+            {
+                "temperature": 19.7,
+                "humidity": 41,
+                "co2": 751,
+                "room": "E208"
+            }
+        ],
+        "E210": [
+            {
+                "temperature": 20.9,
+                "humidity": 39,
+                "co2": 621,
+                "room": "E210"
+            },
+            {
+                "temperature": 21,
+                "humidity": 38.5,
+                "co2": 604,
+                "room": "E210"
+            }
+        ],
+        "E207": [
+            {
+                "temperature": 20.1,
+                "humidity": 38,
+                "co2": 507,
+                "room": "E207"
+            },
+            {
+                "temperature": 20.1,
+                "humidity": 37.5,
+                "co2": 508,
+                "room": "E207"
+            }
+        ],
+        "E101": [
+            {
+                "temperature": 18.7,
+                "humidity": 37,
+                "co2": 462,
+                "room": "E101"
+            },
+            {
+                "temperature": 18.7,
+                "humidity": 37,
+                "co2": 460,
+                "room": "E101"
+            }
+        ],
+        "hall-amphi": [
+            {
+                "temperature": 19.1,
+                "humidity": 42.5,
+                "co2": 521,
+                "room": "hall-amphi"
+            },
+            {
+                "temperature": 19.1,
+                "humidity": 42,
+                "co2": 532,
+                "room": "hall-amphi"
+            }
+        ],
+        "E100": [
+            {
+                "temperature": 24.5,
+                "humidity": 32.5,
+                "co2": 785,
+                "room": "E100"
+            },
+            {
+                "temperature": 23.2,
+                "humidity": 34,
+                "co2": 787,
+                "room": "E100"
+            }
+        ],
+        "E103": [
+            {
+                "temperature": 18,
+                "humidity": 44,
+                "co2": 784,
+                "room": "E103"
+            }
+        ],
+        "hall-entrée-principale": [
+            {
+                "temperature": 19.5,
+                "humidity": 40.5,
+                "co2": 521,
+                "room": "hall-entrée-principale"
+            }
+        ],
+        "B001": [
+            {
+                "temperature": 21,
+                "humidity": 44,
+                "co2": 456,
+                "room": "B001"
+            }
+        ],
+        "Local-velo": [
+            {
+                "temperature": 15.6,
+                "humidity": 54.5,
+                "co2": 457,
+                "room": "Local-velo"
+            }
+        ],
+        "Foyer-personnels": [
+            {
+                "temperature": 19.2,
+                "humidity": 44,
+                "co2": 655,
+                "room": "Foyer-personnels"
+            }
+        ],
+        "C001": [
+            {
+                "temperature": 21.9,
+                "humidity": 37.5,
+                "co2": 556,
+                "room": "C001"
+            }
+        ],
+        "Salle-conseil": [
+            {
+                "temperature": 22.9,
+                "humidity": 36,
+                "co2": 494,
+                "room": "Salle-conseil"
+            }
+        ],
+        "C002": [
+            {
+                "temperature": 21.4,
+                "humidity": 41.5,
+                "co2": 794,
+                "room": "C002"
+            }
+        ],
+        "E007": [
+            {
+                "temperature": 19.4,
+                "humidity": 39.5,
+                "co2": 612,
+                "room": "E007"
+            }
+        ],
+        "C102": [
+            {
+                "temperature": 18.5,
+                "humidity": 47,
+                "co2": 595,
+                "room": "C102"
+            }
+        ]
+    },
+    "PanneauSolaire": []
+}
