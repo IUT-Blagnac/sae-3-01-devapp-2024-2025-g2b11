@@ -18,6 +18,8 @@ public class Capteur{
     public int floor;
     public String Building;
 
+    public String jour;
+    public String heure;
 
     @Override
     public String toString() {
@@ -36,6 +38,8 @@ public class Capteur{
             ", room='" + room + '\'' +
             ", floor=" + floor +
             ", Building='" + Building + '\'' +
+            ", jour='" + jour + '\'' +
+            ", heure='" + heure + '\'' +
             '}';
 }
 
