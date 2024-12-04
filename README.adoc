@@ -88,7 +88,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
 
 
-Prochaine release le 24/11/2024
+Prochaine release le 09/12/2024
 
 == Evaluation communication
 
