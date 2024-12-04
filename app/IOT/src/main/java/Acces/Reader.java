@@ -27,9 +27,9 @@ public class Reader {
             GestionData jsonData = objectMapper.readValue(new File("dataJSON.json"), GestionData.class);
             GestionAlert jsonDataAlert = objectMapper.readValue(new File("alertJSON.json"), GestionAlert.class);
 
-            Map<String, List<Capteur>> capteursAM = jsonData.getCapteursAM();
+            Map<String, List<Capteur>> capteursAM = jsonData.getCapteurs();
 
-            System.out.println(jsonDataAlert.getAlertcapteursAM());
+            System.out.println(jsonDataAlert.getCapteurs());
             
             Map<String, List<Capteur>> CO2capteursAM = jsonDataAlert.getCapteursAMbyAlert("co2Alert");
             Map<String, List<Capteur>> tempcapteursAM = jsonDataAlert.getCapteursAMbyAlert("temperatureAlert");
@@ -74,8 +74,12 @@ public class Reader {
             // for (PanneauSolaire panneau : donneesPanneau) {
             //     System.out.println(panneau);
             // }    
+            List<PanneauSolaire> panneaux = jsonDataAlert.getPanneaux();
 
             System.out.println(donneesPanneau.get(donneesPanneau.size()-1));
+
+             System.out.println("-----------------------------------------ALERTE SOLAIRE -----------------------------------------");
+            System.out.println(panneaux.get(panneaux.size()-1));
 
 
 

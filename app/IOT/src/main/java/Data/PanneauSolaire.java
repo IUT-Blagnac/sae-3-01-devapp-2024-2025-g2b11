@@ -28,6 +28,9 @@ public class PanneauSolaire {
     @JsonProperty("measuredBy")
     public String measuredBy;
 
+    public String jour;
+    public String heure;
+
     @Override
     public String toString() {
         return "PanneauSolaire{" +
@@ -38,6 +41,8 @@ public class PanneauSolaire {
                 ", lastDayData=" + lastDayData +
                 ", currentPower=" + currentPower +
                 ", measuredBy='" + measuredBy + '\'' +
+                ", jour='" + jour + '\'' +
+                ", heure='" + heure + '\'' +
                 '}';
     }
 /**public class PanneauSolaire{

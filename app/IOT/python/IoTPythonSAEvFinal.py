@@ -6,18 +6,30 @@ import datetime
 import time
 
 
-def read_config(chemin):
+#Lit le fichier de configuration et retourne un objet ConfigParser.
+#
+# :param chemin: Chemin vers le fichier de configuration.
+# :return: Objet ConfigParser contenant les données du fichier.
+#
+def read_config(chemin) -> configparser.ConfigParser:
     config = configparser.ConfigParser()
     config.read(chemin)
     return config
 
-
+# Charge un fichier JSON et retourne son contenu sous forme de dictionnaire.
+# Si le fichier n'existe pas, retourne un dictionnaire par défaut.
+# :param fichier: Chemin vers le fichier JSON à charger.
+# :return: Dictionnaire représentant le contenu du fichier JSON.
 def load_json_file(fichier)->dict:
     if os.path.exists(fichier):
         with open(fichier, "r",encoding="utf-8") as file:
             return json.load(file)
     return {"Capteurs AM":  {}, "PanneauSolaire": []}
 
+
+# Filtre les données des panneaux solaires selon les données demandées et les classe dans des alertes
+# selon les seuils définis.
+#  :param data: Dictionnaire contenant les données à analyser.
 def filtredonneesSolaire(data):
     alert=False
     di2 ={}
@@ -35,6 +47,7 @@ def filtredonneesSolaire(data):
     if alert : 
         di2["jour"] = jour
         di2["heure"] = heure
+        print("Alerte Panneau Solaire: ", jour, heure)
 
         if "PanneauSolaire" in dictalert:
             dictalert["PanneauSolaire"].append(di2)
@@ -49,7 +62,9 @@ def filtredonneesSolaire(data):
    
 
 
-
+#Filtre les données des capteurs selon les données demandées et les classe dans des alertes
+#selon les seuils définis.
+# :param data: Liste de dictionnaires contenant les données à analyser.
 def filtredonneesCapteur(data):
     alert=False
     di2 = {}
@@ -105,6 +120,7 @@ def filtredonneesCapteur(data):
         else :
             dictfreq["Capteurs AM"][salle] = [di2]
 
+#Sauvegarde les données fréquentes et les alertes dans leurs fichiers JSON respectifs.
 def sauvegarder():
     with open(fichjson, "w", encoding="utf-8") as freq_file:
         json.dump(dictfreq, freq_file, ensure_ascii=False, indent=4)
