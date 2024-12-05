@@ -1,17 +1,22 @@
-package projet.view;
+package projet.application.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
-import java.util.Optional;
 
-public class AccueilViewController {
+import java.net.URL;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
+public class AccueilViewController implements Initializable {
 
     // Déclaration des composants FXML
     @FXML
@@ -25,6 +30,23 @@ public class AccueilViewController {
 
     @FXML
     private Button btnQuitter;
+
+    private Stage primaryStage;
+
+
+    /**
+     * Définit la scène principale pour ce contrôleur.
+     *
+     * @param primarStage la scène principale.
+     */
+	public void setPrimaryStage(Stage primarStage) {
+		this.primaryStage = primarStage;
+		this.primaryStage.setOnCloseRequest(event -> {
+			event.consume();
+            actionQuitter(null);
+		});
+	}
+
 
     // Méthode appelée pour l'action du bouton "Configurer"
     @FXML
@@ -114,5 +136,10 @@ public class AccueilViewController {
     private void actionQuitterMenu(ActionEvent event) {
         // Quitter l'application
         System.exit(0);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+       
     }
 }

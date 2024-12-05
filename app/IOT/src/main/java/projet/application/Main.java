@@ -1,4 +1,4 @@
-package projet;
+package projet.application;
 
 public class Main {
 

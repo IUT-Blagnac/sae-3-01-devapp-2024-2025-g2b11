@@ -1,4 +1,4 @@
-package projet.Data;
+package projet.application.Data;
 
 import java.util.List;
 import java.util.Map;

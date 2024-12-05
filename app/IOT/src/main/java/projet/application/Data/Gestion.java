@@ -1,4 +1,4 @@
-package projet.Data;
+package projet.application.Data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
