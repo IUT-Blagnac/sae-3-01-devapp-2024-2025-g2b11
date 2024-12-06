@@ -372,6 +372,12 @@
                 "humidity": 37.5,
                 "co2": 756,
                 "room": "C001"
+            },
+            {
+                "temperature": 21.8,
+                "humidity": 35,
+                "co2": 537,
+                "room": "C001"
             }
         ],
         "Salle-conseil": [
@@ -403,6 +409,12 @@
                 "temperature": 23.1,
                 "humidity": 35.5,
                 "co2": 494,
+                "room": "Salle-conseil"
+            },
+            {
+                "temperature": 22.1,
+                "humidity": 31.5,
+                "co2": 513,
                 "room": "Salle-conseil"
             }
         ],
@@ -465,7 +477,34 @@
                 "co2": 647,
                 "room": "C102"
             }
+        ],
+        "C004": [
+            {
+                "temperature": 19.5,
+                "humidity": 41,
+                "co2": 740,
+                "room": "C004"
+            }
         ]
     },
-    "PanneauSolaire": []
+    "PanneauSolaire": [
+        {
+            "lastUpdateTime": "2024-12-05 11:59:05",
+            "lifeTimeData": {
+                "energy": 3448678
+            },
+            "currentPower": {
+                "power": 1960.1211
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-05 11:59:05",
+            "lifeTimeData": {
+                "energy": 3448845
+            },
+            "currentPower": {
+                "power": 1959.9636
+            }
+        }
+    ]
 }

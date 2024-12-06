@@ -1,4 +1,4 @@
-package Acces;
+package projet.application.Acces;
 
 import java.io.File;
 import java.util.List;
@@ -7,10 +7,11 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import Data.Capteur;
-import Data.GestionAlert;
-import Data.GestionData;
-import Data.PanneauSolaire;
+import projet.application.Data.Capteur;
+import projet.application.Data.GestionAlert;
+import projet.application.Data.GestionData;
+import projet.application.Data.PanneauSolaire;
+
 
 public class Reader {
     
@@ -24,7 +25,7 @@ public class Reader {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
 
-            GestionData jsonData = objectMapper.readValue(new File("dataJSON.json"), GestionData.class);
+            GestionData jsonData = objectMapper.readValue(new File("donneeJSON.json"), GestionData.class);
             GestionAlert jsonDataAlert = objectMapper.readValue(new File("alertJSON.json"), GestionAlert.class);
 
             Map<String, List<Capteur>> capteursAM = jsonData.getCapteurs();

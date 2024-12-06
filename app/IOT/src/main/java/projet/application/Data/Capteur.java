@@ -1,4 +1,4 @@
-package Data;
+package projet.application.Data;
 
 public class Capteur{
 
