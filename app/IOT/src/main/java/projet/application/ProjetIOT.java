@@ -5,10 +5,9 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import projet.application.view.AccueilViewController;
+import projet.application.view.AccueilController;
 
 public class ProjetIOT extends Application {
     private BorderPane root;
@@ -21,7 +20,7 @@ public class ProjetIOT extends Application {
 
         Scene scene = new Scene(root);
         //Recupere l'icone du jeu
-        primarStage.setTitle("Akari");
+        primarStage.setTitle("IoT Project");
         primarStage.setScene(scene);
         loadAcceuil(); 
         primarStage.show(); //Lancement du Launcher du jeu
@@ -30,18 +29,18 @@ public class ProjetIOT extends Application {
     public void loadAcceuil() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(ProjetIOT.class.getResource("view/accueilpane.fxml"));
+            loader.setLocation(ProjetIOT.class.getResource("view/Accueil.fxml"));
             
             BorderPane vueHome = loader.load();
             
-            AccueilViewController Actrl = loader.getController();
+            AccueilController Actrl = loader.getController();
             Actrl.setPrimaryStage(primarStage);
 
             
             this.root.setCenter(vueHome);
                         
         } catch (IOException e) {
-            System.out.println("Ressource FXML non disponible : LoadAccueil");
+            System.out.println("Erreur lors du chargement de la vue Accueil.fxml");
             System.exit(1);
         }	
     }
