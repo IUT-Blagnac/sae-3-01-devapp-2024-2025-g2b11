@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/8.0.171" alignment="CENTER" hgap="10" vgap="10" style="-fx-background-color: #3498db; -fx-border-radius: 10; -fx-padding: 20;">
+<GridPane alignment="CENTER" hgap="10" prefHeight="317.0" prefWidth="748.0" style="-fx-background-color: #3498db; -fx-border-radius: 10; -fx-padding: 20;" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label text="Informations sur l'application IoT\n- Version : 1.0\n- Développée par : CREAWEBUT" 
-               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <GridPane GridPane.rowIndex="1" hgap="10">
-            <Button text="Fermer" onAction="#handleClose" style="-fx-background-color: white; -fx-text-fill: #3498db;" />
+        <Label style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Aide : lorem ipsum dolor sit amet lorem ipsum dolor sit amet" />
+        <GridPane hgap="10" prefHeight="65.0" prefWidth="549.0" GridPane.rowIndex="1">
+            <Button onAction="#handleClose" style="-fx-background-color: white; -fx-text-fill: #3498db;" text="Fermer" />
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
     </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="51.0" minHeight="25.0" prefHeight="51.0" />
+      <RowConstraints maxHeight="26.0" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
 </GridPane>

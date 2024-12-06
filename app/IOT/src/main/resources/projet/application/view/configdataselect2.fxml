@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="537.0" BorderPane.alignment="CENTER">
+      <GridPane alignment="CENTER" prefHeight="446.0" prefWidth="629.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="362.0" />
         </columnConstraints>
@@ -23,30 +24,33 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="20.0" prefHeight="44.0" prefWidth="613.0" text="Choisissez les données à afficher:" textAlignment="CENTER" textFill="#b25454" textOverrun="CLIP">
+            <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="20.0" prefHeight="1.0" prefWidth="560.0" text="Choisissez les données à afficher:" textAlignment="CENTER" textFill="#ffffff">
                <font>
                   <Font size="21.0" />
                </font>
+               <padding>
+                  <Insets bottom="50.0" />
+               </padding>
             </Label>
-            <GridPane alignment="CENTER" GridPane.rowIndex="1">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <GridPane alignment="CENTER" prefHeight="142.0" prefWidth="560.0" style="-fx-padding: 10;" GridPane.rowIndex="1">
+               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" text="Données capteurs :" />
-                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" text="Données panneaux solaires :" GridPane.columnIndex="1" />
-                  <VBox alignment="CENTER" prefHeight="97.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Données capteurs :" />
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Données panneaux solaires :" GridPane.columnIndex="1" />
+                  <VBox alignment="CENTER" prefHeight="109.0" prefWidth="270.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Énergie" />
-                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Puissance" />
+                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Énergie" />
+                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Puissance" />
                      </children>
                   </VBox>
-                  <GridPane prefHeight="97.0" prefWidth="341.0" GridPane.rowIndex="1">
+                  <GridPane prefHeight="97.0" prefWidth="341.0" style="-fx-padding: 10;" GridPane.rowIndex="1">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="139.0" />
@@ -55,31 +59,37 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <VBox alignment="CENTER" prefHeight="83.0" prefWidth="300.0">
+                        <VBox alignment="CENTER" prefHeight="83.0" prefWidth="300.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Température" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="CO2" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Humidité" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Activité" />
+                              <CheckBox mnemonicParsing="false" style="-fx-text-fill: white;" text="Température" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="CO2" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Humidité" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Activité" />
                            </children>
+                           <GridPane.margin>
+                              <Insets bottom="40.0" />
+                           </GridPane.margin>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="83.0" prefWidth="300.0" GridPane.columnIndex="1">
+                        <VBox alignment="CENTER" prefHeight="83.0" prefWidth="300.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.columnIndex="1">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="TVOC" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="Illumination" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infrarouges" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infra &amp; visible" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" text="Pression" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="TVOC" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Illumination" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infrarouges" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infra &amp; visible" />
+                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" style="-fx-text-fill: white;" text="Pression" />
                            </children>
+                           <GridPane.margin>
+                              <Insets top="-40.0" />
+                           </GridPane.margin>
                         </VBox>
                      </children>
                   </GridPane>
                </children>
             </GridPane>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.rowIndex="2">
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="560.0" spacing="15.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.rowIndex="2">
                <children>
-                  <Button mnemonicParsing="false" text="Suivant" />
-                  <Button mnemonicParsing="false" text="Retour" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Suivant" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff;" text="Retour" />
                </children>
             </HBox>
          </children>
