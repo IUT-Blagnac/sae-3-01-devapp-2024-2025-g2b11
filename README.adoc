@@ -78,24 +78,29 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 
 == Gestion de projet & Qualité
 
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
-
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
-
-- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.3[v0.0.3]
+- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.4[v0.0.4]
 - Lien vers la doc technique
 - Lien vers la doc utilisateur
-- Lien vers le backlog du sprint : https://github.com/orgs/IUT-Blagnac/projects/262/views/1
-- Lien vers la doc de Conception : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docConception.adoc
-- Lien vers le product backlog : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/labels/User%20Story
-- Tests unitaires et plans de test : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/docTest.adoc
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+- https://github.com/orgs/IUT-Blagnac/projects/262/views/1[Lien vers le backlog du sprint]
+- link:doc/BD/docConception.adoc[Lien vers la doc de Conception] 
+- link:https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues?q=is%3Aopen+is%3Aissue+label%3A%22User+Story%22[Lien vers le product backlog]
+- link:doc/PHP/cahier_de_recette.adoc[Lien vers le cahier de recette] 
+- link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
+- link:doc/réunions/ODJ_28_11-Simul8_Rockworld_2B.pdf[Lien vers l'ODJ]
+- link:doc/réunions/Compte%20Rendu%20de%20Réunion%2028_11.pdf[Lien vers le CR]
 
-Prochaine release le 24/11/2024
 
-Voici un exemple d'évaluation :
+Prochaine release le 09/12/2024
+
+== Evaluation communication
+
+=== Retour semaine 48
+
+ODJ et CR non fait
+Note 0/3
+
+
+=== Voici un exemple d'évaluation :
 
 ifdef::env-github[]
 image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
