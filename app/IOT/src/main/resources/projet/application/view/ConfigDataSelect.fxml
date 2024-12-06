@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigDataSelectViewController">
    <center>
       <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -38,18 +39,21 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <RadioButton alignment="CENTER_LEFT" mnemonicParsing="false" text="Capteurs" />
-                        <RadioButton alignment="TOP_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="148.0" text="Panneaux solaires" />
-                        <RadioButton mnemonicParsing="false" text="Les deux" />
+                        <RadioButton fx:id="sensorsRadio" alignment="CENTER_LEFT" mnemonicParsing="false" text="Capteurs">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="dataChoiceGroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="solarPanelsRadio" alignment="TOP_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="148.0" text="Panneaux solaires" toggleGroup="$dataChoiceGroup" />
+                        <RadioButton fx:id="bothRadio" mnemonicParsing="false" selected="true" text="Les deux" toggleGroup="$dataChoiceGroup" />
                      </children>
                   </VBox>
                </children>
             </GridPane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.rowIndex="2">
                <children>
-                  <Button mnemonicParsing="false" text="Suivant" />
-                  <Button mnemonicParsing="false" text="Retour" />
-                  <Button mnemonicParsing="false" text="Choisir salle" />
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#onNextButtonClicked" text="Suivant" />
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Retour" />
+                  <Button fx:id="chooseRoomButton" mnemonicParsing="false" onAction="#onChooseRoomButtonClicked" text="Choisir salle" />
                </children>
             </HBox>
          </children>
