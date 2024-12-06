@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import projet.application.ProjetIOT;
 import javafx.scene.control.Alert.AlertType;
 
 import java.net.URL;
@@ -30,19 +31,25 @@ public class AccueilController implements Initializable {
     private Button btnQuitter;
 
     private Stage primaryStage;
-
-
-    /**
-     * Définit la scène principale pour ce contrôleur.
-     *
-     * @param primarStage la scène principale.
-     */
-	public void setPrimaryStage(Stage primarStage) {
-		this.primaryStage = primarStage;
-		this.primaryStage.setOnCloseRequest(event -> {
-			event.consume();
-            actionQuitter(null);
-		});
+    
+        private ProjetIOT App;
+    
+    
+        /**
+         * Définit la scène principale pour ce contrôleur.
+         *
+         * @param primarStage la scène principale.
+         */
+        public void setPrimaryStage(Stage primarStage) {
+            this.primaryStage = primarStage;
+            this.primaryStage.setOnCloseRequest(event -> {
+                event.consume();
+                actionQuitter(null);
+            });
+        }
+    
+        public void setPorjetApp(ProjetIOT appProjet) {
+            this.App = appProjet;
 	}
 
 
@@ -50,12 +57,16 @@ public class AccueilController implements Initializable {
     @FXML
     private void actionConfigurer(ActionEvent event) {
         // Afficher une boîte de dialogue de configuration (exemple)
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Configuration");
-        alert.setHeaderText("Configurer les paramètres du système IoT");
-        alert.setContentText("Vous pouvez maintenant configurer votre système IoT.");
+        // Alert alert = new Alert(AlertType.INFORMATION);
+        // alert.setTitle("Configuration");
+        // alert.setHeaderText("Configurer les paramètres du système IoT");
+        // alert.setContentText("Vous pouvez maintenant configurer votre système IoT.");
 
-        alert.showAndWait();
+        // alert.showAndWait();
+
+        // Charger la vue de configuration
+        App.loadSelectConfig();
+
     }
 
     // Méthode appelée pour l'action du bouton "Infos"

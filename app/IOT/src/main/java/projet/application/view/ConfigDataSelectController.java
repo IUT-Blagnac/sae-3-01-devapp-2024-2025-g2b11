@@ -5,8 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
+import projet.application.ProjetIOT;
+import projet.application.control.ConfigRoom;
 
-public class ConfigDataSelectViewController {
+public class ConfigDataSelectController {
 
     @FXML
     private ToggleGroup dataChoiceGroup;
@@ -28,6 +31,25 @@ public class ConfigDataSelectViewController {
 
     @FXML
     private Button backButton;
+    private Stage primaryStage;
+
+    private Stage dialogStage;
+
+    private ProjetIOT App;
+
+    public void setProjetApp(ProjetIOT appProjet) {
+            this.App = appProjet;
+	}
+
+    public void setDialogStage(Stage dialogStage) {
+
+        this.dialogStage = dialogStage;
+
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
 
     // Méthode pour gérer les changements dans le groupe de boutons radio
     @FXML
@@ -62,5 +84,7 @@ public class ConfigDataSelectViewController {
     private void onChooseRoomButtonClicked(ActionEvent event) {
         // Implémentez ici la logique pour choisir une salle en fonction des capteurs
         System.out.println("Choisir une salle");
+        ConfigRoom CR = new ConfigRoom(this.primaryStage, this.App);
+        CR.doConfigroom();
     }
 }
