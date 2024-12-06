@@ -28,10 +28,11 @@ public class ConfigRoom {
             Scene scene = new Scene(root);
 
             this.crStage = new Stage();
+            this.crStage.setTitle("ConfigRoom");
             this.crStage.initModality(Modality.WINDOW_MODAL);
             this.crStage.initOwner(_parentStage);
             this.crStage.setScene(scene);
-            this.crStage.setTitle("ConfigRoom");
+            
             this.crStage.setResizable(false);
 
             this.crViewController = loader.getController();

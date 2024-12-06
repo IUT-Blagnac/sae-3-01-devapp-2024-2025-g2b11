@@ -8,8 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import projet.application.view.AccueilController;
-import projet.application.view.ConfigDataSelectController;
+import projet.application.view.AccueilViewController;
+import projet.application.view.ConfigDataSelectViewController;
 
 public class ProjetIOT extends Application {
     private BorderPane root;
@@ -35,7 +35,7 @@ public class ProjetIOT extends Application {
             
             BorderPane vueHome = loader.load();
             
-            AccueilController Actrl = loader.getController();
+            AccueilViewController Actrl = loader.getController();
             Actrl.setPrimaryStage(primarStage);
             Actrl.setPorjetApp(this);
             
@@ -63,7 +63,7 @@ public class ProjetIOT extends Application {
             dialoStage.setScene(scene);
             
 
-            ConfigDataSelectController ConfigDataSelectctrl = loader.getController();
+            ConfigDataSelectViewController ConfigDataSelectctrl = loader.getController();
             ConfigDataSelectctrl.setDialogStage(dialoStage);
             ConfigDataSelectctrl.setProjetApp(this);
             

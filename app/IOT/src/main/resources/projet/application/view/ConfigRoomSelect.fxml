@@ -87,8 +87,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" text="retour" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" text="valider" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doRetour" text="retour" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doValider" text="valider" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>

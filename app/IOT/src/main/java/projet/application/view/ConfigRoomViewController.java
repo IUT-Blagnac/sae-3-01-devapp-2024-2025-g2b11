@@ -38,5 +38,16 @@ public class ConfigRoomViewController {
         this.containingStage.showAndWait();
     }
 
+    @FXML
+    public void doRetour(){
+        this.containingStage.close();
+    }   
+
+    @FXML
+    public void doValider(){
+        this.containingStage.close();
+        System.out.println("Valider la configuration des salles");
+    }
+
 }
 

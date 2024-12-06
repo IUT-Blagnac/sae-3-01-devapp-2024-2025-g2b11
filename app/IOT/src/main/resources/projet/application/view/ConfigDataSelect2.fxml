@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigDataSelect2ViewController">
    <center>
       <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="537.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -42,8 +42,8 @@
                   <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" text="Données panneaux solaires :" GridPane.columnIndex="1" />
                   <VBox alignment="CENTER" prefHeight="97.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Énergie" />
-                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Puissance" />
+                        <CheckBox fx:id="energie" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Énergie" />
+                        <CheckBox fx:id="puissance" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Puissance" />
                      </children>
                   </VBox>
                   <GridPane prefHeight="97.0" prefWidth="341.0" GridPane.rowIndex="1">
@@ -57,19 +57,19 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="83.0" prefWidth="300.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Température" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="CO2" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Humidité" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Activité" />
+                              <CheckBox fx:id="temperature" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Température" />
+                              <CheckBox fx:id="co2" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="CO2" />
+                              <CheckBox fx:id="humidite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Humidité" />
+                              <CheckBox fx:id="activite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Activité" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="83.0" prefWidth="300.0" GridPane.columnIndex="1">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="TVOC" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="Illumination" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infrarouges" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infra &amp; visible" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" text="Pression" />
+                              <CheckBox fx:id="tvoc" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="TVOC" />
+                              <CheckBox fx:id="illumination" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="Illumination" />
+                              <CheckBox fx:id="infrarouges" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infrarouges" />
+                              <CheckBox fx:id="infravisible" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infra &amp; visible" />
+                              <CheckBox fx:id="pression" mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" text="Pression" />
                            </children>
                         </VBox>
                      </children>
@@ -78,8 +78,8 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.rowIndex="2">
                <children>
-                  <Button mnemonicParsing="false" text="Suivant" />
-                  <Button mnemonicParsing="false" text="Retour" />
+                  <Button mnemonicParsing="false" onAction="#doSauvegarder" text="Sauvgarder" />
+                  <Button mnemonicParsing="false" onAction="#doRetour" text="Retour" />
                </children>
             </HBox>
          </children>

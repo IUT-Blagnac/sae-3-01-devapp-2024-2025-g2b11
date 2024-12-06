@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class AccueilController implements Initializable {
+public class AccueilViewController implements Initializable {
 
     // Déclaration des composants FXML
     @FXML
