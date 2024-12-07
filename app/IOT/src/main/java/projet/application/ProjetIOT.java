@@ -10,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import projet.application.view.AccueilViewController;
 import projet.application.view.ConfigDataSelectViewController;
+import projet.application.view.DashboardViewController;
 
 public class ProjetIOT extends Application {
     private BorderPane root;
@@ -77,6 +78,35 @@ public class ProjetIOT extends Application {
             System.exit(1);
         }
     }
+
+    public void loadDashboard() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(ProjetIOT.class.getResource("view/dashboard.fxml"));
+    
+            BorderPane dashboardPane = loader.load();
+    
+            // Création d'un nouveau stage pour le tableau de bord
+            Stage dashboardStage = new Stage();
+            dashboardStage.setTitle("Tableau de Bord");
+            dashboardStage.initModality(Modality.WINDOW_MODAL); // Fenêtre modale
+            dashboardStage.initOwner(this.primarStage); // Définit la fenêtre principale comme parent
+            Scene scene = new Scene(dashboardPane);
+            dashboardStage.setScene(scene);
+    
+            // Initialisation du contrôleur
+            DashboardViewController dashboardCtrl = loader.getController();
+            dashboardCtrl.setDialogStage(dashboardStage);
+            dashboardCtrl.setProjetApp(this);
+    
+            dashboardStage.show();
+    
+        } catch (IOException e) {
+            System.err.println("Erreur lors du chargement du tableau de bord : " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
     
 
     public static void main(String[] args) {

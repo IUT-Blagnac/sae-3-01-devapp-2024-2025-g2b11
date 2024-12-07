@@ -153,7 +153,7 @@ def on_connect(client, userdata, flags, reason_code, properties=None):
 
 
 def main():
-    fichconfig = read_config("config.ini")
+    fichconfig = read_config("app\IOT\python\config.ini")
     
     global mqttc, topic_subscribe, donnees, donneesSolaire, salles
     global frequence_sauvegarde, fichjson, alertjson
