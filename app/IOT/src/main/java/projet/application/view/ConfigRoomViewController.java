@@ -26,12 +26,15 @@ public class ConfigRoomViewController {
 
 
     public void initContext(Stage _crStage, ProjetIOT _appProjetIOT) {
+
+
+        this.configure();
         this.containingStage = _crStage;
         this.AppProjetIOT = _appProjetIOT;
-        this.configure();
     }
     private void configure() {
-        System.out.println("Developpement");
+        System.out.println(amphi1.idProperty().get());
+
     }
 
     public void DisplayDialog(){
