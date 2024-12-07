@@ -35,7 +35,7 @@ public class Ecrivain{
     private boolean lastUpdate;
 
 
-    private String salles;
+    private String[] salles;
     private int frequency;
 
     private String seuilTemp;
@@ -110,8 +110,10 @@ public class Ecrivain{
         this.currP=currP;
     }
 
-    public void setSalles(String salles){
+    public void setSalles(String[] salles){
         this.salles=salles;
+        for (int i=0;i<salles.length;i++)
+            System.out.println(salles[i]+", ");
     }
     public void setFrequency(int frequency){this.frequency=frequency;}
 
@@ -172,8 +174,14 @@ public class Ecrivain{
                 "port = 1883\n"+
                 "topic_subscribe = "+(solar ? "solaredge/#"+(capteur ? ",AM107/by-room/\n" : "\n") : "AM107/by-room/\n")+
                 "\n[DATA]\nsalles = ";
-        if(salles.length()>0 && capteur)
-            retour+=salles;
+
+        if(salles!=null && salles.length>0 && capteur)
+            for (int i=0;i<salles.length;i++)
+                if (i<salles.length-1){
+                    retour+=salles[i]+",";
+                }else
+                    retour+=salles[i];
+
         retour+="\ntypes = ";
 
         if(temperature){
@@ -318,7 +326,7 @@ public class Ecrivain{
         this.lMonthD=false;
         this.lDayD=false;
         this.currP=false;
-        this.salles="";
+        this.salles=null;
         this.seuilTemp=":";
         this.seuilEnergy="";
         this.seuilHumdity="";
