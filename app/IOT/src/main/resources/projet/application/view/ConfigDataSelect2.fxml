@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400" prefWidth="700" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400" prefWidth="700" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigDataSelect2ViewController">
    <center>
       <GridPane alignment="CENTER" prefHeight="446.0" prefWidth="629.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -42,27 +42,27 @@
                   <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Données panneaux solaires :" GridPane.columnIndex="1" />
                   <VBox alignment="CENTER" prefHeight="109.0" prefWidth="270.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Énergie" />
-                        <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Puissance" />
+                        <CheckBox fx:id="energie" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Énergie" />
+                        <CheckBox fx:id="puissance" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Puissance" />
                      </children>
                   </VBox>
                   <HBox prefHeight="159.0" prefWidth="263.0" GridPane.rowIndex="1">
                      <children>
                         <VBox alignment="CENTER" prefHeight="159.0" prefWidth="178.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Température" />
-                              <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="112.0" style="-fx-text-fill: white;" text="CO2" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Humidité" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Activité" />
+                              <CheckBox fx:id="temperature" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Température" />
+                              <CheckBox fx:id="co2" mnemonicParsing="false" prefHeight="22.0" prefWidth="112.0" style="-fx-text-fill: white;" text="CO2" />
+                              <CheckBox fx:id="humidite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Humidité" />
+                              <CheckBox fx:id="activite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Activité" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="38.0" prefWidth="139.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="TVOC" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Illumination" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infrarouges" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infra &amp; visible" />
-                              <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" style="-fx-text-fill: white;" text="Pression" />
+                              <CheckBox fx:id="tvoc" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="TVOC" />
+                              <CheckBox fx:id="illumination" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Illumination" />
+                              <CheckBox fx:id="infrarouges" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infrarouges" />
+                              <CheckBox fx:id="infravisible" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infra &amp; visible" />
+                              <CheckBox fx:id="pression" mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" style="-fx-text-fill: white;" text="Pression" />
                            </children>
                         </VBox>
                      </children>
@@ -71,11 +71,11 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="209.0" spacing="15.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.rowIndex="2">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Suivant">
+                  <Button mnemonicParsing="false" onAction="#doSauvegarder" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Sauvegarder">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff;" text="Retour">
+                  <Button mnemonicParsing="false" onAction="#doRetour" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff;" text="Retour">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
