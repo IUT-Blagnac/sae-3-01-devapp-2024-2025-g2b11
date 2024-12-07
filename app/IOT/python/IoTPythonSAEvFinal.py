@@ -4,6 +4,7 @@ import configparser
 import os
 import datetime
 import time
+import sys
 
 
 #Lit le fichier de configuration et retourne un objet ConfigParser.
@@ -153,6 +154,10 @@ def on_connect(client, userdata, flags, reason_code, properties=None):
 
 
 def main():
+    mode_test = False
+    if len(sys.argv) > 1 and sys.argv[1] == "test":
+        mode_test = True
+
     fichconfig = read_config("config.ini")
     
     global mqttc, topic_subscribe, donnees, donneesSolaire, salles
@@ -187,6 +192,10 @@ def main():
     mqttc = mqtt.Client()
     mqttc.connect(mqttServer, port, keepalive=60)
     mqttc.on_connect = on_connect
+    if mode_test:
+        print("Mode test : connexion MQTT testée.")
+        return 0
+    
     mqttc.on_message = on_message
     mqttc.loop_start()  # exécute la réception des messages MQTT dans un thread
 

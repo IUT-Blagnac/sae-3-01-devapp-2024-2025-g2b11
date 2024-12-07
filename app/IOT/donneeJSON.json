@@ -746,6 +746,12 @@
                 "humidity": 50.5,
                 "co2": 442,
                 "room": "Local-velo"
+            },
+            {
+                "temperature": 7.3,
+                "humidity": 83.5,
+                "co2": 439,
+                "room": "Local-velo"
             }
         ],
         "Foyer-personnels": [
@@ -831,6 +837,12 @@
                 "temperature": 22,
                 "humidity": 55,
                 "co2": 1171,
+                "room": "Foyer-personnels"
+            },
+            {
+                "temperature": 19.5,
+                "humidity": 47,
+                "co2": 416,
                 "room": "Foyer-personnels"
             }
         ],
@@ -923,6 +935,12 @@
                 "temperature": 22.2,
                 "humidity": 44,
                 "co2": 527,
+                "room": "C001"
+            },
+            {
+                "temperature": 22,
+                "humidity": 43,
+                "co2": 472,
                 "room": "C001"
             }
         ],
@@ -1021,6 +1039,12 @@
                 "temperature": 24.9,
                 "humidity": 42,
                 "co2": 514,
+                "room": "Salle-conseil"
+            },
+            {
+                "temperature": 22.7,
+                "humidity": 38,
+                "co2": 427,
                 "room": "Salle-conseil"
             }
         ],
@@ -1276,6 +1300,12 @@
                 "humidity": 57,
                 "co2": 462,
                 "room": "C004"
+            },
+            {
+                "temperature": 17.1,
+                "humidity": 56,
+                "co2": 421,
+                "room": "C004"
             }
         ],
         "B234": [
@@ -1338,6 +1368,12 @@
                 "humidity": 45,
                 "co2": 993,
                 "room": "B234"
+            },
+            {
+                "temperature": 22.7,
+                "humidity": 42,
+                "co2": 437,
+                "room": "B234"
             }
         ],
         "E209": [
@@ -1399,6 +1435,12 @@
                 "temperature": 21.7,
                 "humidity": 46.5,
                 "co2": 448,
+                "room": "E209"
+            },
+            {
+                "temperature": 19.9,
+                "humidity": 42,
+                "co2": 438,
                 "room": "E209"
             }
         ],
@@ -1736,6 +1778,12 @@
                 "humidity": 57,
                 "co2": 1440,
                 "room": "B202"
+            },
+            {
+                "temperature": 19.2,
+                "humidity": 52,
+                "co2": 456,
+                "room": "B202"
             }
         ],
         "B201": [
@@ -1767,6 +1815,12 @@
                 "temperature": 24.5,
                 "humidity": 49,
                 "co2": 1244,
+                "room": "B201"
+            },
+            {
+                "temperature": 15.1,
+                "humidity": 50,
+                "co2": 446,
                 "room": "B201"
             }
         ],
@@ -1800,6 +1854,12 @@
                 "humidity": 46,
                 "co2": 770,
                 "room": "B109"
+            },
+            {
+                "temperature": 19.6,
+                "humidity": 47,
+                "co2": 491,
+                "room": "B109"
             }
         ],
         "B002": [
@@ -1831,6 +1891,12 @@
                 "temperature": 19.6,
                 "humidity": 52.5,
                 "co2": 2101,
+                "room": "B002"
+            },
+            {
+                "temperature": 18.9,
+                "humidity": 53.5,
+                "co2": 1700,
                 "room": "B002"
             }
         ],
@@ -1888,6 +1954,12 @@
                 "humidity": 58,
                 "co2": 877,
                 "room": "Foyer-etudiants-entrée"
+            },
+            {
+                "temperature": 48.3,
+                "humidity": 53,
+                "co2": 436,
+                "room": "Foyer-etudiants-entrée"
             }
         ],
         "B105": [
@@ -1944,6 +2016,12 @@
                 "humidity": 55.5,
                 "co2": 1492,
                 "room": "B105"
+            },
+            {
+                "temperature": 19.9,
+                "humidity": 48.5,
+                "co2": 431,
+                "room": "B105"
             }
         ],
         "B111": [
@@ -1975,6 +2053,12 @@
                 "temperature": 21.9,
                 "humidity": 54,
                 "co2": 914,
+                "room": "B111"
+            },
+            {
+                "temperature": 19.4,
+                "humidity": 47.5,
+                "co2": 425,
                 "room": "B111"
             }
         ],
@@ -2008,6 +2092,12 @@
                 "humidity": 53,
                 "co2": 1136,
                 "room": "E006"
+            },
+            {
+                "temperature": 19.4,
+                "humidity": 46.5,
+                "co2": 417,
+                "room": "E006"
             }
         ],
         "B113": [
@@ -2039,6 +2129,12 @@
                 "temperature": 21.4,
                 "humidity": 64,
                 "co2": 2698,
+                "room": "B113"
+            },
+            {
+                "temperature": 19.3,
+                "humidity": 56,
+                "co2": 485,
                 "room": "B113"
             }
         ],
@@ -2125,6 +2221,12 @@
                 "temperature": 23.2,
                 "humidity": 44.5,
                 "co2": 456,
+                "room": "E003"
+            },
+            {
+                "temperature": 19.2,
+                "humidity": 43.5,
+                "co2": 435,
                 "room": "E003"
             }
         ]
@@ -2614,6 +2716,33 @@
             },
             "currentPower": {
                 "power": 383.08774
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 17:08:21",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 17:08:21",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 17:23:21",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
             }
         }
     ]
