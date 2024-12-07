@@ -6,8 +6,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-import projet.application.view.AccueilController;
+import projet.application.view.AccueilViewController;
+import projet.application.view.ConfigDataSelectViewController;
 
 public class ProjetIOT extends Application {
     private BorderPane root;
@@ -22,20 +24,20 @@ public class ProjetIOT extends Application {
         //Recupere l'icone du jeu
         primarStage.setTitle("IoT Project");
         primarStage.setScene(scene);
-        loadAcceuil(); 
+        loadAccueil();
         primarStage.show(); //Lancement du Launcher du jeu
     }
 
-    public void loadAcceuil() {
+    public void loadAccueil() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(ProjetIOT.class.getResource("view/Accueil.fxml"));
             
             BorderPane vueHome = loader.load();
             
-            AccueilController Actrl = loader.getController();
+            AccueilViewController Actrl = loader.getController();
             Actrl.setPrimaryStage(primarStage);
-
+            Actrl.setPorjetApp(this);
             
             this.root.setCenter(vueHome);
                         
@@ -44,6 +46,38 @@ public class ProjetIOT extends Application {
             System.exit(1);
         }	
     }
+
+    public void loadSelectConfig() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(ProjetIOT.class.getResource("view/ConfigDataSelect.fxml"));
+
+            BorderPane bp = loader.load();
+
+            Scene scene = new Scene(bp);
+            
+            Stage dialoStage = new Stage();
+            dialoStage.setTitle("Configuration des données");
+            dialoStage.initModality(Modality.WINDOW_MODAL);
+            dialoStage.initOwner(this.primarStage);
+            dialoStage.setScene(scene);
+            
+
+            ConfigDataSelectViewController ConfigDataSelectctrl = loader.getController();
+            ConfigDataSelectctrl.setDialogStage(dialoStage);
+            ConfigDataSelectctrl.setProjetApp(this);
+            
+            dialoStage.show();
+
+            
+            
+
+        } catch (IOException e) {
+            System.out.println(e);
+            System.exit(1);
+        }
+    }
+    
 
     public static void main(String[] args) {
         launch(args);

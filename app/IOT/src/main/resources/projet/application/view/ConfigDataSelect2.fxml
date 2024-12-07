@@ -11,7 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect2.fxml
 <BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400" prefWidth="700" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigDataSelect2ViewController">
+>>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect2.fxml
    <center>
       <GridPane alignment="CENTER" prefHeight="446.0" prefWidth="629.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -42,27 +46,47 @@
                   <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Données panneaux solaires :" GridPane.columnIndex="1" />
                   <VBox alignment="CENTER" prefHeight="109.0" prefWidth="270.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
+<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect2.fxml
                         <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Énergie" />
                         <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Puissance" />
+=======
+                        <CheckBox fx:id="energie" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Énergie" />
+                        <CheckBox fx:id="puissance" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Puissance" />
+>>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect2.fxml
                      </children>
                   </VBox>
                   <HBox prefHeight="159.0" prefWidth="263.0" GridPane.rowIndex="1">
                      <children>
                         <VBox alignment="CENTER" prefHeight="159.0" prefWidth="178.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
+<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect2.fxml
                               <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Température" />
                               <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="112.0" style="-fx-text-fill: white;" text="CO2" />
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Humidité" />
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Activité" />
+=======
+                              <CheckBox fx:id="temperature" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="Température" />
+                              <CheckBox fx:id="co2" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" text="CO2" />
+                              <CheckBox fx:id="humidite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Humidité" />
+                              <CheckBox fx:id="activite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" text="Activité" />
+>>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect2.fxml
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="38.0" prefWidth="139.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
+<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect2.fxml
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="TVOC" />
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Illumination" />
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infrarouges" />
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infra &amp; visible" />
                               <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" style="-fx-text-fill: white;" text="Pression" />
+=======
+                              <CheckBox fx:id="tvoc" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="TVOC" />
+                              <CheckBox fx:id="illumination" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="Illumination" />
+                              <CheckBox fx:id="infrarouges" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infrarouges" />
+                              <CheckBox fx:id="infravisible" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" text="Infra &amp; visible" />
+                              <CheckBox fx:id="pression" mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" text="Pression" />
+>>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect2.fxml
                            </children>
                         </VBox>
                      </children>
@@ -71,6 +95,7 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="209.0" spacing="15.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.rowIndex="2">
                <children>
+<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect2.fxml
                   <Button mnemonicParsing="false" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Suivant">
                      <font>
                         <Font size="14.0" />
@@ -79,6 +104,10 @@
                      <font>
                         <Font size="14.0" />
                      </font></Button>
+=======
+                  <Button mnemonicParsing="false" onAction="#doSauvegarder" text="Sauvgarder" />
+                  <Button mnemonicParsing="false" onAction="#doRetour" text="Retour" />
+>>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect2.fxml
                </children>
             </HBox>
          </children>
