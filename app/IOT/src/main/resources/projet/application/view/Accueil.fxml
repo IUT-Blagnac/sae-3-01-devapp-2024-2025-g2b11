@@ -16,11 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <BorderPane minHeight="200.0" minWidth="200.0" prefHeight="600" prefWidth="1000" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.AccueilController">
-=======
-<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="472.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.AccueilViewController">
->>>>>>> master
     <top>
       <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="592.0" style="-fx-background-color: #2c3e50;" styleClass="menuLabel" stylesheets="@../style.css" BorderPane.alignment="TOP_RIGHT">
         <menus>

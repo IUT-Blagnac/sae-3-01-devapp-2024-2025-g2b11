@@ -4,11 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect.fxml
 <?import javafx.scene.effect.Glow?>
-=======
-<?import javafx.scene.control.ToggleGroup?>
->>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect.fxml
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -17,11 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect.fxml
 <BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400" prefWidth="700" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-=======
-<BorderPane minHeight="200.0" minWidth="200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigDataSelectViewController">
->>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect.fxml
    <center>
       <GridPane alignment="CENTER" prefHeight="354.0" prefWidth="658.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -43,7 +35,6 @@
             </Label>
             <VBox alignment="CENTER" prefHeight="123.0" prefWidth="507.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.rowIndex="1">
                <children>
-<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect.fxml
                   <RadioButton contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="174.0" style="-fx-text-fill: white;" text="Capteurs">
                      <VBox.margin>
                         <Insets bottom="10.0" />
@@ -65,23 +56,10 @@
                         <Font size="18.0" />
                      </font>
                   </RadioButton>
-=======
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <RadioButton fx:id="sensorsRadio" alignment="CENTER_LEFT" mnemonicParsing="false" text="Capteurs">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="dataChoiceGroup" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton fx:id="solarPanelsRadio" alignment="TOP_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="148.0" text="Panneaux solaires" toggleGroup="$dataChoiceGroup" />
-                        <RadioButton fx:id="bothRadio" mnemonicParsing="false" selected="true" text="Les deux" toggleGroup="$dataChoiceGroup" />
-                     </children>
-                  </VBox>
->>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect.fxml
                </children>
             </VBox>
             <HBox alignment="CENTER" prefHeight="104.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.rowIndex="2">
                <children>
-<<<<<<< HEAD:app/IOT/src/main/resources/projet/application/view/configdataselect.fxml
                   <Button mnemonicParsing="false" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Suivant">
                      <font>
                         <Font size="15.0" />
@@ -94,11 +72,6 @@
                      <font>
                         <Font size="14.0" />
                      </font></Button>
-=======
-                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#onNextButtonClicked" text="Suivant" />
-                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Retour" />
-                  <Button fx:id="chooseRoomButton" mnemonicParsing="false" onAction="#onChooseRoomButtonClicked" text="Choisir salle" />
->>>>>>> master:app/IOT/src/main/resources/projet/application/view/ConfigDataSelect.fxml
                </children>
             </HBox>
          </children>
