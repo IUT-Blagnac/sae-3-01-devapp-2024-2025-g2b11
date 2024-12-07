@@ -6,24 +6,13 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="CENTER" hgap="10" prefHeight="317.0" prefWidth="748.0" style="-fx-background-color: #3498db; -fx-border-radius: 10; -fx-padding: 20;" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+<GridPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/8.0.171" alignment="CENTER" hgap="10" vgap="10" style="-fx-background-color: #3498db; -fx-border-radius: 10; -fx-padding: 20;">
     <children>
         <Label style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Aide : lorem ipsum dolor sit amet lorem ipsum dolor sit amet" />
-        <GridPane hgap="10" prefHeight="65.0" prefWidth="549.0" GridPane.rowIndex="1">
-            <Button onAction="#handleClose" style="-fx-background-color: white; -fx-text-fill: #3498db;" text="Fermer" />
-         <columnConstraints>
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-         </rowConstraints>
+        <GridPane GridPane.rowIndex="1" hgap="10">
+            <Button text="OK" onAction="#handleOk" style="-fx-background-color: white; -fx-text-fill: #e74c3c;" />
+            <Button text="Fermer" onAction="#handleClose" style="-fx-background-color: white; -fx-text-fill: #e74c3c;" />
         </GridPane>
     </children>
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints maxHeight="51.0" minHeight="25.0" prefHeight="51.0" />
-      <RowConstraints maxHeight="26.0" minHeight="0.0" prefHeight="0.0" />
-   </rowConstraints>
 </GridPane>
