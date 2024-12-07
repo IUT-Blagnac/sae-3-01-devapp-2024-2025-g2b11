@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import projet.application.Acces.Ecrivain;
 import projet.application.ProjetIOT;
 import projet.application.control.ConfigDataSelect;
 import projet.application.control.ConfigRoom;
@@ -32,6 +33,7 @@ public class ConfigDataSelectViewController {
 
     @FXML
     private Button backButton;
+    private Ecrivain ecrivain;
     private Stage primaryStage;
 
     private Stage dialogStage;
@@ -55,12 +57,22 @@ public class ConfigDataSelectViewController {
     // Méthode pour gérer les changements dans le groupe de boutons radio
     @FXML
     private void initialize() {
+        this.ecrivain=Ecrivain.getInstance();
+        ecrivain.setSolar(true);
+        ecrivain.setCapteur(true);
         // Ajouter un listener pour gérer l'activation du bouton "Choix salle"
         dataChoiceGroup.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
             // Si l'utilisateur sélectionne "Capteurs" ou "Les deux", activer le bouton "Choix salle"
             if (sensorsRadio.isSelected() || bothRadio.isSelected()) {
+                ecrivain.setCapteur(true);
+                if (bothRadio.isSelected()){
+                    ecrivain.setSolar(true);
+                }else {
+                    ecrivain.setSolar(false);
+                }
                 chooseRoomButton.setDisable(false);
             } else {
+                ecrivain.setCapteur(false);
                 chooseRoomButton.setDisable(true);
             }
         });
@@ -79,6 +91,7 @@ public class ConfigDataSelectViewController {
     @FXML
     private void onBackButtonClicked(ActionEvent event) {
         // Implémentez ici la logique pour revenir à la page précédente
+        this.ecrivain.reset();
         this.dialogStage.close();
         System.out.println("Retour : Revenir à la page précédente.");
     }

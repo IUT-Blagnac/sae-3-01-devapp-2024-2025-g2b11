@@ -42,8 +42,8 @@
                   <Label alignment="CENTER" prefHeight="21.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Données panneaux solaires :" GridPane.columnIndex="1" />
                   <VBox alignment="CENTER" prefHeight="109.0" prefWidth="270.0" style="-fx-background-color: #34495e; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <CheckBox fx:id="energie" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Énergie" />
-                        <CheckBox fx:id="puissance" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Puissance" />
+                        <CheckBox fx:id="currentPower" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Énergie" />
+                        <CheckBox fx:id="lastDayData" mnemonicParsing="false" prefHeight="21.0" prefWidth="113.0" style="-fx-text-fill: white;" text="Puissance" />
                      </children>
                   </VBox>
                   <HBox prefHeight="159.0" prefWidth="263.0" GridPane.rowIndex="1">
@@ -52,17 +52,17 @@
                            <children>
                               <CheckBox fx:id="temperature" mnemonicParsing="false" prefHeight="18.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Température" />
                               <CheckBox fx:id="co2" mnemonicParsing="false" prefHeight="22.0" prefWidth="112.0" style="-fx-text-fill: white;" text="CO2" />
-                              <CheckBox fx:id="humidite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Humidité" />
-                              <CheckBox fx:id="activite" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Activité" />
+                              <CheckBox fx:id="humidity" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Humidité" />
+                              <CheckBox fx:id="activity" mnemonicParsing="false" prefHeight="21.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Activité" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="38.0" prefWidth="139.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
                               <CheckBox fx:id="tvoc" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="TVOC" />
                               <CheckBox fx:id="illumination" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Illumination" />
-                              <CheckBox fx:id="infrarouges" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infrarouges" />
-                              <CheckBox fx:id="infravisible" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infra &amp; visible" />
-                              <CheckBox fx:id="pression" mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" style="-fx-text-fill: white;" text="Pression" />
+                              <CheckBox fx:id="infrared" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infrarouges" />
+                              <CheckBox fx:id="infrared_and_visible" mnemonicParsing="false" prefHeight="21.0" prefWidth="121.0" style="-fx-text-fill: white;" text="Infra &amp; visible" />
+                              <CheckBox fx:id="pressure" mnemonicParsing="false" prefHeight="21.0" prefWidth="119.0" style="-fx-text-fill: white;" text="Pression" />
                            </children>
                         </VBox>
                      </children>
