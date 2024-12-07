@@ -1,10 +1,13 @@
 package projet.application.Acces;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import projet.application.Data.Capteur;
@@ -19,6 +22,68 @@ public class Reader {
         getData();
     }
 
+    public static List<Float> getDataForRoomAndType(String room, String type, String filePath) {
+        List<Float> values = new ArrayList<>();
+        try {
+            File file = new File(filePath);
+
+    
+            ObjectMapper objectMapper = new ObjectMapper();
+            GestionData data = objectMapper.readValue(file, GestionData.class);
+    
+            Map<String, List<Capteur>> capteursAM = data.getCapteurs();
+            List<Capteur> capteurs = capteursAM.get(room);
+    
+            if (capteurs != null) {
+                for (Capteur capteur : capteurs) {
+                    switch (type) {
+                        case "température":
+                            values.add(capteur.temperature);
+                            break;
+                        case "humidité":
+                            values.add(capteur.humidity);
+                            break;
+                        case "co2":
+                            values.add((float) capteur.co2);
+                            break;
+                        default:
+                            System.out.println("Type de donnée inconnu : " + type);
+                            break;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erreur lors de la lecture des données : " + e.getMessage());
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public static List<String> getRoomNames(String filePath) {
+        List<String> roomNames = new ArrayList<>();
+
+        try {
+            // Initialisation du mapper Jackson
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            // Lecture du fichier JSON
+            JsonNode rootNode = objectMapper.readTree(new File(filePath));
+
+            // Vérification de la présence du noeud "Capteurs AM"
+            if (rootNode.has("Capteurs AM")) {
+                JsonNode capteursNode = rootNode.get("Capteurs AM");
+
+                // Extraction des noms de salles
+                capteursNode.fieldNames().forEachRemaining(roomNames::add);
+            } else {
+                System.out.println("Le fichier JSON ne contient pas de noeud 'Capteurs AM'.");
+            }
+        } catch (IOException e) {
+            System.err.println("Erreur lors de la lecture du fichier JSON : " + e.getMessage());
+        }
+
+        return roomNames;
+    }
 
     public static void getData(){
         try {

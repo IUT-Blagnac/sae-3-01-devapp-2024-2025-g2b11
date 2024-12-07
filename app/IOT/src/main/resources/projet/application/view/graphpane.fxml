@@ -4,66 +4,57 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.GraphsController">
    <left>
-      <ListView prefHeight="400.0" prefWidth="220.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="listViewDonnees" prefHeight="400.0" prefWidth="220.0" BorderPane.alignment="CENTER" />
    </left>
    <center>
       <GridPane BorderPane.alignment="CENTER">
-        <columnConstraints>
+         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="10.0" prefWidth="153.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="741.0" minWidth="10.0" prefWidth="727.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="741.0" minWidth="10.0" prefWidth="727.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <LineChart nodeOrientation="LEFT_TO_RIGHT" title="donnée X" GridPane.columnIndex="1">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
+            <LineChart fx:id="lineChart" nodeOrientation="LEFT_TO_RIGHT" title="Données" GridPane.columnIndex="1">
+               <xAxis>
+                  <CategoryAxis fx:id="xAxis" side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="yAxis" side="LEFT" />
+               </yAxis>
             </LineChart>
             <VBox alignment="TOP_CENTER" spacing="10.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <children>
-                  <MenuButton mnemonicParsing="false" text="choix donnée">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="température" />
-                      <MenuItem mnemonicParsing="false" text="humidité" />
-                        <MenuItem mnemonicParsing="false" text="CO2" />
-                        <MenuItem mnemonicParsing="false" text="pression" />
-                        <MenuItem mnemonicParsing="false" text="activité" />
-                        <MenuItem mnemonicParsing="false" text="tvoc" />
-                        <MenuItem mnemonicParsing="false" text="illumination" />
-                        <MenuItem mnemonicParsing="false" text="infrarouge" />
-                        <MenuItem mnemonicParsing="false" text="infrarouge et visible" />
-                        <MenuItem mnemonicParsing="false" text="courant" />
-                    </items>
+                  <MenuButton fx:id="menuChoixDonnee" mnemonicParsing="false" text="Choix des données">
+                     <items>
+                        <MenuItem fx:id="menuTemp" text="Température" />
+                        <MenuItem fx:id="menuHum" text="Humidité" />
+                        <MenuItem fx:id="menuCo2" text="CO2" />
+                     </items>
                   </MenuButton>
-                  <MenuButton mnemonicParsing="false" text="type de graph">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="courbe" />
-                      <MenuItem mnemonicParsing="false" text="bâtons" />
-                    </items>
+                  <MenuButton fx:id="menuTypeGraphique" mnemonicParsing="false" text="Type de graph">
+                     <items>
+                        <MenuItem fx:id="menuCourbe" text="Courbe" />
+                        <MenuItem fx:id="menuBar" text="Bâtons" />
+                     </items>
                   </MenuButton>
                </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -72,13 +63,33 @@
       </GridPane>
    </center>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="affichage des données" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Affichage des données">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="labelSalle" text="Salle : Non sélectionnée" />
+         </children>
+      </VBox>
    </top>
    <bottom>
-      <Region prefHeight="20.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="boutonRetour" alignment="CENTER_RIGHT" onAction="#handleRetour" text="Retour" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="470.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
    </bottom>
 </BorderPane>

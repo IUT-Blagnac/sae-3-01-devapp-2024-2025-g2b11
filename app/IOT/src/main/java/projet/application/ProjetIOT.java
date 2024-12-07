@@ -19,11 +19,15 @@ public class ProjetIOT extends Application {
         this.root = new BorderPane();
 
         Scene scene = new Scene(root);
-        //Recupere l'icone du jeu
-        primarStage.setTitle("IoT Project");
-        primarStage.setScene(scene);
-        loadAcceuil(); 
-        primarStage.show(); //Lancement du Launcher du jeu
+        primaryStage.setTitle("IoT Project");
+        primaryStage.setScene(scene);
+
+        // Lancer le script Python
+        lancerProgrammePython();
+
+        // Charger l'accueil
+        loadAcceuil();
+        primaryStage.show();
     }
 
     public void loadAcceuil() {
@@ -36,13 +40,36 @@ public class ProjetIOT extends Application {
             AccueilController Actrl = loader.getController();
             Actrl.setPrimaryStage(primarStage);
 
-            
             this.root.setCenter(vueHome);
-                        
         } catch (IOException e) {
-            System.out.println("Erreur lors du chargement de la vue Accueil.fxml");
+            System.out.println(e);
             System.exit(1);
-        }	
+        }
+    }
+
+    public void lancerProgrammePython() {
+        Thread pythonThread = new Thread(() -> {
+            try {
+                ProcessBuilder pb = new ProcessBuilder(
+                    "python", // Commande pour exécuter Python
+                    "app/IOT/python/IoTPythonSAEvFinal.py" // Chemin relatif vers le script Python
+                );
+                pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+                pb.redirectError(ProcessBuilder.Redirect.INHERIT);
+                pb.start();
+            } catch (IOException e) {
+                System.err.println("Erreur lors de l'exécution du script Python : " + e.getMessage());
+                e.printStackTrace();
+            }
+        });
+        pythonThread.setDaemon(true);
+        pythonThread.start();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        System.out.println("Arrêt de l'application. Assurez-vous que le script Python est également arrêté si nécessaire.");
     }
 
     public static void main(String[] args) {
