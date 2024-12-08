@@ -37,7 +37,7 @@ public class Dashboard {
     public Dashboard(Stage parentStage, ProjetIOT app) {
         this.app = app;
         try {
-            FXMLLoader loader = new FXMLLoader(DashboardViewController.class.getResource("Dashboard.fxml"));
+            FXMLLoader loader = new FXMLLoader(DashboardViewController.class.getResource("dashboard.fxml"));
             BorderPane root = loader.load();
 
             Scene scene = new Scene(root);
