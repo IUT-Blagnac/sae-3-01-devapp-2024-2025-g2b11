@@ -6,6 +6,8 @@ import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 import projet.application.Acces.Ecrivain;
 import projet.application.ProjetIOT;
+import projet.application.control.ConfigAlert;
+import projet.application.control.ConfigDataSelect;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,26 +31,21 @@ public class ConfigDataSelect2ViewController {
 
     @FXML
     private void doSauvegarder() throws IOException {
-        try{
-            //On ajoute les types de données à récupérer pour les capteurs
-            String[] tab=new String[this.typeTabCapt.size()];
-            for (int i=0;i<tab.length;i++)
-                tab[i]=this.typeTabCapt.get(i);
-            this.ecrivain.setTypesDonnee(tab);
+        //On ajoute les types de données à récupérer pour les capteurs
+        String[] tab=new String[this.typeTabCapt.size()];
+        for (int i=0;i<tab.length;i++)
+            tab[i]=this.typeTabCapt.get(i);
+        this.ecrivain.setTypesDonnee(tab);
 
-            //On ajoute les types de données à récupérer pour les panneaux solaires
-            tab=new String[this.typeTabSolaire.size()];
-            for (int i=0;i<tab.length;i++)
-                tab[i]=this.typeTabSolaire.get(i);
-            this.ecrivain.setTypesSolaire(tab);
-            this.ecrivain.writeConfig();
+        //On ajoute les types de données à récupérer pour les panneaux solaires
+        tab=new String[this.typeTabSolaire.size()];
+        for (int i=0;i<tab.length;i++)
+            tab[i]=this.typeTabSolaire.get(i);
+        this.ecrivain.setTypesSolaire(tab);
 
-        }catch (IOException e){
-            System.out.println(e.getMessage());
-        }
+
         this.containingStage.close();
         this.dialogStage.close();
-        System.out.println("Sauvegarder dans le fichier config ini les données sélectionnées");
     }
 
     @FXML
