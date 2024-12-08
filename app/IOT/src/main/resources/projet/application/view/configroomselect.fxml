@@ -10,71 +10,78 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigRoomViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #1e1e2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.application.view.ConfigRoomViewController">
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane style="-fx-background-color: #34495e;" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <ToggleButton fx:id="amphi1" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="amphi 1" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="E208" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E208" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="E210" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E210" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="E207" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E207" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="E101" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E101" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="hallAmphi" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Hall Amphi" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="E100" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E100" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-            <ToggleButton fx:id="E103" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E103" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="hallEntree" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Hall Entree Principale" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="B001" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B001" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="localVelo" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Local Velo" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="foyerPers" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Foyer Personnels" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="C001" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C001" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="salleConseil" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Conseil" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <ToggleButton fx:id="C002" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C002" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="E007" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E007" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="C102" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C102" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="C004" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C004" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="B234" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B234" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="E209" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E209" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="B203" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B203" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <ToggleButton fx:id="B106" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B106" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="E004" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E004" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="B103" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B103" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="C006" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C006" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="E102" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E102" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="B110" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B110" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="E106" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E106" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <ToggleButton fx:id="B202" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B202" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="B201" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B201" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="B109" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B109" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="B002" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B002" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="foyerEtu" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Foyer Etudiants Entree" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="B105" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B105" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="B111" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B111" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <ToggleButton fx:id="E006" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E006" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <ToggleButton fx:id="B113" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B113" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ToggleButton fx:id="B217" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B217" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <ToggleButton fx:id="B112" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B112" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <ToggleButton fx:id="E001" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E001" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+        <children>
+            <ToggleButton fx:id="amphi1" prefHeight="52.0" prefWidth="143.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Amphi 1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ToggleButton fx:id="E208" prefHeight="52.0" prefWidth="110.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E208" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <ToggleButton fx:id="E210" prefHeight="52.0" prefWidth="146.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E210" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <ToggleButton fx:id="E207" prefHeight="52.0" prefWidth="138.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E207" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <ToggleButton fx:id="E101" prefHeight="52.0" prefWidth="116.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E101" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <ToggleButton fx:id="hallAmphi" prefHeight="52.0" prefWidth="106.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Hall Amphi" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+            <ToggleButton fx:id="E100" prefHeight="52.0" prefWidth="115.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E100" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <ToggleButton fx:id="E103" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E103" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ToggleButton fx:id="hallEntree" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Hall Entrée P." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font></ToggleButton>
+            <ToggleButton fx:id="B001" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B001" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ToggleButton fx:id="localVelo" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Local Velo" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <ToggleButton fx:id="foyerPers" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Foyer Personnels" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <ToggleButton fx:id="C001" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="34.0" prefWidth="58.0" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="C001" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <ToggleButton fx:id="salleConseil" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Conseil" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <ToggleButton fx:id="C002" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="C002" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ToggleButton fx:id="E007" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E007" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ToggleButton fx:id="C102" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="C102" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ToggleButton fx:id="C004" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="C004" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ToggleButton fx:id="B234" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B234" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <ToggleButton fx:id="E209" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E209" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <ToggleButton fx:id="B203" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B203" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <ToggleButton fx:id="B106" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B106" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ToggleButton fx:id="E004" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E004" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ToggleButton fx:id="B103" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B103" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <ToggleButton fx:id="C006" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="C006" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></ToggleButton>
+            <ToggleButton fx:id="E102" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E102" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <ToggleButton fx:id="B110" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B110" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <ToggleButton fx:id="E106" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E106" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <ToggleButton fx:id="B202" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B202" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <ToggleButton fx:id="B201" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B201" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ToggleButton fx:id="B109" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B109" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <ToggleButton fx:id="B002" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B002" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <ToggleButton fx:id="foyerEtu" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="Foyer Etudiants Entree" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <ToggleButton fx:id="B105" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B105" textAlignment="CENTER" GridPane.rowIndex="6" />
+            <ToggleButton fx:id="B111" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B111" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ToggleButton fx:id="E006" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E006" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <ToggleButton fx:id="B113" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B113" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ToggleButton fx:id="B217" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B217" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <ToggleButton fx:id="B112" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="B112" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <ToggleButton fx:id="E001" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-font-size: 14px; -fx-background-color: #53728D; -fx-text-fill: white; -fx-background-radius: 5px;" text="E001" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
 
-
-         </children>
+        </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+         </BorderPane.margin>
       </GridPane>
    </center>
    <bottom>
@@ -87,11 +94,17 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doRetour" text="retour" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doValider" text="valider" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doRetour" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff;" text="Retour" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doValider" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Sauvegarder" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Button>
          </children>
          <BorderPane.margin>
@@ -100,10 +113,13 @@
       </GridPane>
    </bottom>
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="sélectionner les salles désirées" BorderPane.alignment="CENTER">
+      <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner les salles désirées" textAlignment="CENTER" wrappingWidth="223.2113037109375" BorderPane.alignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font size="22.0" />
          </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
       </Text>
    </top>
 </BorderPane>
