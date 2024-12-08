@@ -21,6 +21,13 @@ public class Reader {
         getData();
     }
 
+    /**
+     * Récupère les données des panneaux solaires pour un type de donnée spécifique.
+     *
+     * @param dataType le type de donnée à récupérer (par exemple, "current power", "lifetime energy").
+     * @param filePath le chemin vers le fichier JSON contenant les données des panneaux solaires.
+     * @return une liste de valeurs float correspondant au type de donnée demandé.
+     */
     public static List<Float> getSolarDataByType(String dataType, String filePath) {
         List<Float> dataValues = new ArrayList<>();
         try {
@@ -112,7 +119,14 @@ public class Reader {
     }
     
     
-
+    /**
+     * Récupère les données pour un type de mesure spécifique dans une salle donnée.
+     *
+     * @param room     le nom de la salle dont les données doivent être récupérées.
+     * @param type     le type de donnée à récupérer (par exemple, "température", "humidité").
+     * @param filePath le chemin vers le fichier JSON contenant les données des capteurs.
+     * @return une liste de valeurs float correspondant au type de donnée demandé pour la salle spécifiée.
+     */
     public static List<String> getRoomNames(String filePath) {
         List<String> roomNames = new ArrayList<>();
 
@@ -138,7 +152,18 @@ public class Reader {
 
         return roomNames;
     }
-
+    
+    /**
+     * Récupère et affiche les données des capteurs et des panneaux solaires à partir de fichiers JSON.
+     *
+     * Cette méthode :
+     * - Charge les données de capteurs et les alertes à partir des fichiers `donneeJSON.json` et `alertJSON.json`.
+     * - Affiche les dernières mesures disponibles pour chaque salle.
+     * - Affiche les alertes liées aux niveaux de CO2, température et humidité.
+     * - Affiche les données et alertes des panneaux solaires.
+     *
+     * Les fichiers doivent respecter les structures définies pour `GestionData` et `GestionAlert`.
+     */
     public static void getData() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
