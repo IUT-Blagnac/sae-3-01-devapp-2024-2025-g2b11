@@ -87,19 +87,19 @@ public class Ecrivain{
 
         if(salles!=null && capteur)
             for (int i=0;i<salles.length;i++)
-                    retour+=salles[i]+(i<salles.length-1 ? ", " : "");
+                    retour+=salles[i]+(i<salles.length-1 ? "," : "");
 
 
         retour+="\ntypes = ";
         if(typesDonnee!=null)
             for (int i=0;i<typesDonnee.length;i++)
-                    retour+=typesDonnee[i]+(i<typesDonnee.length-1 ? ", " : "");
+                    retour+=typesDonnee[i]+(i<typesDonnee.length-1 ? "," : "");
 
 
         retour+="\ntypesSolaire = ";
         if(typesSolaire!=null)
             for (int i=0;i<typesSolaire.length;i++)
-                    retour+=typesSolaire[i]+(i<typesSolaire.length-1 ? ", " : "");
+                    retour+=typesSolaire[i]+(i<typesSolaire.length-1 ? "," : "");
 
 
         retour+="\nfrequency = "+frequency+"\n\n\n"+
