@@ -10,15 +10,35 @@ import projet.application.view.ConfigRoomViewController;
 
 import java.io.IOException;
 
+/**
+ * Classe responsable de la gestion et de l'affichage de la fenêtre de configuration des salles.
+ * Cette classe initialise l'interface de sélection des salles et permet de lancer la configuration.
+ */
 public class ConfigRoom {
+    /** Fenêtre dédiée à la configuration des salles. */
     private Stage crStage;
+
+    /** Contrôleur associé à la vue de configuration des salles. */
     private ConfigRoomViewController crViewController;
+
+    /** Référence à l'application principale ProjetIOT. */
     private ProjetIOT AppProjetIOT;
 
+    /**
+     * Affiche la fenêtre de configuration des salles.
+     * Cette méthode appelle la méthode correspondante du contrôleur associé.
+     */
     public void doConfigroom(){
         this.crViewController.DisplayDialog();
     }
 
+    /**
+     * Constructeur de la classe ConfigRoom.
+     * Initialise la fenêtre de configuration des salles, charge la vue depuis un fichier FXML, et configure le contrôleur associé.
+     *
+     * @param _parentStage   Stage parent de la fenêtre de configuration.
+     * @param _AppProjetIOT  Référence à l'application principale ProjetIOT.
+     */
     public ConfigRoom(Stage _parentStage, ProjetIOT _AppProjetIOT) {
         this.AppProjetIOT = _AppProjetIOT;
         try{
