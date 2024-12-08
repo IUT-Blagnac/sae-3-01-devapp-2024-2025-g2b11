@@ -82,6 +82,11 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
+                        <Button fx:id="btnDashboard" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#actionDashboard" prefHeight="39.0" prefWidth="110.0" text="Dashboard">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                         <Button fx:id="btnQuitter" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#actionQuitter" prefHeight="39.0" prefWidth="106.0" text="Quitter">
                            <font>
                               <Font size="14.0" />
@@ -116,7 +121,4 @@
       <URL value="@../style.css" />
       <URL value="@../style/style.css" />
    </stylesheets>
-    
-
-    
 </BorderPane>

@@ -8,9 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import projet.application.control.Dashboard;
 import projet.application.Acces.RunPythonBackground;
 import projet.application.view.AccueilViewController;
 import projet.application.view.ConfigDataSelectViewController;
+import projet.application.view.DashboardViewController;
 
 public class ProjetIOT extends Application {
     private BorderPane root;
@@ -42,6 +44,7 @@ public class ProjetIOT extends Application {
             Actrl.setPorjetApp(this);
 
             this.root.setCenter(vueHome);
+
             LoadPython("tes");
 
         } catch (IOException e) {
@@ -77,6 +80,12 @@ public class ProjetIOT extends Application {
         }
     }
 
+
+    public void loadDashboard() {
+        Dashboard dashboard = new Dashboard(this.primarStage, this);
+        dashboard.showDashboard();
+    }
+
     public void LoadPython(String args) {
         RunPythonBackground pythonRunner = new RunPythonBackground(args);
         Thread pythonThread = new Thread(pythonRunner);
@@ -104,6 +113,7 @@ public class ProjetIOT extends Application {
     public int getExitCodeMQTT() {
         return this.exitCodeMQTT;
     }   
+
 
     public static void main(String[] args) {
         launch(args);
