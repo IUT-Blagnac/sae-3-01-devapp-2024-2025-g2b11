@@ -1,9 +1,11 @@
 package projet.application.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import projet.application.Acces.Ecrivain;
 import projet.application.ProjetIOT;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,11 +18,17 @@ public class ConfigAlertViewController {
     private Ecrivain ecrivain;
 
     private ProjetIOT App;
+    @FXML
+    private TextField seuil_temperature, seuil_co2, seuil_humidity, seuil_power, seuil_energy;
 
     @FXML
     private void doSauvegarder() throws IOException {
         try{
-
+            this.ecrivain.setSeuilTemp(seuil_temperature.getText().matches("-?[0-9]*") ? Integer.parseInt(seuil_temperature.getText()) : Integer.MAX_VALUE);
+            this.ecrivain.setSeuilCo2(seuil_co2.getText().matches("-?[0-9]*") ? Integer.parseInt(seuil_co2.getText()) : Integer.MAX_VALUE);
+            this.ecrivain.setSeuilHumdity(seuil_humidity.getText().matches("-?[0-9]*") ? Integer.parseInt(seuil_humidity.getText()) : Integer.MAX_VALUE);
+            this.ecrivain.setSeuilPower(seuil_power.getText().matches("-?[0-9]*") ? Integer.parseInt(seuil_power.getText()) : Integer.MAX_VALUE);
+            this.ecrivain.setSeuilEnergy(seuil_energy.getText().matches("-?[0-9]*") ? Integer.parseInt(seuil_energy.getText()) : Integer.MAX_VALUE);
 
             //On construit le fichier config.ini
             this.ecrivain.writeConfig();
@@ -38,17 +46,6 @@ public class ConfigAlertViewController {
         this.containingStage.close();
         System.out.println("Retour à la configuration des données");
     }
-
-
-
-
-
-
-
-
-
-
-
 
     public void setDialogStage(Stage dialogStage) {
 
@@ -68,9 +65,14 @@ public class ConfigAlertViewController {
 
     public void initContext(Stage _crStage, ProjetIOT _appProjetIOT, Stage _containingstage) {
         this.ecrivain=Ecrivain.getInstance();
+        this.initTextFields();
         this.containingStage = _crStage;
         this.App = _appProjetIOT;
         this.dialogStage = _containingstage;
+
+    }
+
+    public void initTextFields(){
 
     }
 }

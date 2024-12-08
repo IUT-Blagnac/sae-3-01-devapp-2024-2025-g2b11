@@ -58,9 +58,9 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="38.0" prefWidth="139.0" spacing="5.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
-                              <TextField id="seuil_temperature" />
-                              <TextField id="seuil_co2" />
-                              <TextField id="seuil_humidity" />
+                              <TextField id="seuil_temperature" fx:id="seuil_temperature"/>
+                              <TextField id="seuil_co2" fx:id="seuil_co2" />
+                              <TextField id="seuil_humidity" fx:id="seuil_humidity"/>
                            </children>
                         </VBox>
                      </children>
@@ -78,8 +78,8 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="38.0" prefWidth="139.0" spacing="5.0" style="-fx-background-color: #34495e; -fx-padding: 10;">
                            <children>
-                              <TextField id="seuil_power" />
-                              <TextField id="seuil_energy" />
+                              <TextField id="seuil_power" fx:id="seuil_power"/>
+                              <TextField id="seuil_energy" fx:id="seuil_energy"/>
                            </children>
                         </VBox>
                      </children>
