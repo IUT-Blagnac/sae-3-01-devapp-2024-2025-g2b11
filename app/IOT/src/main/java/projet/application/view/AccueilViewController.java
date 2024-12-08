@@ -104,12 +104,7 @@ public class AccueilViewController implements Initializable {
         }
     }
 
-    // Méthode pour l'action du menu "Jouer" (sur l'élément du menu "Fichier")
-    @FXML
-    private void actionPlay(ActionEvent event) {
-        // Vous pouvez ajouter une logique ici pour démarrer un jeu ou une action
-        System.out.println("Le jeu a commencé !");
-    }
+   
 
     // Méthode pour l'action du menu "Importer votre grille" (sur l'élément "Fichier")
     @FXML
@@ -123,17 +118,7 @@ public class AccueilViewController implements Initializable {
         alert.showAndWait();
     }
 
-    // Méthode pour l'action du menu "Règles"
-    @FXML
-    private void actionRegles(ActionEvent event) {
-        // Affichage des règles dans une boîte de dialogue
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Règles");
-        alert.setHeaderText("Règles du jeu");
-        alert.setContentText("Voici les règles du jeu IoT...");
-
-        alert.showAndWait();
-    }
+  
 
     // Méthode pour l'action du menu "À propos"
     @FXML

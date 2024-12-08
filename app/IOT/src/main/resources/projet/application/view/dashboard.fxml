@@ -26,7 +26,7 @@
             <children>
                 <Label prefHeight="35.0" prefWidth="258.0" style="-fx-font-size: 24; -fx-text-fill: #ffffff;" text="Panneau de contrôle" />
                 <Region prefHeight="35.0" prefWidth="448.0" />
-                <ComboBox fx:id="timeRangeComboBox" editable="true" prefHeight="31.0" prefWidth="218.0" promptText="Sélectionner la période" style="-fx-background-color: #34495e; -fx-text-fill: #ffffff;" />
+                <ComboBox fx:id="timeRangeComboBox" editable="true" opacity="0.0" prefHeight="31.0" prefWidth="218.0" promptText="Sélectionner la période" style="-fx-background-color: #34495e; -fx-text-fill: #ffffff;" />
                 <Button fx:id="refreshButton" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #27ae60; -fx-text-fill: #ffffff;" text="Rafraîchir" />
             </children>
         </HBox>

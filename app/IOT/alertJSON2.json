@@ -1,4 +1,180 @@
 {
     "Capteurs AM": {},
-    "PanneauSolaire": []
+    "PanneauSolaire": [
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:38:30"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:39:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:41:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:43:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:45:09"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:47:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:49:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:51:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:53:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:55:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:57:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "21:59:09"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:01:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:03:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:05:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:07:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:09:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:09:42"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:11:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:13:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:15:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:17:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:19:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:21:08"
+        },
+        {
+            "lastDayData": {
+                "energy": 2339
+            },
+            "jour": "08-12-2024",
+            "heure": "22:23:08"
+        }
+    ]
 }

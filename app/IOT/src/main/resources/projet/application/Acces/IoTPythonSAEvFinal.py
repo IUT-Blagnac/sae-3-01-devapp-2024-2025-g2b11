@@ -11,8 +11,11 @@ import sys
 #
 # :param chemin: Chemin vers le fichier de configuration.
 # :return: Objet ConfigParser contenant les données du fichier.
-#
+# :raises FileNotFoundError: Si le fichier de configuration n'existe pas.
 def read_config(chemin) -> configparser.ConfigParser:
+    if not os.path.exists(chemin):
+        raise FileNotFoundError("Le fichier de configuration ",chemin," est introuvable.")
+    
     config = configparser.ConfigParser()
     config.read(chemin)
     return config
@@ -35,6 +38,7 @@ def filtredonneesSolaire(data):
     alert=False
     di2 ={}
     
+    # Filtrage des données pertinentes pour les panneaux solaires
     for k, v in data.items():
         if k in donneesSolaire:
             di2[k] = v
@@ -42,9 +46,13 @@ def filtredonneesSolaire(data):
     jour = datetime.datetime.now().strftime("%d-%m-%Y")
     heure = datetime.datetime.now().strftime("%H:%M:%S")
 
+
+     # Vérification des seuils pour déclencher une alerte
     if ("currentPower" in di2 and di2["currentPower"]["power"] > s_power) or ("lastDayData" in di2 and di2["lastDayData"]["energy"] > s_energy):
         alert=True
+    
 
+    # Enregistrement des données en fonction du type (alerte ou fréquent)
     if alert : 
         di2["jour"] = jour
         di2["heure"] = heure
@@ -79,6 +87,8 @@ def filtredonneesCapteur(data):
     jour = datetime.datetime.now().strftime("%d-%m-%Y")
     heure = datetime.datetime.now().strftime("%H:%M:%S")
 
+
+    # Vérification des seuils et classement des alertes par type
     if "temperature" in di2 and di2["temperature"] > s_temperature:
 
         if "temperatureAlert" not in dictalert["Capteurs AM"]:
@@ -109,6 +119,7 @@ def filtredonneesCapteur(data):
 
         alert=True
     
+    # Affichage et enregistrement des données d'alerte
     if alert : 
         print("Alerte salle ",salle, " : ", jour, heure)
         di2["jour"] = jour
@@ -157,31 +168,38 @@ def main():
     mode_test = False
     if len(sys.argv) > 1 and sys.argv[1] == "test":
         mode_test = True
-
-    fichconfig = read_config("config.ini")
+    try:
+        fichconfig = read_config("config.ini")
     
-    global mqttc, topic_subscribe, donnees, donneesSolaire, salles
-    global frequence_sauvegarde, fichjson, alertjson
-    global s_temperature, s_co2, s_humidite, s_power, s_energy
-    global dictfreq, dictalert
+        global mqttc, topic_subscribe, donnees, donneesSolaire, salles
+        global frequence_sauvegarde, fichjson, alertjson
+        global s_temperature, s_co2, s_humidite, s_power, s_energy
+        global dictfreq, dictalert
 
-    mqttServer = fichconfig['MQTT']['broker']
-    port = int(fichconfig['MQTT']['port'])
-    topic_subscribe = fichconfig['MQTT']['topic_subscribe'].split(',')
+        mqttServer = fichconfig['MQTT']['broker']
+        port = int(fichconfig['MQTT']['port'])
+        topic_subscribe = fichconfig['MQTT']['topic_subscribe'].split(',')
 
-    donnees = fichconfig['DATA']['types'].split(',')
-    donneesSolaire = fichconfig['DATA']['typesSolaire'].split(',')
-    salles = fichconfig['DATA']['salles'].split(',')
-    frequence_sauvegarde = int(fichconfig['DATA']['frequency'])
+        donnees = fichconfig['DATA']['types'].split(',')
+        donneesSolaire = fichconfig['DATA']['typesSolaire'].split(',')
+        salles = fichconfig['DATA']['salles'].split(',')
+        frequence_sauvegarde = int(fichconfig['DATA']['frequency'])
 
-    fichjson = fichconfig['OUTPUT']['json_file']
-    alertjson = fichconfig['OUTPUT']['alert_file']
+        fichjson = fichconfig['OUTPUT']['json_file']
+        alertjson = fichconfig['OUTPUT']['alert_file']
 
-    s_temperature = int(fichconfig['ALERTE']['seuil_temperature'])
-    s_co2 = int(fichconfig['ALERTE']['seuil_co2'])
-    s_humidite = int(fichconfig['ALERTE']['seuil_humidity'])
-    s_power = float(fichconfig['ALERTE']['seuil_power'])
-    s_energy = int(fichconfig['ALERTE']['seuil_energy'])
+        s_temperature = int(fichconfig['ALERTE']['seuil_temperature'])
+        s_co2 = int(fichconfig['ALERTE']['seuil_co2'])
+        s_humidite = int(fichconfig['ALERTE']['seuil_humidity'])
+        s_power = float(fichconfig['ALERTE']['seuil_power'])
+        s_energy = int(fichconfig['ALERTE']['seuil_energy'])
+
+    except FileNotFoundError as e:
+        print(f"Erreur : {e}")
+        sys.exit(1)  
+    except KeyError as e:
+        print(f"Erreur dans le fichier de configuration : {e}")
+        sys.exit(2)  
 
     dictfreq = load_json_file(fichjson)
     dictalert = load_json_file(alertjson)
@@ -194,7 +212,7 @@ def main():
     mqttc.on_connect = on_connect
     if mode_test:
         print("Mode test : connexion MQTT testée.")
-        return 0
+        sys.exit(0)
     
     mqttc.on_message = on_message
     mqttc.loop_start()  # exécute la réception des messages MQTT dans un thread
