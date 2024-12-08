@@ -66,7 +66,7 @@ public class ConfigAlertViewController {
 
     /**
      * Retourne à la vue précédente sans enregistrer les changements.
-     * <p>Ferme la fenêtre de configuration actuelle.</p>
+     * Ferme la fenêtre de configuration actuelle.
      */
     @FXML
     private void doRetour(){
