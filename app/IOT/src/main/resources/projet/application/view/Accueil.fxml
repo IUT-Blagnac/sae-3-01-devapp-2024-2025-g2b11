@@ -74,7 +74,7 @@
                   <Insets />
                </GridPane.margin>
                <children>
-                  <HBox prefHeight="100.0" prefWidth="260.0">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="260.0">
                      <children>
                         <Button fx:id="btnConfigurer" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#actionConfigurer" prefHeight="39.0" prefWidth="98.0" text="Configurer" />
                         <Button fx:id="btnInfos" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#actionInfos" prefHeight="39.0" prefWidth="100.0" text="Infos">
@@ -88,6 +88,15 @@
                            </font>
                         </Button>
                         <Button fx:id="btnQuitter" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#actionQuitter" prefHeight="39.0" prefWidth="106.0" text="Quitter">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="260.0">
+                     <children>
+                        <Button fx:id="btnTestMQTT" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doTestConnexionMQTT" prefHeight="39.0" prefWidth="187.0" text="Tester la connexion MQTT">
                            <font>
                               <Font size="14.0" />
                            </font>

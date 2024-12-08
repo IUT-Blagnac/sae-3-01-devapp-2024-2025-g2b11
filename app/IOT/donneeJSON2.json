@@ -1,0 +1,454 @@
+{
+    "Capteurs AM": {
+        "E001": [
+            {
+                "tvoc": 107
+            },
+            {
+                "tvoc": 110
+            },
+            {
+                "tvoc": 108
+            },
+            {
+                "tvoc": 113
+            },
+            {
+                "tvoc": 115
+            },
+            {
+                "temperature": 16.9,
+                "humidity": 48.5,
+                "activity": 0,
+                "co2": 431,
+                "tvoc": 121,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.9
+            }
+        ],
+        "B217": [
+            {
+                "temperature": 17.9,
+                "humidity": 43,
+                "activity": 0,
+                "co2": 421,
+                "tvoc": 50,
+                "illumination": 2,
+                "infrared": 0,
+                "infrared_and_visible": 1,
+                "pressure": 989.5
+            }
+        ],
+        "B112": [
+            {
+                "temperature": 17.6,
+                "humidity": 46,
+                "activity": 0,
+                "co2": 435,
+                "tvoc": 54,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 989.6
+            }
+        ],
+        "C002": [
+            {
+                "temperature": 19.4,
+                "humidity": 44.5,
+                "activity": 0,
+                "co2": 462,
+                "tvoc": 65,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.4
+            }
+        ],
+        "C102": [
+            {
+                "temperature": 17.1,
+                "humidity": 47,
+                "activity": 0,
+                "co2": 455,
+                "tvoc": 97,
+                "illumination": 0,
+                "infrared": 0,
+                "infrared_and_visible": 0,
+                "pressure": 990.3
+            }
+        ],
+        "E007": [
+            {
+                "temperature": 17.9,
+                "humidity": 45.5,
+                "activity": 0,
+                "co2": 417,
+                "tvoc": 65,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.8
+            }
+        ],
+        "B203": [
+            {
+                "temperature": 18.2,
+                "humidity": 45,
+                "activity": 0,
+                "co2": 444,
+                "tvoc": 19,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 989.4
+            }
+        ],
+        "amphi1": [
+            {
+                "temperature": 15.9,
+                "humidity": 49.5,
+                "activity": 0,
+                "co2": 428,
+                "tvoc": 47,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.3
+            }
+        ],
+        "E210": [
+            {
+                "temperature": 17.1,
+                "humidity": 47,
+                "activity": 0,
+                "co2": 423,
+                "tvoc": 67,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 988.9
+            }
+        ],
+        "E208": [
+            {
+                "temperature": 17.7,
+                "humidity": 45,
+                "activity": 0,
+                "co2": 416,
+                "tvoc": 52,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 989.6
+            }
+        ],
+        "B103": [
+            {
+                "temperature": 18.8,
+                "humidity": 41,
+                "activity": 0,
+                "co2": 1647,
+                "tvoc": 32,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.1
+            }
+        ],
+        "E207": [
+            {
+                "temperature": 18.4,
+                "humidity": 42.5,
+                "activity": 0,
+                "co2": 424,
+                "tvoc": 91,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 989.7
+            }
+        ],
+        "E101": [
+            {
+                "temperature": 16.7,
+                "humidity": 47,
+                "activity": 0,
+                "co2": 433,
+                "tvoc": 102,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990
+            }
+        ],
+        "E100": [
+            {
+                "temperature": 23.6,
+                "humidity": 31.5,
+                "activity": 0,
+                "co2": 405,
+                "tvoc": 38,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.1
+            }
+        ],
+        "C006": [
+            {
+                "temperature": 17.9,
+                "humidity": 49,
+                "activity": 0,
+                "co2": 410,
+                "tvoc": 74,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 990.5
+            }
+        ],
+        "hall-amphi": [
+            {
+                "temperature": 18,
+                "humidity": 47,
+                "activity": 0,
+                "co2": 446,
+                "tvoc": 219,
+                "illumination": 1,
+                "infrared": 1,
+                "infrared_and_visible": 1,
+                "pressure": 989.9
+            }
+        ]
+    },
+    "PanneauSolaire": [
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        }
+    ]
+}

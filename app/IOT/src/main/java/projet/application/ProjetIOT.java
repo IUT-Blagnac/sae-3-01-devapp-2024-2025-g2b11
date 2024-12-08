@@ -9,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import projet.application.control.Dashboard;
+import projet.application.Acces.RunPythonBackground;
 import projet.application.view.AccueilViewController;
 import projet.application.view.ConfigDataSelectViewController;
 import projet.application.view.DashboardViewController;
@@ -16,6 +17,7 @@ import projet.application.view.DashboardViewController;
 public class ProjetIOT extends Application {
     private BorderPane root;
     private Stage primarStage;
+    private int exitCodeMQTT;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -42,6 +44,8 @@ public class ProjetIOT extends Application {
             Actrl.setPorjetApp(this);
 
             this.root.setCenter(vueHome);
+
+            LoadPython("tes");
 
         } catch (IOException e) {
             System.out.println("Erreur lors du chargement de la vue Accueil.fxml");
@@ -76,10 +80,40 @@ public class ProjetIOT extends Application {
         }
     }
 
+
     public void loadDashboard() {
         Dashboard dashboard = new Dashboard(this.primarStage, this);
         dashboard.showDashboard();
     }
+
+    public void LoadPython(String args) {
+        RunPythonBackground pythonRunner = new RunPythonBackground(args);
+        Thread pythonThread = new Thread(pythonRunner);
+        pythonThread.setDaemon(true); // S'arrête automatiquement quand l'application ferme
+        pythonThread.start();
+
+        if (args.equals("test")) {
+            try {
+                pythonThread.join();
+                int exitCode = pythonRunner.getExitCode();
+                this.exitCodeMQTT = exitCode;
+                System.out.println("Code de sortie récupéré dans le Main : " + exitCode);
+
+                if (exitCode == 0) {
+                    System.out.println("Le script Python s'est terminé avec succès.");
+                } else {
+                    System.out.println("Le script Python a rencontré une erreur.");
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public int getExitCodeMQTT() {
+        return this.exitCodeMQTT;
+    }   
+
 
     public static void main(String[] args) {
         launch(args);

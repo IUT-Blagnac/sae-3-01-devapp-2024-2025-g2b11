@@ -29,6 +29,8 @@ public class AccueilViewController implements Initializable {
 
     @FXML
     private Button btnQuitter;
+    @FXML
+    private Button btnTestMQTT;
 
     private Stage primaryStage;
     
@@ -150,6 +152,28 @@ public class AccueilViewController implements Initializable {
     private void actionQuitterMenu(ActionEvent event) {
         // Quitter l'application
         System.exit(0);
+    }
+
+    @FXML
+    private void doTestConnexionMQTT(){
+        System.out.println("Test de connexion MQTT");
+        App.LoadPython("test");
+        int exitcode = App.getExitCodeMQTT();
+        if (exitcode == 0) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Test de connexion MQTT");
+            alert.setHeaderText("Test de connexion MQTT réussi");
+            alert.setContentText("La connexion MQTT a été établie avec succès.");
+
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Test de connexion MQTT");
+            alert.setHeaderText("Erreur de connexion MQTT");
+            alert.setContentText("Impossible de se connecter au serveur MQTT.");
+
+            alert.showAndWait();
+        }
     }
 
     @Override
