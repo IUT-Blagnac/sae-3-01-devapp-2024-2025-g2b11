@@ -44,6 +44,10 @@ public class ConfigDataSelect2ViewController {
         this.ecrivain.setTypesSolaire(tab);
 
 
+        ConfigAlert configAlert = new ConfigAlert(this.containingStage, this.App, this.dialogStage);
+        configAlert.doConfigDonnees();
+
+        
         this.containingStage.close();
         this.dialogStage.close();
     }

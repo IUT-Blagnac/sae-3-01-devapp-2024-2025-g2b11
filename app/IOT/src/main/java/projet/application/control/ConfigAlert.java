@@ -14,13 +14,13 @@ import java.io.IOException;
 
 public class ConfigAlert {
 
-    private Stage cdsStage;
-    private ConfigAlertViewController ConfigdonneesViewController;
+    private Stage caStage;
+    private ConfigAlertViewController ConfigAlertViewController;
     private ProjetIOT AppProjetIOT;
 
 
     public void doConfigDonnees() {
-        this.ConfigdonneesViewController.DisplayDialog();
+        this.ConfigAlertViewController.DisplayDialog();
     }
 
     public ConfigAlert(Stage _parentStage, ProjetIOT _AppProjetIOT, Stage _containingstage) {
@@ -31,18 +31,18 @@ public class ConfigAlert {
 
             Scene scene = new Scene(root);
 
-            this.cdsStage = new Stage();
-            this.cdsStage.setTitle("ConfigRoom");
-            this.cdsStage.initModality(Modality.WINDOW_MODAL);
-            this.cdsStage.initOwner(_containingstage);
-            this.cdsStage.setScene(scene);
+            this.caStage = new Stage();
+            this.caStage.setTitle("ConfigAlerte");
+            this.caStage.initModality(Modality.WINDOW_MODAL);
+            this.caStage.initOwner(_containingstage);
+            this.caStage.setScene(scene);
 
 
 
-            this.cdsStage.setResizable(false);
+            this.caStage.setResizable(false);
 
-            this.ConfigdonneesViewController = loader.getController();
-            this.ConfigdonneesViewController.initContext(this.cdsStage, this.AppProjetIOT, _containingstage);
+            this.ConfigAlertViewController = loader.getController();
+            this.ConfigAlertViewController.initContext(this.caStage, this.AppProjetIOT, _containingstage);
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -3559,6 +3559,21 @@
             "currentPower": {
                 "power": 0
             }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
         }
     ]
 }

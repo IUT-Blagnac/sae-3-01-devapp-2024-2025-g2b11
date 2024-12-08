@@ -559,6 +559,14 @@
                     "room": "B002",
                     "jour": "06-12-2024",
                     "heure": "10:42:23"
+                },
+                {
+                    "temperature": 18.9,
+                    "humidity": 45,
+                    "co2": 1646,
+                    "room": "B002",
+                    "jour": "08-12-2024",
+                    "heure": "17:02:23"
                 }
             ],
             "B234": [
@@ -2163,6 +2171,22 @@
                     "room": "Foyer-etudiants-entrée",
                     "jour": "06-12-2024",
                     "heure": "10:42:55"
+                },
+                {
+                    "temperature": 47.5,
+                    "humidity": 45.5,
+                    "co2": 429,
+                    "room": "Foyer-etudiants-entrée",
+                    "jour": "08-12-2024",
+                    "heure": "17:02:55"
+                },
+                {
+                    "temperature": 47.5,
+                    "humidity": 45.5,
+                    "co2": 429,
+                    "room": "Foyer-etudiants-entrée",
+                    "jour": "08-12-2024",
+                    "heure": "17:02:57"
                 }
             ]
         },
