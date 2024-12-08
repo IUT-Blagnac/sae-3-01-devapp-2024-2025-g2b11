@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -37,41 +38,46 @@
             <children>
 
                 <!-- Section Graphiques -->
-                <HBox alignment="CENTER" spacing="20">
-                    <children>
-                        <!-- Nouveau MenuButton pour sélectionner Salle ou Panneaux Solaires -->
-                        <MenuButton fx:id="selectionTypeMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Type: Salle" textFill="WHITE">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Salle" />
-                                <MenuItem mnemonicParsing="false" text="Panneaux Solaires" />
-                            </items>
-                        </MenuButton>
+                    <HBox alignment="CENTER" prefHeight="32.0" prefWidth="780.0" spacing="20">
+                        <children>
+                            <MenuButton fx:id="selectionTypeMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Type: Salle" textFill="WHITE">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="Salle" />
+                                    <MenuItem mnemonicParsing="false" text="Panneaux Solaires" />
+                                </items>
+                            </MenuButton>
 
-                        <!-- Nouveau MenuButton pour afficher les salles ou panneaux -->
-                        <MenuButton fx:id="specificSelectionMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Sélection: Aucune" textFill="WHITE">
-                            <items>
-                                <!-- Les items seront ajoutés dynamiquement depuis le contrôleur -->
-                            </items>
-                        </MenuButton>
+                            <!-- Nouveau MenuButton pour Toutes les salles ou une salle -->
+                            <MenuButton fx:id="allOrSpecificMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Toutes les salles" textFill="WHITE">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="Toutes les salles" />
+                                    <MenuItem mnemonicParsing="false" text="Choisir une salle" />
+                                </items>
+                            </MenuButton>
 
-                        <!-- MenuButton existant pour le choix des données -->
-                        <MenuButton fx:id="dataSelectionMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Données à afficher" textFill="WHITE">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Température (°C)" />
-                                <MenuItem mnemonicParsing="false" text="Humidité (%)" />
-                                <MenuItem mnemonicParsing="false" text="CO2 (ppm)" />
-                            </items>
-                        </MenuButton>
+                            <MenuButton fx:id="specificSelectionMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Sélection: Aucune" textFill="WHITE">
+                                <items>
+                                    <!-- Items dynamiquement ajoutés depuis le contrôleur -->
+                                </items>
+                            </MenuButton>
 
-                        <!-- MenuButton existant pour le choix du type de graphique -->
-                        <MenuButton fx:id="chartTypeMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Choix de graphique" textFill="WHITE">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Courbes" />
-                                <MenuItem mnemonicParsing="false" text="Barres" />
-                            </items>
-                        </MenuButton>
-                    </children>
-                </HBox>
+                            <MenuButton fx:id="dataSelectionMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Données à afficher" textFill="WHITE">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="Température (°C)" />
+                                    <MenuItem mnemonicParsing="false" text="Humidité (%)" />
+                                    <MenuItem mnemonicParsing="false" text="CO2 (ppm)" />
+                                </items>
+                            </MenuButton>
+
+                            <MenuButton fx:id="chartTypeMenuButton" mnemonicParsing="false" style="-fx-background-color: #2c3e50; -fx-padding: 10;" text="Choix de graphique" textFill="WHITE">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="Courbes" />
+                                    <MenuItem mnemonicParsing="false" text="Jauge" />
+                                </items>
+                            </MenuButton>
+                        </children>
+                    </HBox>
+
                 
                 <!-- Zone de message ou d'indication -->
                 <Label fx:id="nomSalle" alignment="CENTER" prefHeight="53.0" prefWidth="980.0" text="NULL" textFill="WHITE">
@@ -83,15 +89,23 @@
                     </VBox.margin>
                 </Label>
 
-                <!-- Graphique principal -->
-                <LineChart fx:id="lineChart" nodeOrientation="LEFT_TO_RIGHT" prefHeight="559.0" prefWidth="980.0" style="-fx-text-fill: #ffffff;">
-                    <xAxis>
-                        <CategoryAxis fx:id="xAxis" side="BOTTOM" tickLabelFill="WHITE" />
-                    </xAxis>
-                    <yAxis>
-                        <NumberAxis fx:id="yAxis" side="LEFT" tickLabelFill="WHITE" />
-                    </yAxis>
-                </LineChart>
+                <!-- Conteneur principal superposé -->
+                <StackPane prefHeight="367.0" prefWidth="780.0" style="-fx-alignment: center; -fx-background-color: #1e1e2f; -fx-padding: 20;">
+                    <!-- Graphique -->
+                    <LineChart fx:id="lineChart" nodeOrientation="LEFT_TO_RIGHT" prefHeight="559.0" prefWidth="740.0" style="-fx-text-fill: #ffffff;">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" fx:id="xAxis" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="yAxis" side="LEFT" tickLabelFill="WHITE" />
+                        </yAxis>
+                    </LineChart>
+
+                    <!-- Jauge -->
+                    <StackPane fx:id="gaugePane" style="-fx-background-color: #2c3e50; -fx-alignment: center;" visible="false">
+                        <Label style="-fx-font-size: 48px; -fx-text-fill: #ffffff;" text="Jauge : Dernière valeur" />
+                    </StackPane>
+                </StackPane>
             </children>
         </VBox>
     </center>

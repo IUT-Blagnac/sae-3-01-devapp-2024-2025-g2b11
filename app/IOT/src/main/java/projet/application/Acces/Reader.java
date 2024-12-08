@@ -15,49 +15,35 @@ import projet.application.Data.GestionAlert;
 import projet.application.Data.GestionData;
 import projet.application.Data.PanneauSolaire;
 
-
 public class Reader {
-    
+
     public static void main(String[] args) {
         getData();
     }
-    
-    public static List<Float> getSolarCurrentPower(String filePath) {
-        List<Float> powerData = new ArrayList<>();
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode rootNode = objectMapper.readTree(new File(filePath));
-    
-            if (rootNode.has("PanneauSolaire")) {
-                JsonNode solarPanelsNode = rootNode.get("PanneauSolaire");
-                for (JsonNode panel : solarPanelsNode) {
-                    if (panel.has("currentPower") && panel.get("currentPower").has("power")) {
-                        float power = panel.get("currentPower").get("power").floatValue();
-                        powerData.add(power);
-                    }
-                }
-            } else {
-                System.out.println("Le fichier JSON ne contient pas de noeud 'PanneauSolaire'.");
-            }
-        } catch (IOException e) {
-            System.err.println("Erreur lors de la lecture du fichier JSON : " + e.getMessage());
-        }
-        return powerData;
-    }
-    
 
-    public static List<Float> getSolarEnergyData(String filePath) {
-        List<Float> energyData = new ArrayList<>();
+    public static List<Float> getSolarDataByType(String dataType, String filePath) {
+        List<Float> dataValues = new ArrayList<>();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode rootNode = objectMapper.readTree(new File(filePath));
-    
+
             if (rootNode.has("PanneauSolaire")) {
                 JsonNode solarPanelsNode = rootNode.get("PanneauSolaire");
                 for (JsonNode panel : solarPanelsNode) {
-                    if (panel.has("lifeTimeData") && panel.get("lifeTimeData").has("energy")) {
-                        float energy = panel.get("lifeTimeData").get("energy").floatValue();
-                        energyData.add(energy);
+                    switch (dataType.toLowerCase()) {
+                        case "current power":
+                            if (panel.has("currentPower") && panel.get("currentPower").has("power")) {
+                                dataValues.add(panel.get("currentPower").get("power").floatValue());
+                            }
+                            break;
+                        case "lifetime energy":
+                            if (panel.has("lifeTimeData") && panel.get("lifeTimeData").has("energy")) {
+                                dataValues.add(panel.get("lifeTimeData").get("energy").floatValue());
+                            }
+                            break;
+                        default:
+                            System.out.println("Type de donnée inconnu pour les panneaux solaires : " + dataType);
+                            break;
                     }
                 }
             } else {
@@ -66,14 +52,13 @@ public class Reader {
         } catch (IOException e) {
             System.err.println("Erreur lors de la lecture du fichier JSON : " + e.getMessage());
         }
-        return energyData;
+        return dataValues;
     }
-    
+
     public static List<Float> getDataForRoomAndType(String room, String type, String filePath) {
         List<Float> values = new ArrayList<>();
         try {
             File file = new File(filePath);
-
     
             ObjectMapper objectMapper = new ObjectMapper();
             GestionData data = objectMapper.readValue(file, GestionData.class);
@@ -83,19 +68,39 @@ public class Reader {
     
             if (capteurs != null) {
                 for (Capteur capteur : capteurs) {
-                    switch (type) {
+                    Float value = null; // Valeur par défaut pour différencier les absences
+                    switch (type.toLowerCase()) {
                         case "température":
-                            values.add(capteur.temperature);
+                            value = capteur.temperature;
                             break;
                         case "humidité":
-                            values.add(capteur.humidity);
+                            value = capteur.humidity;
                             break;
                         case "co2":
-                            values.add((float) capteur.co2);
+                            value = (float) capteur.co2;
                             break;
-                        default:
-                            System.out.println("Type de donnée inconnu : " + type);
+                        case "tvoc":
+                            value = (float) capteur.tvoc;
                             break;
+                        case "illumination":
+                            value = (float) capteur.illumination;
+                            break;
+                        case "infrared":
+                            value = (float) capteur.infrared;
+                            break;
+                        case "infrared_and_visible":
+                            value = (float) capteur.infrared_and_visible;
+                            break;
+                        case "pressure":
+                            value = capteur.pressure;
+                            break;
+                        case "activity":
+                            value = (float) capteur.activity;
+                            break;
+                    }
+                    // Ajouter uniquement si la valeur n'est pas absente
+                    if (value != null) {
+                        values.add(value);
                     }
                 }
             }
@@ -105,6 +110,8 @@ public class Reader {
         }
         return values;
     }
+    
+    
 
     public static List<String> getRoomNames(String filePath) {
         List<String> roomNames = new ArrayList<>();
@@ -132,7 +139,7 @@ public class Reader {
         return roomNames;
     }
 
-    public static void getData(){
+    public static void getData() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
@@ -143,62 +150,60 @@ public class Reader {
             Map<String, List<Capteur>> capteursAM = jsonData.getCapteurs();
 
             System.out.println(jsonDataAlert.getCapteurs());
-            
+
             Map<String, List<Capteur>> CO2capteursAM = jsonDataAlert.getCapteursAMbyAlert("co2Alert");
             Map<String, List<Capteur>> tempcapteursAM = jsonDataAlert.getCapteursAMbyAlert("temperatureAlert");
             Map<String, List<Capteur>> humcapteursAM = jsonDataAlert.getCapteursAMbyAlert("humiditeAlert");
-
 
             for (Map.Entry<String, List<Capteur>> entry : capteursAM.entrySet()) {
                 String roomName = entry.getKey();
                 List<Capteur> mesureCapteur = entry.getValue();
 
-                if (!mesureCapteur.isEmpty() ) {
-                    Capteur lastMesure = mesureCapteur.get(mesureCapteur.size() - 1);  // Dernière mesure
-                    System.out.println(roomName +": "+ lastMesure);
+                if (!mesureCapteur.isEmpty()) {
+                    Capteur lastMesure = mesureCapteur.get(mesureCapteur.size() - 1); // Dernière mesure
+                    System.out.println(roomName + ": " + lastMesure);
                 }
             }
-            System.out.println("-----------------------------------------ALERTES -----------------------------------------");
+            System.out.println(
+                    "-----------------------------------------ALERTES -----------------------------------------");
 
-            //ALERTES 
-            Map<String, List<Capteur>>[] alertMaps = new Map[]{CO2capteursAM, tempcapteursAM, humcapteursAM};
-            String[] alertTypes = new String[]{"CO2 Alert", "Temperature Alert", "Humidity Alert"};
-            
+            // ALERTES
+            Map<String, List<Capteur>>[] alertMaps = new Map[] { CO2capteursAM, tempcapteursAM, humcapteursAM };
+            String[] alertTypes = new String[] { "CO2 Alert", "Temperature Alert", "Humidity Alert" };
+
             for (int i = 0; i < alertMaps.length; i++) {
                 Map<String, List<Capteur>> alertMap = alertMaps[i];
                 String alertType = alertTypes[i];
-                
+
                 System.out.println(alertType + ":");
-                
+
                 for (Map.Entry<String, List<Capteur>> entry : alertMap.entrySet()) {
                     String roomName = entry.getKey();
                     List<Capteur> mesureCapteur = entry.getValue();
 
-                    if (!mesureCapteur.isEmpty() ) {
-                        Capteur lastMesure = mesureCapteur.get(mesureCapteur.size() - 1);  // Dernière mesure
+                    if (!mesureCapteur.isEmpty()) {
+                        Capteur lastMesure = mesureCapteur.get(mesureCapteur.size() - 1); // Dernière mesure
                         System.out.println(roomName + ": " + lastMesure);
                     }
                 }
             }
-            
 
             System.out.println("\nPanneaux solaires : ");
             List<PanneauSolaire> donneesPanneau = jsonData.getPanneaux();
             // for (PanneauSolaire panneau : donneesPanneau) {
-            //     System.out.println(panneau);
-            // }    
+            // System.out.println(panneau);
+            // }
             List<PanneauSolaire> panneaux = jsonDataAlert.getPanneaux();
 
-            System.out.println(donneesPanneau.get(donneesPanneau.size()-1));
+            System.out.println(donneesPanneau.get(donneesPanneau.size() - 1));
 
-             System.out.println("-----------------------------------------ALERTE SOLAIRE -----------------------------------------");
-            System.out.println(panneaux.get(panneaux.size()-1));
-
-
+            System.out.println(
+                    "-----------------------------------------ALERTE SOLAIRE -----------------------------------------");
+            System.out.println(panneaux.get(panneaux.size() - 1));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
 }
