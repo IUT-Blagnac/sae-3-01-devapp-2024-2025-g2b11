@@ -288,6 +288,12 @@
                 "humidity": 50.5,
                 "co2": 485,
                 "room": "E207"
+            },
+            {
+                "temperature": 19.3,
+                "humidity": 44,
+                "co2": 427,
+                "room": "E207"
             }
         ],
         "E101": [
@@ -350,6 +356,12 @@
                 "humidity": 52,
                 "co2": 1046,
                 "room": "E101"
+            },
+            {
+                "temperature": 18.6,
+                "humidity": 41,
+                "co2": 438,
+                "room": "E101"
             }
         ],
         "hall-amphi": [
@@ -411,6 +423,12 @@
                 "temperature": 19.7,
                 "humidity": 55,
                 "co2": 572,
+                "room": "hall-amphi"
+            },
+            {
+                "temperature": 19.1,
+                "humidity": 49.5,
+                "co2": 446,
                 "room": "hall-amphi"
             }
         ],
@@ -491,6 +509,12 @@
                 "temperature": 25.3,
                 "humidity": 40,
                 "co2": 711,
+                "room": "E100"
+            },
+            {
+                "temperature": 24.8,
+                "humidity": 33,
+                "co2": 406,
                 "room": "E100"
             }
         ],
@@ -1650,6 +1674,12 @@
                 "humidity": 57,
                 "co2": 549,
                 "room": "C006"
+            },
+            {
+                "temperature": 17.9,
+                "humidity": 56.5,
+                "co2": 420,
+                "room": "C006"
             }
         ],
         "E102": [
@@ -2738,6 +2768,699 @@
         },
         {
             "lastUpdateTime": "2024-12-07 17:23:21",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:43:56",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:43:56",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 18:59:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:14:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:29:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:44:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 19:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:01:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:16:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:31:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:46:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 20:49:49",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:05:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:20:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-07 21:20:34",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-08 01:59:50",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-08 02:14:54",
+            "lifeTimeData": {
+                "energy": 3469161
+            },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "lastUpdateTime": "2024-12-08 02:14:54",
             "lifeTimeData": {
                 "energy": 3469161
             },
