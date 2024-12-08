@@ -22,7 +22,7 @@ public class ConfigRoom {
     public ConfigRoom(Stage _parentStage, ProjetIOT _AppProjetIOT) {
         this.AppProjetIOT = _AppProjetIOT;
         try{
-            FXMLLoader loader = new FXMLLoader(ConfigRoomViewController.class.getResource("ConfigRoomSelect.fxml"));
+            FXMLLoader loader = new FXMLLoader(ConfigRoomViewController.class.getResource("configroomselect.fxml"));
             BorderPane root = loader.load();
 
             Scene scene = new Scene(root);
