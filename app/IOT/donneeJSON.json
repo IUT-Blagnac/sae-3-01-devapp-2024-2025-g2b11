@@ -2244,6 +2244,24 @@
                 "humidity": 59,
                 "co2": 1664,
                 "room": "E001"
+            },
+            {
+                "tvoc": 107
+            },
+            {
+                "tvoc": 110
+            },
+            {
+                "tvoc": 108
+            },
+            {
+                "tvoc": 113
+            },
+            {
+                "tvoc": 115
+            },
+            {
+                "tvoc": 121
             }
         ],
         "E003": [
@@ -3491,6 +3509,226 @@
             "lifeTimeData": {
                 "energy": 3469161
             },
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
+            "currentPower": {
+                "power": 0
+            }
+        },
+        {
             "currentPower": {
                 "power": 0
             }

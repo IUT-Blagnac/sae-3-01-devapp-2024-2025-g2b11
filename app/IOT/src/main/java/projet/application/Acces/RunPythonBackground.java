@@ -1,8 +1,13 @@
 package projet.application.Acces;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 public class RunPythonBackground implements Runnable {
     private String args;
@@ -18,9 +23,20 @@ public class RunPythonBackground implements Runnable {
     @Override
     public void run() {
         try {
+
+             // Récupération du script Python depuis les ressources
+            InputStream pythonScriptStream = RunPythonBackground.class.getResourceAsStream("IoTPythonSAEvFinal.py");
+
+            if (pythonScriptStream == null) {
+                throw new FileNotFoundException("Le fichier Python 'IoTPythonSAEvFinal.py' est introuvable dans le classpath.");
+            } 
+
+            Path tempScriptPath = Files.createTempFile("IoTPythonSAEvFinal", ".py");
+            Files.copy(pythonScriptStream, tempScriptPath, StandardCopyOption.REPLACE_EXISTING);
+
             ProcessBuilder pb = new ProcessBuilder(
                 "py", // Commande pour exécuter Python
-                "python/IoTPythonSAEvFinal.py", // Chemin relatif vers le script Python
+                tempScriptPath.toString(), // Chemin relatif vers le script Python
                 this.args // Argument pour tester la connexion MQTT
             );
 
