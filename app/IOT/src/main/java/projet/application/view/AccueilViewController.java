@@ -71,6 +71,11 @@ public class AccueilViewController implements Initializable {
 
     }
 
+    @FXML
+    private void actionDashboard(ActionEvent event) {
+        App.loadDashboard();
+    }
+
     // Méthode appelée pour l'action du bouton "Infos"
     @FXML
     private void actionInfos(ActionEvent event) {
