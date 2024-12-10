@@ -15,9 +15,11 @@ import javafx.stage.Stage;
 import projet.application.control.Dashboard;
 import projet.application.ProjetIOT;
 import projet.application.Acces.AlertFetcher;
-
+import projet.application.Acces.GraphRefreshTask;
 
 import java.util.List;
+import java.util.Map;
+
 /**
  * Contrôleur pour la vue du tableau de bord (Dashboard).
  * Permet l'affichage et la manipulation des données des capteurs
@@ -53,10 +55,10 @@ public class DashboardViewController {
     private Label nomSalle;
 
     @FXML
-    private MenuButton allOrSpecificMenuButton; 
+    private MenuButton allOrSpecificMenuButton;
 
     @FXML
-    private ListView<String> alertListView; 
+    private ListView<String> alertListView;
 
     private static final List<String> ROOM_DATA_TYPES = List.of(
             "Température", "Humidité", "CO2", "TVOC", "Activity",
@@ -64,6 +66,8 @@ public class DashboardViewController {
 
     private Stage stage;
     private ProjetIOT app;
+
+    private Map<String, List<Float>> previousAllRoomsData = null;
 
     private boolean allRoomsChartDisplayed = false;
     private boolean animation = true;
@@ -74,9 +78,8 @@ public class DashboardViewController {
     private String allOrSpecificChoice = "Toutes les salles";
 
     private Thread graphRefreshThread;
-
+    private GraphRefreshTask graphRefreshTask;
     
-
     /**
      * Initialise le contexte du contrôleur.
      *
@@ -100,7 +103,8 @@ public class DashboardViewController {
 
     /**
      * Méthode appelée automatiquement lors de l'initialisation de la vue.
-     * Configure les menus, initialise les états des boutons et lance le rafraîchissement des graphiques.
+     * Configure les menus, initialise les états des boutons et lance le
+     * rafraîchissement des graphiques.
      */
     @FXML
     private void initialize() {
@@ -111,10 +115,10 @@ public class DashboardViewController {
         initializeChartTypeMenu();
         updateButtonStates();
         startGraphRefreshThread();
-        
+
         // Créer une instance de AlertFetcher avec le contrôleur comme argument
         AlertFetcher alertFetcher = new AlertFetcher(this);
-        
+
         // Lancer la tâche en arrière-plan dans un thread séparé
         Thread alertThread = new Thread(alertFetcher);
         alertThread.start();
@@ -122,12 +126,13 @@ public class DashboardViewController {
 
     public void setAlerts(List<String> alerts) {
         // Ajouter des alertes à la ListView
-        alertListView.getItems().clear();  // Clear les anciennes alertes
-        alertListView.getItems().addAll(alerts);  // Ajouter les nouvelles alertes
+        alertListView.getItems().clear(); // Clear les anciennes alertes
+        alertListView.getItems().addAll(alerts); // Ajouter les nouvelles alertes
     }
 
     /**
-     * Initialise le menu pour choisir entre "Toutes les salles" ou une salle spécifique.
+     * Initialise le menu pour choisir entre "Toutes les salles" ou une salle
+     * spécifique.
      */
     private void initializeAllOrSpecificMenu() {
         allOrSpecificMenuButton.getItems().clear();
@@ -165,6 +170,7 @@ public class DashboardViewController {
             selectedChartType = "Lignes";
             chartTypeMenuButton.setText("Graphique: Lignes");
             chartTypeMenuButton.setDisable(true);
+            previousAllRoomsData = null;
         } else {
             chartTypeMenuButton.setDisable(false); // Activer le bouton si "Choisir une salle" est sélectionné
         }
@@ -192,7 +198,6 @@ public class DashboardViewController {
         handleTypeSelection("Salle");
     }
 
-
     /**
      * Gère la sélection entre Salle et Panneaux Solaires.
      *
@@ -200,6 +205,12 @@ public class DashboardViewController {
      */
     private void handleTypeSelection(String type) {
         animation = true;
+
+        // Si le type change, réinitialiser les données précédentes
+        if (!type.equals(selectedType)) {
+            previousAllRoomsData = null; // Forcer le rafraîchissement des graphiques
+        }
+
         selectedType = type;
 
         if ("Panneaux Solaires".equals(type)) {
@@ -220,8 +231,9 @@ public class DashboardViewController {
     /**
      * Met à jour l'état des différents boutons du tableau de bord en fonction des
      * sélections actuelles.
-     * Cette méthode ajuste l'activation ou la désactivation des menus selon le type 
-     * sélectionné (Salle ou Panneaux Solaires) et les choix utilisateur (Toutes les salles ou Choisir une salle).
+     * Cette méthode ajuste l'activation ou la désactivation des menus selon le type
+     * sélectionné (Salle ou Panneaux Solaires) et les choix utilisateur (Toutes les
+     * salles ou Choisir une salle).
      */
     private void updateButtonStates() {
 
@@ -237,8 +249,10 @@ public class DashboardViewController {
 
     /**
      * Initialise le menu des types de graphiques disponibles.
-     * Ce menu permet de choisir entre l'affichage des graphiques en "Lignes" ou la "Dernière valeur".
-     * Les choix mettent à jour le type de graphique sélectionné et rafraîchissent l'affichage.
+     * Ce menu permet de choisir entre l'affichage des graphiques en "Lignes" ou la
+     * "Dernière valeur".
+     * Les choix mettent à jour le type de graphique sélectionné et rafraîchissent
+     * l'affichage.
      */
     private void initializeChartTypeMenu() {
         chartTypeMenuButton.getItems().clear();
@@ -262,24 +276,23 @@ public class DashboardViewController {
      */
     private void configureRoomDataSelectionMenu() {
         dataSelectionMenuButton.getItems().clear();
-    
+
         for (String dataType : ROOM_DATA_TYPES) {
             MenuItem item = new MenuItem(dataType);
             item.setOnAction(event -> handleDataSelection(dataType));
             dataSelectionMenuButton.getItems().add(item);
         }
-    
+
         // Sélection par défaut
         dataSelectionMenuButton.setText("Données: Température");
         selectedData = "température";
-    
+
         updateButtonStates();
     }
-    
 
     /**
      * Configure le menu de sélection des données pour les panneaux solaires.
-     * Ce menu permet à l'utilisateur de choisir le type de données à afficher, 
+     * Ce menu permet à l'utilisateur de choisir le type de données à afficher,
      * telles que "Puissance actuelle" ou "Énergie totale".
      */
     private void configureSolarDataSelectionMenu() {
@@ -301,17 +314,18 @@ public class DashboardViewController {
 
     /**
      * Gère la sélection du type de données à afficher.
-     * Cette méthode est appelée lorsqu'une option de données est choisie dans le menu, 
+     * Cette méthode est appelée lorsqu'une option de données est choisie dans le
+     * menu,
      * telle que "Température", "CO2", ou tout autre type.
      * 
      * @param dataType Le type de données sélectionné par l'utilisateur.
      */
     private void handleDataSelection(String dataType) {
 
-        if(allOrSpecificChoice.equals("Choisir une salle")){
+        if (allOrSpecificChoice.equals("Choisir une salle")) {
             lineChart.setAnimated(true);
         }
-       
+
         selectedData = dataType.toLowerCase();
         dataSelectionMenuButton.setText("Données: " + dataType);
 
@@ -321,8 +335,10 @@ public class DashboardViewController {
     }
 
     /**
-     * Met à jour le menu des sélections spécifiques en fonction du type sélectionné (Salle ou Panneaux Solaires).
-     * Cette méthode recharge les options disponibles dans le menu déroulant pour permettre à l'utilisateur
+     * Met à jour le menu des sélections spécifiques en fonction du type sélectionné
+     * (Salle ou Panneaux Solaires).
+     * Cette méthode recharge les options disponibles dans le menu déroulant pour
+     * permettre à l'utilisateur
      * de choisir une salle spécifique ou une autre catégorie pertinente.
      */
     private void updateSpecificSelectionMenu() {
@@ -352,13 +368,16 @@ public class DashboardViewController {
     }
 
     /**
-     * Configure les axes X et Y du graphique en fonction du type sélectionné (Salle ou Panneaux Solaires)
+     * Configure les axes X et Y du graphique en fonction du type sélectionné (Salle
+     * ou Panneaux Solaires)
      * et des données à afficher.
-     * Les étiquettes, plages et unités des axes sont adaptées dynamiquement selon la sélection.
+     * Les étiquettes, plages et unités des axes sont adaptées dynamiquement selon
+     * la sélection.
      */
     private void configureAxes() {
         xAxis.setLabel("Points de mesure");
-
+        xAxis.lookup(".axis-label").setStyle("-fx-text-fill: white;");
+        yAxis.lookup(".axis-label").setStyle("-fx-text-fill: white;");
         if ("Salle".equalsIgnoreCase(selectedType)) {
             switch (selectedData.toLowerCase()) {
                 case "température":
@@ -379,8 +398,8 @@ public class DashboardViewController {
                     yAxis.setLabel("CO2 (ppm)");
                     yAxis.setAutoRanging(false);
                     yAxis.setLowerBound(0);
-                    yAxis.setUpperBound(2000);
-                    yAxis.setTickUnit(250);
+                    yAxis.setUpperBound(3000);
+                    yAxis.setTickUnit(375);
                     break;
                 case "tvoc":
                     yAxis.setLabel("TVOC (ppb)");
@@ -442,33 +461,23 @@ public class DashboardViewController {
     }
 
     /**
-     * Démarre un thread en arrière-plan pour actualiser périodiquement le graphique.
+     * Démarre un thread en arrière-plan pour actualiser périodiquement le
+     * graphique.
      */
     private void startGraphRefreshThread() {
-        graphRefreshThread = new Thread(() -> {
-            while (!Thread.currentThread().isInterrupted()) {
-                try {
-                    // Délai entre les rafraîchissements
-                    Thread.sleep(500);
-                    Platform.runLater(this::refreshChart);
-
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-            }
-        });
+        graphRefreshTask = new GraphRefreshTask(this::refreshChart);
+        graphRefreshThread = new Thread(graphRefreshTask);
         graphRefreshThread.setDaemon(true);
         graphRefreshThread.start();
     }
 
     /**
-     * Actualise le graphique en fonction des données sélectionnées et du type de visualisation choisi.
+     * Actualise le graphique en fonction des données sélectionnées et du type de
+     * visualisation choisi.
      */
     private void refreshChart() {
         configureAxes();
-    
 
-    
         if ("Dernière valeur".equals(selectedChartType)) {
             showLastValue();
         } else {
@@ -478,62 +487,91 @@ public class DashboardViewController {
                 showLineChart();
             }
         }
-    
+
         lineChart.layout();
     }
-    
+
     /**
      * Affiche les données de toutes les salles sous forme de courbes.
-     * Cette méthode récupère les données de chaque salle pour le type de donnée sélectionné,
+     * Cette méthode récupère les données de chaque salle pour le type de donnée
+     * sélectionné,
      * les organise en séries, et les affiche dans un graphique.
      * Si les données sont déjà affichées, la méthode retourne immédiatement.
      */
     private void showAllRoomsData() {
         lineChart.setAnimated(false);
-
-        if (allRoomsChartDisplayed) {
-            return;
-        }
-
+    
         lineChart.setVisible(true);
         gaugePane.setVisible(false);
-
+    
         if (selectedData == null) {
             lineChart.getData().clear();
             lineChart.setTitle("Aucune donnée disponible");
             return;
         }
-
-        lineChart.getData().clear();
-        List<String> rooms = Dashboard.getRoomNames();
-
+    
+        // Récupérer les données en fonction du type sélectionné
+        List<String> rooms = "Salle".equalsIgnoreCase(selectedType)
+                ? Dashboard.getRoomNames()
+                : List.of("Panneaux Solaires");
+    
+        // Préparer une map pour stocker les données actuelles
+        Map<String, List<Float>> currentAllRoomsData = new java.util.HashMap<>();
+    
         for (String room : rooms) {
-            List<Float> data = Dashboard.getData("Salle", room, selectedData);
-
-
-            if (data == null || data.isEmpty()) {
-                continue;
+            List<Float> data = Dashboard.getData(selectedType, room, selectedData);
+            if (data != null && !data.isEmpty()) {
+                currentAllRoomsData.put(room, data);
             }
-
+        }
+    
+        // Comparer currentAllRoomsData et previousAllRoomsData
+        if (previousAllRoomsData != null && previousAllRoomsData.equals(currentAllRoomsData)) {
+            // Les données sont identiques à la dernière fois, on ne rafraîchit pas
+            return;
+        }
+    
+        // Rafraîchir le graphique
+        lineChart.getData().clear();
+        for (Map.Entry<String, List<Float>> entry : currentAllRoomsData.entrySet()) {
+            String room = entry.getKey();
+            List<Float> data = entry.getValue();
+    
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName(room + " - " + selectedData);
-
+    
             for (int i = 0; i < data.size(); i++) {
-                series.getData().add(new XYChart.Data<>("Point " + (i + 1), data.get(i)));
+                float value = data.get(i);
+    
+                // Filtrer les valeurs égales à 0 pour température, humidité et CO2
+                if ((selectedData.equalsIgnoreCase("température") || 
+                     selectedData.equalsIgnoreCase("humidité") || 
+                     selectedData.equalsIgnoreCase("co2")) && value == 0) {
+                    continue; // Ignorer cette valeur
+                }
+    
+                series.getData().add(new XYChart.Data<>("Point " + (i + 1), value));
             }
-
+    
             lineChart.getData().add(series);
         }
-
+    
         nomSalle.setText("Graphique : Toutes les salles");
-        allRoomsChartDisplayed = true; // On définit le flag à vrai après le rendu du graphique
+        allRoomsChartDisplayed = true;
+    
+        // Mettre à jour les données précédentes
+        previousAllRoomsData = currentAllRoomsData;
     }
+    
 
     /**
-     * Affiche un graphique en ligne pour une salle spécifique et un type de données sélectionné.
-     * Cette méthode récupère les données associées à une salle et les organise sous forme de série 
+     * Affiche un graphique en ligne pour une salle spécifique et un type de données
+     * sélectionné.
+     * Cette méthode récupère les données associées à une salle et les organise sous
+     * forme de série
      * pour un affichage sous forme de courbe dans le graphique.
-     * Si aucune donnée n'est disponible, un message approprié est affiché dans le graphique.
+     * Si aucune donnée n'est disponible, un message approprié est affiché dans le
+     * graphique.
      */
     private void showLineChart() {
         lineChart.setVisible(true);
@@ -557,18 +595,27 @@ public class DashboardViewController {
 
         for (int i = 0; i < data.size(); i++) {
             String xValue = "Point " + (i + 1);
-            if (selectedData.equalsIgnoreCase("infrared") || 
-                selectedData.equalsIgnoreCase("infrared and visible") || 
-                selectedData.equalsIgnoreCase("activity")) {
+            float value = data.get(i);
+
+            // Filtrer les points pour la température, CO2 et humidité
+            if ((selectedData.equalsIgnoreCase("température")
+                    || selectedData.equalsIgnoreCase("co2")
+                    || selectedData.equalsIgnoreCase("humidité"))
+                    && value == 0) {
+                continue; // Ignorer les points avec des valeurs égales à 0
+            }
+
+            if (selectedData.equalsIgnoreCase("infrared") ||
+                    selectedData.equalsIgnoreCase("infrared and visible") ||
+                    selectedData.equalsIgnoreCase("activity")) {
                 // Booléen : Oui/Non
-                String yValue = booleanToText(data.get(i));
+                String yValue = booleanToText(value);
                 series.getData().add(new XYChart.Data<>(xValue, yValue.equals("Oui") ? 1 : 0));
             } else {
                 // Valeur numérique
-                series.getData().add(new XYChart.Data<>(xValue, data.get(i)));
+                series.getData().add(new XYChart.Data<>(xValue, value));
             }
         }
-        
 
         lineChart.getData().clear();
         lineChart.getData().add(series);
@@ -577,8 +624,10 @@ public class DashboardViewController {
     }
 
     /**
-     * Affiche la dernière valeur mesurée pour une salle ou un panneau solaire spécifique.
-     * Cette méthode présente les données sous forme d'une jauge ou d'un texte en grand format. 
+     * Affiche la dernière valeur mesurée pour une salle ou un panneau solaire
+     * spécifique.
+     * Cette méthode présente les données sous forme d'une jauge ou d'un texte en
+     * grand format.
      * Si aucune donnée n'est disponible, un message d'erreur est affiché.
      */
     private void showLastValue() {
@@ -606,9 +655,9 @@ public class DashboardViewController {
         Float lastValue = data.get(data.size() - 1);
         String displayValue;
     
-        if (selectedData.equalsIgnoreCase("infrared") || 
-            selectedData.equalsIgnoreCase("infrared and visible") || 
-            selectedData.equalsIgnoreCase("activity")) {
+        if (selectedData.equalsIgnoreCase("infrared") ||
+                selectedData.equalsIgnoreCase("infrared and visible") ||
+                selectedData.equalsIgnoreCase("activity")) {
             // Booléen : afficher Oui/Non
             displayValue = booleanToText(lastValue);
         } else {
@@ -622,7 +671,7 @@ public class DashboardViewController {
         gaugeText.setStyle("-fx-font-size: 48px; -fx-text-fill: #ffffff;");
         gaugePane.getChildren().add(gaugeText);
         nomSalle.setText("Dernière valeur : " + selectedSpecific);
-    }   
+    }
 
     /**
      * Convertit une valeur numérique booléenne en texte.
@@ -633,12 +682,14 @@ public class DashboardViewController {
     private String booleanToText(float value) {
         return value == 1 ? "Oui" : "Non";
     }
-    
+
     /**
      * Récupère l'unité correspondant à un type de donnée spécifique.
      *
-     * @param dataType le type de donnée pour lequel récupérer l'unité (par exemple, "température", "humidité").
-     * @return l'unité correspondant au type de donnée, ou une chaîne vide si aucune unité n'est applicable.
+     * @param dataType le type de donnée pour lequel récupérer l'unité (par exemple,
+     *                 "température", "humidité").
+     * @return l'unité correspondant au type de donnée, ou une chaîne vide si aucune
+     *         unité n'est applicable.
      */
     private String getUnitForDataType(String dataType) {
         switch (dataType.toLowerCase()) {
@@ -658,14 +709,19 @@ public class DashboardViewController {
                 return ""; 
             case "pressure":
                 return "hPa";
+            case "current power": // Panneaux Solaires
+                return "W";
+            case "lifetime energy": // Panneaux Solaires
+                return "Wh";
             default:
                 return "";
         }
     }
-    
-    
 
     public void stopGraphRefreshThread() {
+        if (graphRefreshTask != null) {
+            graphRefreshTask.stop();
+        }
         if (graphRefreshThread != null) {
             graphRefreshThread.interrupt();
         }
