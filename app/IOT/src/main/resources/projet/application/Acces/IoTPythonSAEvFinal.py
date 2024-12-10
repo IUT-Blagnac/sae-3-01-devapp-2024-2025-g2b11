@@ -62,11 +62,10 @@ def filtredonneesSolaire(data):
             dictalert["PanneauSolaire"].append(di2)
         else :
             dictalert["PanneauSolaire"] = [di2]
-    else:
-        if "PanneauSolaire" in dictfreq:
-            dictfreq["PanneauSolaire"].append(di2)
-        else :
-            dictfreq["PanneauSolaire"] = [di2]
+    if "PanneauSolaire" in dictfreq:
+        dictfreq["PanneauSolaire"].append(di2)
+    else :
+        dictfreq["PanneauSolaire"] = [di2]
 
    
 
@@ -125,12 +124,12 @@ def filtredonneesCapteur(data):
         di2["jour"] = jour
         di2["heure"] = heure
         di2["room"] = salle
-    else:
+    
 
-        if salle in dictfreq["Capteurs AM"]:
-            dictfreq["Capteurs AM"][salle].append(di2)
-        else :
-            dictfreq["Capteurs AM"][salle] = [di2]
+    if salle in dictfreq["Capteurs AM"]:
+        dictfreq["Capteurs AM"][salle].append(di2)
+    else :
+        dictfreq["Capteurs AM"][salle] = [di2]
 
 #Sauvegarde les données fréquentes et les alertes dans leurs fichiers JSON respectifs.
 def sauvegarder():

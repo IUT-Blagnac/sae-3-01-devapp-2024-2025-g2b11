@@ -13,6 +13,7 @@ public class RunPythonBackground implements Runnable {
     private String args;
     private volatile boolean isRunning;
     private int exitCode; // Code de sortie du script Python
+    private Process process;
 
     public RunPythonBackground(String _args) {
         this.isRunning = true;
@@ -53,11 +54,20 @@ public class RunPythonBackground implements Runnable {
         } catch (IOException | InterruptedException e) {
             System.err.println("Erreur lors de l'exécution du script Python : " + e.getMessage());
             e.printStackTrace();
+
+        }  finally {
+            if (process != null && process.isAlive()) {
+                process.destroy(); // Nettoyer le processus en cas d'arrêt
+            }
         }
     }
 
     public void stopIt() {
         this.isRunning = false;
+        if (process != null && process.isAlive()) {
+            process.destroy(); 
+            System.out.println("Le processus Python a été interrompu.");
+        }
     }
 
     public int getExitCode() {
