@@ -9,6 +9,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import projet.application.ProjetIOT;
+import projet.application.Acces.AlertManager;
 import javafx.scene.control.Alert.AlertType;
 
 import java.net.URL;
@@ -159,6 +160,10 @@ public class AccueilViewController implements Initializable {
 
             alert.showAndWait();
         }
+    }
+    
+    public void setAlertManager(AlertManager alertManager) {
+        listViewParties.setItems(alertManager.getAlerts());
     }
 
     @Override

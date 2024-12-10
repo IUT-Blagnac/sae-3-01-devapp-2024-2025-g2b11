@@ -1,6 +1,7 @@
 package projet.application;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import projet.application.control.Dashboard;
+import projet.application.Acces.AlertManager;
 import projet.application.Acces.RunPythonBackground;
 import projet.application.view.AccueilViewController;
 import projet.application.view.ConfigDataSelectViewController;
@@ -18,11 +20,19 @@ public class ProjetIOT extends Application {
     private BorderPane root;
     private Stage primarStage;
     private int exitCodeMQTT;
+    private AlertManager alertManager;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primarStage = primaryStage;
         this.root = new BorderPane();
+
+        LocalDateTime appLaunchTime = LocalDateTime.now();
+        this.alertManager = new AlertManager(appLaunchTime);
+
+        Thread alertThread = new Thread(alertManager);
+        alertThread.setDaemon(true);
+        alertThread.start();
 
         Scene scene = new Scene(root);
         // Recupere l'icone du jeu
@@ -42,6 +52,8 @@ public class ProjetIOT extends Application {
             AccueilViewController Actrl = loader.getController();
             Actrl.setPrimaryStage(primarStage);
             Actrl.setPorjetApp(this);
+
+            Actrl.setAlertManager(this.alertManager);
 
             this.root.setCenter(vueHome);
 
@@ -82,7 +94,7 @@ public class ProjetIOT extends Application {
 
 
     public void loadDashboard() {
-        Dashboard dashboard = new Dashboard(this.primarStage, this);
+        Dashboard dashboard = new Dashboard(this.primarStage, this,this.alertManager);
         dashboard.showDashboard();
     }
 

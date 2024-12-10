@@ -14,7 +14,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import projet.application.control.Dashboard;
 import projet.application.ProjetIOT;
-import projet.application.Acces.AlertFetcher;
+import projet.application.Acces.AlertManager;
 import projet.application.Acces.GraphRefreshTask;
 
 import java.util.List;
@@ -79,7 +79,7 @@ public class DashboardViewController {
 
     private Thread graphRefreshThread;
     private GraphRefreshTask graphRefreshTask;
-    
+
     /**
      * Initialise le contexte du contrôleur.
      *
@@ -116,18 +116,10 @@ public class DashboardViewController {
         updateButtonStates();
         startGraphRefreshThread();
 
-        // Créer une instance de AlertFetcher avec le contrôleur comme argument
-        AlertFetcher alertFetcher = new AlertFetcher(this);
-
-        // Lancer la tâche en arrière-plan dans un thread séparé
-        Thread alertThread = new Thread(alertFetcher);
-        alertThread.start();
     }
 
-    public void setAlerts(List<String> alerts) {
-        // Ajouter des alertes à la ListView
-        alertListView.getItems().clear(); // Clear les anciennes alertes
-        alertListView.getItems().addAll(alerts); // Ajouter les nouvelles alertes
+    public void setAlertManager(AlertManager alertManager) {
+        alertListView.setItems(alertManager.getAlerts());
     }
 
     /**
@@ -500,69 +492,68 @@ public class DashboardViewController {
      */
     private void showAllRoomsData() {
         lineChart.setAnimated(false);
-    
+
         lineChart.setVisible(true);
         gaugePane.setVisible(false);
-    
+
         if (selectedData == null) {
             lineChart.getData().clear();
             lineChart.setTitle("Aucune donnée disponible");
             return;
         }
-    
+
         // Récupérer les données en fonction du type sélectionné
         List<String> rooms = "Salle".equalsIgnoreCase(selectedType)
                 ? Dashboard.getRoomNames()
                 : List.of("Panneaux Solaires");
-    
+
         // Préparer une map pour stocker les données actuelles
         Map<String, List<Float>> currentAllRoomsData = new java.util.HashMap<>();
-    
+
         for (String room : rooms) {
             List<Float> data = Dashboard.getData(selectedType, room, selectedData);
             if (data != null && !data.isEmpty()) {
                 currentAllRoomsData.put(room, data);
             }
         }
-    
+
         // Comparer currentAllRoomsData et previousAllRoomsData
         if (previousAllRoomsData != null && previousAllRoomsData.equals(currentAllRoomsData)) {
             // Les données sont identiques à la dernière fois, on ne rafraîchit pas
             return;
         }
-    
+
         // Rafraîchir le graphique
         lineChart.getData().clear();
         for (Map.Entry<String, List<Float>> entry : currentAllRoomsData.entrySet()) {
             String room = entry.getKey();
             List<Float> data = entry.getValue();
-    
+
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName(room + " - " + selectedData);
-    
+
             for (int i = 0; i < data.size(); i++) {
                 float value = data.get(i);
-    
+
                 // Filtrer les valeurs égales à 0 pour température, humidité et CO2
-                if ((selectedData.equalsIgnoreCase("température") || 
-                     selectedData.equalsIgnoreCase("humidité") || 
-                     selectedData.equalsIgnoreCase("co2")) && value == 0) {
+                if ((selectedData.equalsIgnoreCase("température") ||
+                        selectedData.equalsIgnoreCase("humidité") ||
+                        selectedData.equalsIgnoreCase("co2")) && value == 0) {
                     continue; // Ignorer cette valeur
                 }
-    
+
                 series.getData().add(new XYChart.Data<>("Point " + (i + 1), value));
             }
-    
+
             lineChart.getData().add(series);
         }
-    
+
         nomSalle.setText("Graphique : Toutes les salles");
         allRoomsChartDisplayed = true;
-    
+
         // Mettre à jour les données précédentes
         previousAllRoomsData = currentAllRoomsData;
     }
-    
 
     /**
      * Affiche un graphique en ligne pour une salle spécifique et un type de données
@@ -633,7 +624,7 @@ public class DashboardViewController {
     private void showLastValue() {
         lineChart.setVisible(false);
         gaugePane.setVisible(true);
-    
+
         if (selectedSpecific == null || selectedData == null) {
             gaugePane.getChildren().clear();
             Label noDataLabel = new Label("Aucune donnée disponible");
@@ -641,9 +632,9 @@ public class DashboardViewController {
             gaugePane.getChildren().add(noDataLabel);
             return;
         }
-    
+
         List<Float> data = Dashboard.getData(selectedType, selectedSpecific, selectedData);
-    
+
         if (data == null || data.isEmpty()) {
             gaugePane.getChildren().clear();
             Label noDataLabel = new Label("Aucune donnée disponible pour " + selectedSpecific);
@@ -651,10 +642,10 @@ public class DashboardViewController {
             gaugePane.getChildren().add(noDataLabel);
             return;
         }
-    
+
         Float lastValue = data.get(data.size() - 1);
         String displayValue;
-    
+
         if (selectedData.equalsIgnoreCase("infrared") ||
                 selectedData.equalsIgnoreCase("infrared and visible") ||
                 selectedData.equalsIgnoreCase("activity")) {
@@ -665,7 +656,7 @@ public class DashboardViewController {
             String unit = getUnitForDataType(selectedData);
             displayValue = String.format("%.2f %s", lastValue, unit);
         }
-    
+
         gaugePane.getChildren().clear();
         Label gaugeText = new Label(displayValue);
         gaugeText.setStyle("-fx-font-size: 48px; -fx-text-fill: #ffffff;");
@@ -706,7 +697,7 @@ public class DashboardViewController {
             case "infrared":
             case "infrared and visible":
             case "activity":
-                return ""; 
+                return "";
             case "pressure":
                 return "hPa";
             case "current power": // Panneaux Solaires
