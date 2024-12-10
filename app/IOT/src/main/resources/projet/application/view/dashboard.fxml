@@ -124,7 +124,7 @@
         <URL value="@../style/style.css" />
     </stylesheets>
     <left>
-        <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 10; -fx-background-color: #53728D;" BorderPane.alignment="CENTER" />
+        <ListView fx:id="alertListView" prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 10; -fx-background-color: #53728D;" BorderPane.alignment="CENTER" />
     </left>
 
 </BorderPane>

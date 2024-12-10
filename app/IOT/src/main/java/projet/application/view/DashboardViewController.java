@@ -7,12 +7,15 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import projet.application.control.Dashboard;
 import projet.application.ProjetIOT;
+import projet.application.Acces.AlertFetcher;
+
 
 import java.util.List;
 /**
@@ -52,6 +55,9 @@ public class DashboardViewController {
     @FXML
     private MenuButton allOrSpecificMenuButton; 
 
+    @FXML
+    private ListView<String> alertListView; 
+
     private static final List<String> ROOM_DATA_TYPES = List.of(
             "Température", "Humidité", "CO2", "TVOC", "Activity",
             "Illumination", "Infrared", "Infrared_and_visible", "Pressure");
@@ -68,6 +74,8 @@ public class DashboardViewController {
     private String allOrSpecificChoice = "Toutes les salles";
 
     private Thread graphRefreshThread;
+
+    
 
     /**
      * Initialise le contexte du contrôleur.
@@ -103,6 +111,19 @@ public class DashboardViewController {
         initializeChartTypeMenu();
         updateButtonStates();
         startGraphRefreshThread();
+        
+        // Créer une instance de AlertFetcher avec le contrôleur comme argument
+        AlertFetcher alertFetcher = new AlertFetcher(this);
+        
+        // Lancer la tâche en arrière-plan dans un thread séparé
+        Thread alertThread = new Thread(alertFetcher);
+        alertThread.start();
+    }
+
+    public void setAlerts(List<String> alerts) {
+        // Ajouter des alertes à la ListView
+        alertListView.getItems().clear();  // Clear les anciennes alertes
+        alertListView.getItems().addAll(alerts);  // Ajouter les nouvelles alertes
     }
 
     /**

@@ -231,4 +231,49 @@ public class Reader {
         }
     }
 
+    public static List<String> getAlerts() {
+        List<String> alerts = new ArrayList<>();
+
+        try {
+            // Charger les données et alertes
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
+
+            GestionData jsonData = objectMapper.readValue(new File("donneeJSON.json"), GestionData.class);
+            GestionAlert jsonDataAlert = objectMapper.readValue(new File("alertJSON.json"), GestionAlert.class);
+
+            Map<String, List<Capteur>> CO2capteursAM = jsonDataAlert.getCapteursAMbyAlert("co2Alert");
+            Map<String, List<Capteur>> tempcapteursAM = jsonDataAlert.getCapteursAMbyAlert("temperatureAlert");
+            Map<String, List<Capteur>> humcapteursAM = jsonDataAlert.getCapteursAMbyAlert("humiditeAlert");
+
+            // Collecter les alertes
+            StringBuilder alertMessage = new StringBuilder();
+
+            // Alertes CO2
+            for (Map.Entry<String, List<Capteur>> entry : CO2capteursAM.entrySet()) {
+                alertMessage.append("CO2 Alert in room: ").append(entry.getKey()).append("\n");
+                alerts.add(alertMessage.toString());
+            }
+
+            // Alertes Température
+            alertMessage.setLength(0); // Reset
+            for (Map.Entry<String, List<Capteur>> entry : tempcapteursAM.entrySet()) {
+                alertMessage.append("Temperature Alert in room: ").append(entry.getKey()).append("\n");
+                alerts.add(alertMessage.toString());
+            }
+
+            // Alertes Humidité
+            alertMessage.setLength(0); // Reset
+            for (Map.Entry<String, List<Capteur>> entry : humcapteursAM.entrySet()) {
+                alertMessage.append("Humidity Alert in room: ").append(entry.getKey()).append("\n");
+                alerts.add(alertMessage.toString());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return alerts;
+    }
+
 }
