@@ -1,6 +1,7 @@
 package projet.application.control;
 
 import projet.application.ProjetIOT;
+import projet.application.Acces.AlertManager;
 import projet.application.Acces.Reader;
 import projet.application.view.DashboardViewController;
 
@@ -34,7 +35,7 @@ public class Dashboard {
      *
      * En cas d'erreur lors du chargement de la vue, l'exception est imprimée dans la console.
      */
-    public Dashboard(Stage parentStage, ProjetIOT app) {
+public Dashboard(Stage parentStage, ProjetIOT app, AlertManager alertManager) {
         this.app = app;
         try {
             FXMLLoader loader = new FXMLLoader(DashboardViewController.class.getResource("dashboard.fxml"));
@@ -50,6 +51,8 @@ public class Dashboard {
 
             this.dashboardController = loader.getController();
             this.dashboardController.initContext(this.dashboardStage, this.app);
+
+            this.dashboardController.setAlertManager(alertManager);
         } catch (IOException e) {
             e.printStackTrace();
         }
