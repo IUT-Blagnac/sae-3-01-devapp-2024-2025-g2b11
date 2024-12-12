@@ -88,9 +88,11 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
 - link:doc/réunions/ODJ_06-12-2024_G2B11.pdf[Lien vers l'ODJ du 06/12/2024]
 - link:doc/réunions/CR_06_12-2024_G2B11.pdf[Lien vers le CR du 06/12/2024]
+- link:doc/réunions/ODJ_09_12-Simul8_Equipedev_2B.pdf[Lien vers l'ODJ du 09/12/2024]
+- link:doc/réunions/Compte%20Rendu%20de%20Réunion%2009_12.pdf[Lien vers le CR du 09/12/2024]
 
 
-Prochaine release le 09/12/2024
+Prochaine release le 16/12/2024
 
 == Evaluation communication
 
