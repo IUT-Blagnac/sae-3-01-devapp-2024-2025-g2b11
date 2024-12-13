@@ -79,7 +79,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 
 == Gestion de projet & Qualité
 
-- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.4[v0.0.4]
+- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.5[v0.0.5]
 - Lien vers la doc technique
 - Lien vers la doc utilisateur
 - https://github.com/orgs/IUT-Blagnac/projects/262/views/1[Lien vers le backlog du sprint]
@@ -87,10 +87,10 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/issues?q=is%3Aopen+is%3Aissue+label%3A%22User+Story%22[Lien vers le product backlog]
 - link:doc/PHP/cahier_de_recette.adoc[Lien vers le cahier de recette] 
 - link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
-- link:doc/réunions/ODJ_06-12-2024_G2B11.pdf[Lien vers l'ODJ du 06/12/2024]
-- link:doc/réunions/CR_06_12-2024_G2B11.pdf[Lien vers le CR du 06/12/2024]
-- link:doc/réunions/ODJ_09_12-Simul8_Equipedev_2B.pdf[Lien vers l'ODJ du 09/12/2024]
-- link:doc/réunions/Compte%20Rendu%20de%20Réunion%2009_12.pdf[Lien vers le CR du 09/12/2024]
+- link:doc/réunions/ODJ_06-12-2024_G2B11.pdf[Lien vers l'ODJ du 06/12/2024 (Semaine 49)] 
+- link:doc/réunions/CR_06_12-2024_G2B11.pdf[Lien vers le CR du 06/12/2024 (Semaine 49)]
+- link:doc/réunions/Sprint6_ODJ%2BCR%2BAnalyse_Equipedev_2B.pdf[Lien vers l'ODJ, le CR et l'Analyse du 09/12/2024 (Semaine 50)]
+
 
 
 Prochaine release le 16/12/2024
