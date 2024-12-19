@@ -107,6 +107,10 @@ ODJ: Pb date ! Précisez la salle.  Précisez dans le plan qui est responsable d
 note : 2,09/3
 note appel offre : 13,37/20
 
+=== retour semaine 50
+ODJ :  manque qui est responsable de chaque thème mis à l'ordre du jour. Séparer ODJ de CR. CR : préciser clairement les présents. Il manque toujours le point client et l'analyse des difficultés et réussites techniques et organisationnelles.
+note : 2/3
+
 === Voici un exemple d'évaluation :
 
 image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
