@@ -1,0 +1,25 @@
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 2%; /* Add spacing between radio buttons */
+}
+
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+.radio-container .radio-checkmark {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--radio-color, #ccc);
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.radio-container input[type="radio"]:checked + .radio-checkmark {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    border-color: var(--radio-color, #333);
+}
