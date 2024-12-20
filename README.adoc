@@ -92,7 +92,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/réunions/Sprint6_ODJ%2BCR%2BAnalyse_Equipedev_2B.pdf[Lien vers l'ODJ, le CR et l'Analyse du 09/12/2024 (Semaine 50)]
 - link:doc/r%C3%A9unions/Sprint7_ODJ_G2B11.pdf[Lien vers l'ODJ du 19/12/2024 (Semaine 51)]
 - link:doc/réunions/Sprint7_CR%2BAnalyse_G2B11.pdf[Lien vers le Compte Rendu et l'analyse du sprint 7 du 19/12/2024 (Semaine 51)]
-
+- https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/droit/Fiche%20de%20Conseils%20Juridiques%20et%20de%20S%C3%A9curit%C3%A9%20-%20Simul8.pdf[Fiche de Conseils Juridiques et de Sécurité]
 
 
 Prochaine release le 16/12/2024
