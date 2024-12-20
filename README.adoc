@@ -90,6 +90,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/réunions/ODJ_06-12-2024_G2B11.pdf[Lien vers l'ODJ du 06/12/2024 (Semaine 49)] 
 - link:doc/réunions/CR_06_12-2024_G2B11.pdf[Lien vers le CR du 06/12/2024 (Semaine 49)]
 - link:doc/réunions/Sprint6_ODJ%2BCR%2BAnalyse_Equipedev_2B.pdf[Lien vers l'ODJ, le CR et l'Analyse du 09/12/2024 (Semaine 50)]
+- link:doc/r%C3%A9unions/Sprint7_ODJ_G2B11.pdf[Lien vers l'ODJ du 19/12/2024 (Semaine 51)]
 
 
 
