@@ -21,11 +21,11 @@ Chaque test décrit les actions à effectuer, les comportements attendus et les 
 |Objectif 4+|Vérifier qu'un administrateur peut se connecter avec succès, tout en gérant les cookies de session.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Connexion_Admin.1 ^|Accéder à la page de connexion administrateur. ^|Le formulaire de connexion administrateur est affiché. ^|Aucune ^|?
-^|Connexion_Admin.2 ^|Saisir un identifiant et un mot de passe d'administrateur valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion administrateur sont valides. ^|?
-^|Connexion_Admin.3 ^|Cliquer sur le bouton "Se connecter comme admin". ^|L'administrateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides et l'utilisateur a un rôle administrateur. ^|?
-^|Connexion_Admin.4 ^|Vérifier que le rôle administrateur est actif. ^|Le système confirme les privilèges administrateurs pour l'utilisateur connecté. ^|Une session administrateur est active. ^|?
-^|Connexion_Admin.5 ^|Vérifier la session active via le cookie dans le navigateur. ^|Le cookie permet une reconnexion automatique si valide. ^|Une session est active avec les privilèges administrateurs. ^|?
+^|Connexion_Admin.1 ^|Accéder à la page de connexion. ^|Le formulaire de connexion est affiché. ^|Aucune ^|OK
+^|Connexion_Admin.2 ^|Saisir un identifiant et un mot de passe d'administrateur valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion administrateur sont valides. ^|OK
+^|Connexion_Admin.3 ^|Cliquer sur le bouton "Se connecter". ^|L'administrateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides et l'utilisateur a un rôle administrateur. ^|OK
+^|Connexion_Admin.4 ^|Vérifier que le rôle administrateur est actif. ^|Le système confirme les privilèges administrateurs pour l'utilisateur connecté. ^|Une session administrateur est active. ^|OK
+^|Connexion_Admin.5 ^|Vérifier la session active via le cookie dans le navigateur. ^|Le cookie permet une reconnexion automatique si valide. ^|Une session est active avec les privilèges administrateurs. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité pour un administrateur de se connecter au système, avec la gestion correcte des cookies pour maintenir la session active.
@@ -41,7 +41,7 @@ Ce cas de test valide la capacité pour un administrateur de se connecter au sys
 |Objectif 4+|Vérifier qu'un administrateur peut se déconnecter correctement et que la session est fermée.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Deconnexion_Admin.1 ^|Cliquer sur le bouton "Se déconnecter". ^|La session administrateur est fermée et le cookie est supprimé. ^|Une session administrateur est active. ^|?
+^|Deconnexion_Admin.1 ^|Cliquer sur le bouton "Se déconnecter". ^|La session administrateur est fermée et le cookie est supprimé. ^|Une session administrateur est active. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité pour un administrateur de se déconnecter du système, en s'assurant que la session et le cookie sont correctement supprimés.
@@ -59,9 +59,9 @@ Ce cas de test valide la capacité pour un administrateur de se déconnecter du 
 |Objectif 4+|Vérifier qu'un administrateur peut ajouter un produit dans la base de données.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Ajout_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|?
-^|Ajout_Produit.2 ^|Cliquer sur "Ajouter un produit". ^|Le formulaire d'ajout de produit est affiché. ^|Aucune ^|?
-^|Ajout_Produit.3 ^|Remplir les champs obligatoires (nom, description, prix, etc.) et valider. ^|Le nouveau produit est ajouté et apparaît dans la liste des produits, et est ajouté dans la base de données. ^|Les informations saisies sont valides. ^|?
+^|Ajout_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|OK
+^|Ajout_Produit.2 ^|Cliquer sur "Ajouter un produit". ^|Le formulaire d'ajout de produit est affiché. ^|Aucune ^|NOK
+^|Ajout_Produit.3 ^|Remplir les champs obligatoires (nom, description, prix, etc.) et valider. ^|Le nouveau produit est ajouté et apparaît dans la liste des produits, et est ajouté dans la base de données. ^|Les informations saisies sont valides. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide l'ajout d'un produit par l'administrateur, en s'assurant que le produit est bien enregistré dans la base de données et affiché correctement dans la liste des produits.
@@ -77,9 +77,9 @@ Ce cas de test valide l'ajout d'un produit par l'administrateur, en s'assurant q
 |Objectif 4+|Vérifier qu'un administrateur peut modifier les informations d'un produit existant.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Modification_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|?
-^|Modification_Produit.2 ^|Sélectionner un produit existant et cliquer sur "Modifier". ^|Le formulaire de modification du produit sélectionné est affiché. ^|Le produit existe dans la base de données. ^|?
-^|Modification_Produit.3 ^|Modifier les informations nécessaires et valider. ^|Les modifications sont enregistrées dans la base de données, et la liste des produits est mise à jour. ^|Les informations saisies sont valides. ^|?
+^|Modification_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|OK
+^|Modification_Produit.2 ^|Sélectionner un produit existant et cliquer sur "Modifier". ^|Le formulaire de modification du produit sélectionné est affiché. ^|Le produit existe dans la base de données. ^|OK
+^|Modification_Produit.3 ^|Modifier les informations nécessaires et valider. ^|Les modifications sont enregistrées dans la base de données, et la liste des produits est mise à jour. ^|Les informations saisies sont valides. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité de l'administrateur à modifier un produit, en vérifiant que les changements sont enregistrés correctement dans la base de données et affichés à jour dans l'interface utilisateur.
@@ -95,8 +95,8 @@ Ce cas de test valide la capacité de l'administrateur à modifier un produit, e
 |Objectif 4+|Vérifier qu'un administrateur peut supprimer un produit de la base de données.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Suppression_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|?
-^|Suppression_Produit.2 ^|Sélectionner un produit existant et cliquer sur "Supprimer". ^|Le produit est supprimé de la base de données, et il disparaît de la liste des produits. ^|Le produit existe dans la base de données. ^|?
+^|Suppression_Produit.1 ^|Accéder à la section "Gestion des produits". ^|La liste des produits existants et les options de gestion (ajout, modification, suppression) sont affichées. ^|L'administrateur est connecté. ^|OK
+^|Suppression_Produit.2 ^|Sélectionner un produit existant et cliquer sur "Supprimer". ^|Le produit est supprimé de la base de données, et il disparaît de la liste des produits. ^|Le produit existe dans la base de données. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité de l'administrateur à supprimer un produit, en vérifiant que la suppression est correctement appliquée dans la base de données et que le produit ne figure plus dans la liste.
@@ -114,7 +114,7 @@ Ce cas de test valide la capacité de l'administrateur à supprimer un produit, 
 |Objectif 4+|Vérifier qu'un administrateur peut consulter la liste des commandes existantes dans le système.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Consultation_Commande.1 ^|Accéder à la section "Consultation des commandes". ^|La liste des commandes s'affiche correctement avec toutes les informations nécessaires. ^|L'administrateur est connecté. ^|?
+^|Consultation_Commande.1 ^|Accéder à la section "Consultation des commandes". ^|La liste des commandes s'affiche correctement avec toutes les informations nécessaires. ^|L'administrateur est connecté. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à consulter les commandes disponibles dans le système.
@@ -215,8 +215,8 @@ Ce cas de test valide la capacité d'un administrateur à répondre à un avis u
 |Objectif 4+|Vérifier qu'un administrateur peut consulter la liste des utilisateurs.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Consulter_Utilisateurs.1 ^|Accéder à la section "Gestion des utilisateurs". ^|La liste complète des utilisateurs est affichée. ^|L'administrateur est connecté. ^|?
-^|Consulter_Utilisateurs.2 ^|Utiliser les options de recherche/filtrage pour trouver un utilisateur spécifique. ^|Les résultats affichent les utilisateurs correspondant aux critères de recherche. ^|Des utilisateurs existent dans le système. ^|?
+^|Consulter_Utilisateurs.1 ^|Accéder à la section "Gestion des utilisateurs". ^|La liste complète des utilisateurs est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consulter_Utilisateurs.2 ^|Utiliser les options de recherche/filtrage pour trouver un utilisateur spécifique. ^|Les résultats affichent les utilisateurs correspondant aux critères de recherche. ^|Des utilisateurs existent dans le système. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à consulter et rechercher des utilisateurs.
@@ -232,8 +232,8 @@ Ce cas de test valide la capacité d'un administrateur à consulter et recherche
 |Objectif 4+|Vérifier qu'un administrateur peut modifier les informations d'un utilisateur existant.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Modifier_Utilisateur.1 ^|Accéder à la liste des utilisateurs et sélectionner un utilisateur existant. ^|Les informations de l'utilisateur sélectionné sont affichées dans un formulaire de modification. ^|L'utilisateur existe dans la base de données. ^|?
-^|Modifier_Utilisateur.2 ^|Modifier les informations (nom, email, rôle, etc.) et valider. ^|Les modifications sont enregistrées dans la base de données, et la liste des utilisateurs est mise à jour. ^|Les informations saisies sont valides. ^|?
+^|Modifier_Utilisateur.1 ^|Accéder à la liste des utilisateurs et sélectionner un utilisateur existant. ^|Les informations de l'utilisateur sélectionné sont affichées dans un formulaire de modification. ^|L'utilisateur existe dans la base de données. ^|OK
+^|Modifier_Utilisateur.2 ^|Modifier les informations (nom, email, rôle, etc.) et valider. ^|Les modifications sont enregistrées dans la base de données, et la liste des utilisateurs est mise à jour. ^|Les informations saisies sont valides. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à modifier les informations des utilisateurs.
@@ -249,8 +249,8 @@ Ce cas de test valide la capacité d'un administrateur à modifier les informati
 |Objectif 4+|Vérifier qu'un administrateur peut supprimer un utilisateur.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Suppression_Utilisateur.1 ^|Accéder à la liste des utilisateurs et sélectionner un utilisateur à supprimer. ^|L'utilisateur est sélectionné pour suppression. ^|L'utilisateur existe dans la base de données. ^|?
-^|Suppression_Utilisateur.2 ^|Confirmer la suppression. ^|L'utilisateur est supprimé de la base de données et n'apparaît plus dans la liste. ^|Un utilisateur valide est sélectionné. ^|?
+^|Suppression_Utilisateur.1 ^|Accéder à la liste des utilisateurs et sélectionner un utilisateur à supprimer. ^|L'utilisateur est sélectionné pour suppression. ^|L'utilisateur existe dans la base de données. ^|OK
+^|Suppression_Utilisateur.2 ^|Confirmer la suppression. ^|L'utilisateur est supprimé de la base de données et n'apparaît plus dans la liste. ^|Un utilisateur valide est sélectionné. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à supprimer un utilisateur du système.
@@ -266,9 +266,9 @@ Ce cas de test valide la capacité d'un administrateur à supprimer un utilisate
 |Objectif 4+|Vérifier qu'un administrateur peut ajouter une nouvelle catégorie.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Creation_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|?
-^|Creation_Categorie.2 ^|Cliquer sur "Créer une catégorie". ^|Le formulaire d'ajout de catégorie est affiché. ^|Aucune ^|?
-^|Creation_Categorie.3 ^|Remplir les informations nécessaires et valider. ^|La nouvelle catégorie est ajoutée au système et apparaît dans la liste. ^|Les informations saisies sont valides. ^|?
+^|Creation_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
+^|Creation_Categorie.2 ^|Cliquer sur "Créer une catégorie". ^|Le formulaire d'ajout de catégorie est affiché. ^|Aucune ^|OK
+^|Creation_Categorie.3 ^|Remplir les informations nécessaires et valider. ^|La nouvelle catégorie est ajoutée au système et apparaît dans la liste. ^|Les informations saisies sont valides. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à créer une catégorie dans le système.
@@ -282,9 +282,9 @@ Ce cas de test valide la capacité d'un administrateur à créer une catégorie 
 |Objectif 4+|Vérifier qu'un administrateur peut modifier une catégorie existante.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Modification_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|?
-^|Modification_Categorie.2 ^|Sélectionner une catégorie existante et cliquer sur "Modifier". ^|Le formulaire de modification de catégorie est affiché. ^|Une catégorie existe dans le système. ^|?
-^|Modification_Categorie.3 ^|Modifier les informations nécessaires et valider. ^|Les modifications sont enregistrées et apparaissent dans la liste. ^|Les informations modifiées sont valides. ^|?
+^|Modification_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
+^|Modification_Categorie.2 ^|Sélectionner une catégorie existante et cliquer sur "Modifier". ^|Le formulaire de modification de catégorie est affiché. ^|Une catégorie existe dans le système. ^|OK
+^|Modification_Categorie.3 ^|Modifier les informations nécessaires et valider. ^|Les modifications sont enregistrées et apparaissent dans la liste. ^|Les informations modifiées sont valides. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à modifier une catégorie existante dans le système.
@@ -298,9 +298,9 @@ Ce cas de test valide la capacité d'un administrateur à modifier une catégori
 |Objectif 4+|Vérifier qu'un administrateur peut supprimer une catégorie existante.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Suppression_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|?
-^|Suppression_Categorie.2 ^|Sélectionner une catégorie et cliquer sur "Supprimer". ^|Une boîte de confirmation est affichée. ^|Une catégorie existe dans le système. ^|?
-^|Suppression_Categorie.3 ^|Confirmer la suppression. ^|La catégorie est supprimée du système et ne figure plus dans la liste. ^|La confirmation est validée. ^|?
+^|Suppression_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
+^|Suppression_Categorie.2 ^|Sélectionner une catégorie et cliquer sur "Supprimer". ^|Une boîte de confirmation est affichée. ^|Une catégorie existe dans le système. ^|OK
+^|Suppression_Categorie.3 ^|Confirmer la suppression. ^|La catégorie est supprimée du système et ne figure plus dans la liste. ^|La confirmation est validée. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à supprimer une catégorie dans le système.
@@ -316,9 +316,9 @@ Ce cas de test valide la capacité d'un administrateur à supprimer une catégor
 |Objectif 4+|Vérifier qu'un administrateur peut consulter l'historique des ventes par produit.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Consultation_Ventes_Produit.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|?
-^|Consultation_Ventes_Produit.2 ^|Sélectionner l'option "Consulter les ventes par produit". ^|La liste des produits avec leurs statistiques de vente est affichée. ^|Des ventes de produits existent dans le système. ^|?
-^|Consultation_Ventes_Produit.3 ^|Rechercher un produit spécifique ou filtrer les résultats. ^|Les résultats sont mis à jour selon les critères de recherche ou de filtre. ^|Le critère de recherche ou de filtre est valide. ^|?
+^|Consultation_Ventes_Produit.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consultation_Ventes_Produit.2 ^|Sélectionner l'option "Consulter les ventes par produit". ^|La liste des produits avec leurs statistiques de vente est affichée. ^|Des ventes de produits existent dans le système. ^|OK
+^|Consultation_Ventes_Produit.3 ^|Rechercher un produit spécifique ou filtrer les résultats. ^|Les résultats sont mis à jour selon les critères de recherche ou de filtre. ^|Le critère de recherche ou de filtre est valide. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à visualiser les ventes classées par produit.
@@ -332,9 +332,9 @@ Ce cas de test valide la capacité d'un administrateur à visualiser les ventes 
 |Objectif 4+|Vérifier qu'un administrateur peut consulter l'historique des ventes par catégorie.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Consultation_Ventes_Categorie.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|?
-^|Consultation_Ventes_Categorie.2 ^|Sélectionner l'option "Consulter les ventes par catégorie". ^|La liste des catégories avec leurs statistiques de vente est affichée. ^|Des ventes enregistrées existent dans le système. ^|?
-^|Consultation_Ventes_Categorie.3 ^|Rechercher une catégorie spécifique ou filtrer les résultats. ^|Les résultats sont mis à jour selon les critères de recherche ou de filtre. ^|Le critère de recherche ou de filtre est valide. ^|?
+^|Consultation_Ventes_Categorie.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consultation_Ventes_Categorie.2 ^|Sélectionner l'option "Consulter les ventes par catégorie". ^|La liste des catégories avec leurs statistiques de vente est affichée. ^|Des ventes enregistrées existent dans le système. ^|OK
+^|Consultation_Ventes_Categorie.3 ^|Rechercher une catégorie spécifique ou filtrer les résultats. ^|Les résultats sont mis à jour selon les critères de recherche ou de filtre. ^|Le critère de recherche ou de filtre est valide. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à visualiser les ventes classées par catégorie.
@@ -348,9 +348,9 @@ Ce cas de test valide la capacité d'un administrateur à visualiser les ventes 
 |Objectif 4+|Vérifier qu'un administrateur peut exporter les données des ventes sous forme de fichier.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Exportation_Ventes.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|?
-^|Exportation_Ventes.2 ^|Cliquer sur "Exporter les données des ventes". ^|Une boîte de dialogue pour choisir le format d'export (CSV, Excel, etc.) est affichée. ^|Des ventes enregistrées existent dans le système. ^|?
-^|Exportation_Ventes.3 ^|Sélectionner le format d'export et valider. ^|Le fichier contenant les données des ventes est téléchargé. ^|Un format valide est choisi. ^|?
+^|Exportation_Ventes.1 ^|Accéder à la section "Gestion des ventes". ^|La liste des options de consultation est affichée. ^|L'administrateur est connecté. ^|OK
+^|Exportation_Ventes.2 ^|Cliquer sur "Exporter les données des ventes". ^|Une boîte de dialogue pour choisir le format d'export (CSV, Excel, etc.) est affichée. ^|Des ventes enregistrées existent dans le système. ^|OK
+^|Exportation_Ventes.3 ^|Sélectionner le format d'export et valider. ^|Le fichier contenant les données des ventes est téléchargé. ^|Un format valide est choisi. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à exporter les données des ventes pour une analyse externe.
@@ -366,8 +366,8 @@ Ce cas de test valide la capacité d'un administrateur à exporter les données 
 |Objectif 4+|Vérifier qu'un administrateur peut consulter les points de fidélité attribués à un utilisateur.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Consultation_Points.1 ^|Accéder à la section "Programme de fidélité". ^|La liste des utilisateurs avec leurs points de fidélité est affichée. ^|L'administrateur est connecté. ^|?
-^|Consultation_Points.2 ^|Sélectionner un utilisateur. ^|Les détails des points de fidélité de l'utilisateur sont affichés. ^|L'utilisateur a des points de fidélité attribués. ^|?
+^|Consultation_Points.1 ^|Accéder à la section "Programme de fidélité". ^|La liste des utilisateurs avec leurs points de fidélité est affichée. ^|L'administrateur est connecté. ^|OK
+^|Consultation_Points.2 ^|Sélectionner un utilisateur. ^|Les détails des points de fidélité de l'utilisateur sont affichés. ^|L'utilisateur a des points de fidélité attribués. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à consulter les points de fidélité d'un utilisateur spécifique.
@@ -381,9 +381,9 @@ Ce cas de test valide la capacité d'un administrateur à consulter les points d
 |Objectif 4+|Vérifier qu'un administrateur peut modifier les points de fidélité d'un utilisateur dans le système.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Modification_Points.1 ^|Accéder à la section "Programme de fidélité". ^|La liste des utilisateurs avec leurs points de fidélité est affichée. ^|L'administrateur est connecté. ^|?
-^|Modification_Points.2 ^|Sélectionner un utilisateur et cliquer sur "Modifier les points". ^|Le formulaire de modification des points de l'utilisateur est affiché. ^|L'utilisateur a des points de fidélité attribués. ^|?
-^|Modification_Points.3 ^|Saisir une nouvelle valeur de points et valider. ^|Les points de l'utilisateur sont mis à jour et enregistrés dans le système. ^|Les informations saisies sont valides. ^|?
+^|Modification_Points.1 ^|Accéder à la section "Programme de fidélité". ^|La liste des utilisateurs avec leurs points de fidélité est affichée. ^|L'administrateur est connecté. ^|OK
+^|Modification_Points.2 ^|Sélectionner un utilisateur et cliquer sur "Modifier les points". ^|Le formulaire de modification des points de l'utilisateur est affiché. ^|L'utilisateur a des points de fidélité attribués. ^|OK
+^|Modification_Points.3 ^|Saisir une nouvelle valeur de points et valider. ^|Les points de l'utilisateur sont mis à jour et enregistrés dans le système. ^|Les informations saisies sont valides. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un administrateur à modifier les points de fidélité d'un utilisateur dans le système.
@@ -401,11 +401,11 @@ Ce cas de test valide la capacité d'un administrateur à modifier les points de
 |Objectif 4+|Vérifier qu'un nouvel utilisateur peut s'inscrire avec succès.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Inscription.1 ^|Accéder à la page d'inscription. ^|La page du formulaire d'inscription s'affiche correctement. ^|Aucune ^|?
-^|Inscription.2 ^|Remplir le formulaire d'inscription avec des informations valides (nom, email, mot de passe, etc.). ^|Les informations saisies sont acceptées et le bouton "Valider" devient actif. ^|Aucune ^|?
-^|Inscription.3 ^|Cliquer sur le bouton "Valider les informations". ^|Les informations sont vérifiées et validées par le système. ^|Les données fournies sont valides. ^|?
-^|Inscription.4 ^|Créer un compte utilisateur. ^|Le compte est créé avec succès dans le système. ^|Les informations sont valides et non dupliquées. ^|?
-^|Inscription.5 ^|Envoyer un email de confirmation. ^|Un email de confirmation est envoyé à l'adresse email fournie. ^|L'adresse email est valide et accessible. ^|?
+^|Inscription.1 ^|Accéder à la page d'inscription. ^|La page du formulaire d'inscription s'affiche correctement. ^|Aucune ^|OK
+^|Inscription.2 ^|Remplir le formulaire d'inscription avec des informations valides (nom, email, mot de passe, etc.). ^|Les informations saisies sont acceptées et le bouton "Valider" devient actif. ^|Aucune ^|OK
+^|Inscription.3 ^|Cliquer sur le bouton "Valider les informations". ^|Les informations sont vérifiées et validées par le système. ^|Les données fournies sont valides. ^|OK
+^|Inscription.4 ^|Créer un compte utilisateur. ^|Le compte est créé avec succès dans le système. ^|Les informations sont valides et non dupliquées. ^|OK
+^|Inscription.5 ^|Envoyer un email de confirmation. ^|Un email de confirmation est envoyé à l'adresse email fournie. ^|L'adresse email est valide et accessible. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la procédure complète d'inscription pour un nouvel utilisateur, y compris la création de compte et l'envoi d'un email de confirmation.
@@ -421,10 +421,10 @@ Ce cas de test valide la procédure complète d'inscription pour un nouvel utili
 |Objectif 4+|Vérifier que l'utilisateur peut se connecter et se déconnecter avec succès.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Connexion.1 ^|Accéder à la page de connexion. ^|Le formulaire de connexion est affiché. ^|Aucune ^|?
-^|Connexion.2 ^|Saisir un identifiant et un mot de passe valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion sont valides. ^|?
-^|Connexion.3 ^|Cliquer sur le bouton "Se connecter". ^|L'utilisateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides. ^|?
-^|Deconnexion.1 ^|Cliquer sur le bouton "Se déconnecter". ^|La session est fermée et le cookie est supprimé. ^|Une session utilisateur est active. ^|?
+^|Connexion.1 ^|Accéder à la page de connexion. ^|Le formulaire de connexion est affiché. ^|Aucune ^|OK
+^|Connexion.2 ^|Saisir un identifiant et un mot de passe valides. ^|Les informations saisies sont validées sans erreur. ^|Les informations de connexion sont valides. ^|OK
+^|Connexion.3 ^|Cliquer sur le bouton "Se connecter". ^|L'utilisateur est connecté, et un cookie valide est créé ou rafraîchi. ^|Les identifiants sont valides. ^|OK
+^|Deconnexion.1 ^|Cliquer sur le bouton "Se déconnecter". ^|La session est fermée et le cookie est supprimé. ^|Une session utilisateur est active. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un utilisateur à se connecter et se déconnecter du système. Les cookies sont gérés correctement pour maintenir ou supprimer la session utilisateur.
@@ -441,9 +441,9 @@ Ce cas de test valide la capacité d'un utilisateur à se connecter et se décon
 |Objectif 4+|Vérifier qu'un utilisateur peut ajouter un produit au panier avec succès.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Ajout_Panier.1 ^|Accéder à la page d'un produit. ^|Les détails du produit sélectionné sont affichés. ^|L'utilisateur est connecté ou non. ^|?
-^|Ajout_Panier.2 ^|Cliquer sur le bouton "Ajouter au panier". ^|Le produit est ajouté au panier avec succès. ^|Le produit est en stock et l'utilisateur est connecté ^|?
-^|Ajout_Panier.3 ^|Afficher la confirmation d'ajout. ^|Un message de confirmation est affiché, indiquant que le produit a été ajouté au panier. ^|Aucune ^|?
+^|Ajout_Panier.1 ^|Accéder à la page d'un produit. ^|Les détails du produit sélectionné sont affichés. ^|L'utilisateur est connecté ou non. ^|OK
+^|Ajout_Panier.2 ^|Cliquer sur le bouton "Ajouter au panier". ^|Le produit est ajouté au panier avec succès. ^|Le produit est en stock et l'utilisateur est connecté ^|OK
+^|Ajout_Panier.3 ^|Afficher la confirmation d'ajout. ^|Un message de confirmation est affiché, indiquant que le produit a été ajouté au panier. ^|Aucune ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité d'un utilisateur à ajouter des produits au panier et à recevoir une confirmation claire et visible.
@@ -458,7 +458,7 @@ Ce cas de test valide la capacité d'un utilisateur à ajouter des produits au p
 |Objectif 4+|Vérifier qu'un utilisateur peut consulter le contenu de son panier.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Panier_Affichage.1 ^|Accéder à la section "Mon Panier". ^|Le contenu actuel du panier est affiché avec les produits et leurs détails (nom, quantité, prix). ^|L'utilisateur a des produits dans son panier. ^|?
+^|Panier_Affichage.1 ^|Accéder à la section "Mon Panier". ^|Le contenu actuel du panier est affiché avec les produits et leurs détails (nom, quantité, prix). ^|L'utilisateur a des produits dans son panier. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide que le contenu du panier est correctement affiché pour l'utilisateur.
@@ -474,8 +474,8 @@ Ce cas de test valide que le contenu du panier est correctement affiché pour l'
 |Objectif 4+|Vérifier qu’un utilisateur peut modifier la quantité d’un produit déjà présent dans le panier.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Modifier_Quantité.1 ^|Accéder à la section "Mon Panier". ^|Le panier affiche tous les produits présents avec leurs quantités actuelles. ^|L’utilisateur a des produits dans son panier. ^|?
-^|Modifier_Quantité.2 ^|Cliquer sur le champ de quantité d’un produit et entrer une nouvelle valeur. ^|La quantité est mise à jour et le total est recalculé automatiquement. ^|Le produit est en stock pour la quantité demandée. ^|?
+^|Modifier_Quantité.1 ^|Accéder à la section "Mon Panier". ^|Le panier affiche tous les produits présents avec leurs quantités actuelles. ^|L’utilisateur a des produits dans son panier. ^|OK
+^|Modifier_Quantité.2 ^|Cliquer sur le champ de quantité d’un produit et entrer une nouvelle valeur. ^|La quantité est mise à jour et le total est recalculé automatiquement. ^|Le produit est en stock pour la quantité demandée. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide que la modification des quantités est possible et que le total du panier est correctement mis à jour.
@@ -490,8 +490,8 @@ Ce cas de test valide que la modification des quantités est possible et que le 
 |Objectif 4+|Vérifier qu'un utilisateur peut supprimer un produit de son panier.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Supprimer_Produit.1 ^|Accéder à la section "Mon Panier". ^|Le panier affiche tous les produits présents avec leurs détails. ^|L'utilisateur a des produits dans son panier. ^|?
-^|Supprimer_Produit.2 ^|Cliquer sur le bouton "Supprimer" d'un produit. ^|Le produit est retiré du panier et le total est recalculé automatiquement. ^|Le produit est déjà ajouté au panier. ^|?
+^|Supprimer_Produit.1 ^|Accéder à la section "Mon Panier". ^|Le panier affiche tous les produits présents avec leurs détails. ^|L'utilisateur a des produits dans son panier. ^|OK
+^|Supprimer_Produit.2 ^|Cliquer sur le bouton "Supprimer" d'un produit. ^|Le produit est retiré du panier et le total est recalculé automatiquement. ^|Le produit est déjà ajouté au panier. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la suppression d'un produit du panier et la mise à jour correcte des totaux.
@@ -507,7 +507,7 @@ Ce cas de test valide la suppression d'un produit du panier et la mise à jour c
 |Objectif 4+|Vérifier qu'un utilisateur peut valider son panier pour passer à l'étape de paiement.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Validation_Panier.1 ^|Cliquer sur le bouton "Valider le panier". ^|Le système redirige vers la page de paiement ou de confirmation de commande. ^|Le panier contient au moins un produit. ^|?
+^|Validation_Panier.1 ^|Cliquer sur le bouton "Valider le panier". ^|Le système redirige vers la page de paiement ou de confirmation de commande. ^|Le panier contient au moins un produit. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide que la transition entre le panier et l'étape de paiement fonctionne correctement.
@@ -523,8 +523,8 @@ Ce cas de test valide que la transition entre le panier et l'étape de paiement 
 |Objectif 4+|Vérifier qu'un utilisateur peut consulter les détails d'un produit.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Consultation_Produit.1 ^|Accéder à la page d'accueil ou effectuer une recherche. ^|La liste des produits disponibles est affichée. ^|L'utilisateur est connecté ou non connecté. ^|?
-^|Consultation_Produit.2 ^|Cliquer sur un produit spécifique. ^|Les détails du produit sélectionné (prix, description, photos, avis, etc.) sont affichés. ^|Le produit sélectionné existe dans la base de données. ^|?
+^|Consultation_Produit.1 ^|Accéder à la page d'accueil ou effectuer une recherche. ^|La liste des produits disponibles est affichée. ^|L'utilisateur est connecté ou non connecté. ^|OK
+^|Consultation_Produit.2 ^|Cliquer sur un produit spécifique. ^|Les détails du produit sélectionné (prix, description, photos, avis, etc.) sont affichés. ^|Le produit sélectionné existe dans la base de données. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité de base d'un utilisateur à visualiser les détails d'un produit spécifique.
@@ -538,10 +538,10 @@ Ce cas de test valide la capacité de base d'un utilisateur à visualiser les d�
 |Objectif 4+|Vérifier que les informations associées à un produit sont correctement affichées.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Informations_Produit.1 ^|Accéder à un produit spécifique depuis la liste ou la recherche. ^|Les informations principales (nom, prix, description) sont affichées correctement. ^|Le produit possède des informations enregistrées. ^|?
-^|Informations_Produit.2 ^|Afficher les photos du produit. ^|Les photos du produit sont affichées en haute résolution. ^|Le produit dispose d'images associées. ^|?
-^|Informations_Produit.3 ^|Afficher les avis et notes. ^|Les avis et notes des utilisateurs sont visibles et lisibles. ^|Des avis ont été enregistrés pour ce produit. ^|?
-^|Informations_Produit.4 ^|Vérifier le stock et les options de regroupement. ^|Les informations de stock et de regroupement (variantes, couleurs, tailles) sont affichées. ^|Le produit possède des options enregistrées. ^|?
+^|Informations_Produit.1 ^|Accéder à un produit spécifique depuis la liste ou la recherche. ^|Les informations principales (nom, prix, description) sont affichées correctement. ^|Le produit possède des informations enregistrées. ^|OK
+^|Informations_Produit.2 ^|Afficher les photos du produit. ^|Les photos du produit sont affichées en haute résolution. ^|Le produit dispose d'images associées. ^|OK
+^|Informations_Produit.3 ^|Afficher les avis et notes. ^|Les avis et notes des utilisateurs sont visibles et lisibles. ^|Des avis ont été enregistrés pour ce produit. ^|OK
+^|Informations_Produit.4 ^|Vérifier le stock et les options de regroupement. ^|Les informations de stock et de regroupement (variantes, couleurs, tailles) sont affichées. ^|Le produit possède des options enregistrées. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test vérifie que toutes les informations associées à un produit sont visibles, correctes et complètes pour l'utilisateur.
@@ -558,9 +558,9 @@ Ce cas de test vérifie que toutes les informations associées à un produit son
 |Objectif 4+|Vérifier qu'un utilisateur peut afficher, filtrer, et voir les détails d'un produit.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Recherche.1 ^|Afficher la liste des produits. ^|Une liste complète des produits disponibles est affichée. ^|Aucun filtre ou tri n'est appliqué. ^|?
-^|Recherche.2 ^|Appliquer un filtre (ex : catégorie, marque). ^|La liste est filtrée selon les critères sélectionnés. ^|Des produits correspondent au filtre appliqué. ^|?
-^|Recherche.3 ^|Cliquer sur un produit dans la liste. ^|Les détails complets du produit sélectionné sont affichés. ^|Le produit sélectionné est disponible. ^|?
+^|Recherche.1 ^|Afficher la liste des produits. ^|Une liste complète des produits disponibles est affichée. ^|Aucun filtre ou tri n'est appliqué. ^|OK
+^|Recherche.2 ^|Appliquer un filtre (ex : catégorie, marque). ^|La liste est filtrée selon les critères sélectionnés. ^|Des produits correspondent au filtre appliqué. ^|OK
+^|Recherche.3 ^|Cliquer sur un produit dans la liste. ^|Les détails complets du produit sélectionné sont affichés. ^|Le produit sélectionné est disponible. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité de l'utilisateur à rechercher et filtrer des produits, ainsi qu'à consulter leurs détails.
@@ -576,8 +576,8 @@ Ce cas de test valide la capacité de l'utilisateur à rechercher et filtrer des
 |Objectif 4+|Vérifier qu'un utilisateur peut rechercher des produits via des mots-clés ou une catégorie spécifique.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Catégorie.1 ^|Entrer des mots-clés dans la barre de recherche. ^|Le système affiche les résultats correspondant aux mots-clés saisis. ^|Des produits existent correspondant aux mots-clés saisis. ^|?
-^|Catégorie.2 ^|Sélectionner une catégorie dans le menu déroulant. ^|Le système affiche uniquement les produits liés à cette catégorie. ^|La catégorie sélectionnée contient des produits. ^|?
+^|Catégorie.1 ^|Entrer des mots-clés dans la barre de recherche. ^|Le système affiche les résultats correspondant aux mots-clés saisis. ^|Des produits existent correspondant aux mots-clés saisis. ^|OK
+^|Catégorie.2 ^|Sélectionner une catégorie dans le menu déroulant. ^|Le système affiche uniquement les produits liés à cette catégorie. ^|La catégorie sélectionnée contient des produits. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test vérifie la recherche basée sur des mots-clés et des catégories pour garantir que l'utilisateur peut trouver les produits recherchés efficacement.
@@ -593,9 +593,9 @@ Ce cas de test vérifie la recherche basée sur des mots-clés et des catégorie
 |Objectif 4+|Vérifier que l'utilisateur peut trier les produits par prix croissant et décroissant.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Tri_Prix.1 ^|Appliquer un tri par prix croissant. ^|Les produits sont affichés dans l'ordre croissant des prix. ^|Des produits sont listés. ^|?
-^|Tri_Prix.2 ^|Appliquer un tri par prix décroissant. ^|Les produits sont affichés dans l'ordre décroissant des prix. ^|Des produits sont listés. ^|?
-^|Tri_Prix.3 ^|Changer de critère de tri. ^|Le système met immédiatement à jour l'affichage selon le nouveau critère. ^|Des produits sont listés. ^|?
+^|Tri_Prix.1 ^|Appliquer un tri par prix croissant. ^|Les produits sont affichés dans l'ordre croissant des prix. ^|Des produits sont listés. ^|OK
+^|Tri_Prix.2 ^|Appliquer un tri par prix décroissant. ^|Les produits sont affichés dans l'ordre décroissant des prix. ^|Des produits sont listés. ^|OK
+^|Tri_Prix.3 ^|Changer de critère de tri. ^|Le système met immédiatement à jour l'affichage selon le nouveau critère. ^|Des produits sont listés. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide les fonctionnalités de tri par prix, garantissant que l'utilisateur peut facilement comparer les produits.
@@ -612,8 +612,8 @@ Ce cas de test valide les fonctionnalités de tri par prix, garantissant que l'u
 |Objectif 4+|Vérifier qu'un utilisateur peut afficher l'historique de ses commandes passées.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Historique_Commande.1 ^|Accéder à la section "Historique des commandes" depuis le profil utilisateur. ^|L'historique des commandes est affiché avec toutes les commandes passées, incluant les détails de chaque commande. ^|L'utilisateur doit être connecté et avoir des commandes passées. ^|?
-^|Historique_Commande.2 ^|Cliquer sur une commande spécifique. ^|Les détails de la commande sélectionnée (produits, prix, date, etc.) sont affichés correctement. ^|La commande sélectionnée existe dans l'historique de l'utilisateur. ^|?
+^|Historique_Commande.1 ^|Accéder à la section "Historique des commandes" depuis le profil utilisateur. ^|L'historique des commandes est affiché avec toutes les commandes passées, incluant les détails de chaque commande. ^|L'utilisateur doit être connecté et avoir des commandes passées. ^|OK
+^|Historique_Commande.2 ^|Cliquer sur une commande spécifique. ^|Les détails de la commande sélectionnée (produits, prix, date, etc.) sont affichés correctement. ^|La commande sélectionnée existe dans l'historique de l'utilisateur. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité de l'utilisateur à consulter l'historique de ses commandes passées.
@@ -627,10 +627,10 @@ Ce cas de test valide la capacité de l'utilisateur à consulter l'historique de
 |Objectif 4+|Vérifier qu'un utilisateur peut laisser un avis sur un produit et ajouter une photo à l'avis.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Ajout_Avis.1 ^|Accéder à la page de détail d'un produit acheté. ^|La page de détail du produit acheté s'affiche correctement. ^|L'utilisateur doit avoir acheté le produit. ^|?
-^|Ajout_Avis.2 ^|Cliquer sur "Laisser un avis" pour le produit sélectionné. ^|L'interface permettant de saisir un avis et d'ajouter une photo s'affiche. ^|L'utilisateur doit avoir accès à l'option d'ajout d'avis. ^|?
-^|Ajout_Avis.3 ^|Rédiger un avis et ajouter une photo. ^|L'avis est écrit, et une photo peut être téléchargée avec l'avis. ^|Le produit doit permettre l'ajout d'une photo avec l'avis. ^|?
-^|Ajout_Avis.4 ^|Soumettre l'avis avec la photo. ^|L'avis et la photo sont envoyés et associés au produit, visible pour les autres utilisateurs. ^|L'utilisateur doit avoir un produit disponible pour laisser un avis. ^|?
+^|Ajout_Avis.1 ^|Accéder à la page de détail d'un produit acheté. ^|La page de détail du produit acheté s'affiche correctement. ^|L'utilisateur doit avoir acheté le produit. ^|OK
+^|Ajout_Avis.2 ^|Cliquer sur "Laisser un avis" pour le produit sélectionné. ^|L'interface permettant de saisir un avis et d'ajouter une photo s'affiche. ^|L'utilisateur doit avoir accès à l'option d'ajout d'avis. ^|OK
+^|Ajout_Avis.3 ^|Rédiger un avis et ajouter une photo. ^|L'avis est écrit, et une photo peut être téléchargée avec l'avis. ^|Le produit doit permettre l'ajout d'une photo avec l'avis. ^|OK
+^|Ajout_Avis.4 ^|Soumettre l'avis avec la photo. ^|L'avis et la photo sont envoyés et associés au produit, visible pour les autres utilisateurs. ^|L'utilisateur doit avoir un produit disponible pour laisser un avis. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la possibilité pour un utilisateur de laisser un avis accompagné d'une photo sur un produit qu'il a acheté.
@@ -647,8 +647,8 @@ Ce cas de test valide la possibilité pour un utilisateur de laisser un avis acc
 |Objectif 4+|Vérifier qu'un utilisateur peut consulter son solde de points sans problème.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Fidélité.1 ^|Accéder à l'espace de fidélité. ^|Le solde de points actuel de l'utilisateur est affiché correctement. ^|L'utilisateur est connecté à son compte. ^|?
-^|Fidélité.2 ^|Consulter le solde de points. ^|Le système affiche avec exactitude le nombre de points disponibles. ^|Des points existent sur le compte de l'utilisateur. ^|?
+^|Fidélité.1 ^|Accéder à l'espace de fidélité. ^|Le solde de points actuel de l'utilisateur est affiché correctement. ^|L'utilisateur est connecté à son compte. ^|OK
+^|Fidélité.2 ^|Consulter le solde de points. ^|Le système affiche avec exactitude le nombre de points disponibles. ^|Des points existent sur le compte de l'utilisateur. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide que l'utilisateur peut vérifier facilement son solde de points dans l'interface de fidélité.
@@ -664,8 +664,8 @@ Ce cas de test valide que l'utilisateur peut vérifier facilement son solde de p
 |Objectif 4+|Vérifier qu'un utilisateur peut utiliser ses points de fidélité pour réduire le montant total d'une commande.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Fidélité.3 ^|Choisir d'utiliser des points pour une commande. ^|Le montant total de la commande est réduit en fonction des points utilisés. ^|L'utilisateur dispose d'un solde de points suffisant. ^|?
-^|Fidélité.4 ^|Valider la commande après utilisation des points. ^|Le solde de points est mis à jour correctement après validation de la commande. ^|Une commande valide est en cours. ^|?
+^|Fidélité.3 ^|Choisir d'utiliser des points pour une commande. ^|Le montant total de la commande est réduit en fonction des points utilisés. ^|L'utilisateur dispose d'un solde de points suffisant. ^|OK
+^|Fidélité.4 ^|Valider la commande après utilisation des points. ^|Le solde de points est mis à jour correctement après validation de la commande. ^|Une commande valide est en cours. ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide que l'utilisateur peut utiliser ses points pour bénéficier d'une réduction, et que le solde est mis à jour en conséquence.
@@ -682,9 +682,9 @@ Ce cas de test valide que l'utilisateur peut utiliser ses points pour bénéfici
 |Objectif 4+|Vérifier qu'un utilisateur peut afficher l'historique de ses consultations de produits.
 5+|
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
-^|Historique_Consultation.1 ^|Accéder à la section "Historique des consultations". ^|La liste des produits consultés s'affiche avec les détails de chaque produit (nom, date de consultation, etc.). ^|L'utilisateur a consulté des produits au préalable. ^|?
-^|Historique_Consultation.2 ^|Afficher les détails d'un produit dans l'historique. ^|Les détails du produit sélectionné s'affichent correctement. ^|Un produit est présent dans l'historique. ^|?
-^|Historique_Consultation.3 ^|Vérifier que l'historique est automatiquement mis à jour après une nouvelle consultation. ^|Les nouvelles consultations sont ajoutées à l'historique en temps réel. ^|Aucune ^|?
+^|Historique_Consultation.1 ^|Accéder à la section "Historique des consultations". ^|La liste des produits consultés s'affiche avec les détails de chaque produit (nom, date de consultation, etc.). ^|L'utilisateur a consulté des produits au préalable. ^|OK
+^|Historique_Consultation.2 ^|Afficher les détails d'un produit dans l'historique. ^|Les détails du produit sélectionné s'affichent correctement. ^|Un produit est présent dans l'historique. ^|OK
+^|Historique_Consultation.3 ^|Vérifier que l'historique est automatiquement mis à jour après une nouvelle consultation. ^|Les nouvelles consultations sont ajoutées à l'historique en temps réel. ^|Aucune ^|OK
 5+|
 5+|Commentaire :
 Ce cas de test valide la capacité du système à enregistrer et afficher l'historique des produits consultés par un utilisateur.
