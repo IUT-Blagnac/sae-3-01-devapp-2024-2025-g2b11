@@ -252,10 +252,10 @@ Ce cas de test valide la capacité d'un administrateur à ajouter une sous-caté
 ^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
 ^|Suppression_Categorie.1 ^|Accéder à la section "Gestion des catégories". ^|La liste actuelle des catégories est affichée. ^|L'administrateur est connecté. ^|OK
 ^|Suppression_Categorie.2 ^|Sélectionner une catégorie et cliquer sur "Supprimer". ^|Une boîte de confirmation est affichée. ^|Une catégorie existe dans le système. ^|OK
-^|Suppression_Categorie.3 ^|Confirmer la suppression. ^|La catégorie est supprimée du système et ne figure plus dans la liste. ^|La confirmation est validée. ^|OK
+^|Suppression_Categorie.3 ^|Confirmer la suppression, en s'assurant que la catégorie ne contient pas d'enfants ni de produits associés. ^|La catégorie est supprimée du système et ne figure plus dans la liste si elle ne contient pas d'enfants ou de produits associés. ^|La confirmation est validée et la catégorie n'a ni enfants ni produits associés. ^|OK
 5+|
 5+|Commentaire :
-Ce cas de test valide la capacité d'un administrateur à supprimer une catégorie dans le système.
+Ce cas de test valide la capacité d'un administrateur à supprimer une catégorie dans le système, sous la condition que la catégorie n'ait pas d'enfants ni de produits associés.
 |====
 
 
