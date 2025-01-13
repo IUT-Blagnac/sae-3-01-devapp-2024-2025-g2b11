@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="register-container">
+    <div class="top-left-link">
+        <a href="accueil.php" class="back-to-home">
+            ← Retourner à l'accueil
+        </a>
+    </div>
     <div class="register-box">
         <h2>Créer un compte</h2>
         <form action="TraitInscription.php" method="post">
@@ -41,8 +47,10 @@
             </div>
             -->
             <label><button type="submit" name="valider" value="valide" class="btn-register">S'inscrire</button></label>
+            <div class="form-to-login">Vous avez déjà un compte ? Connectez-vous en cliquant <a href="FormConnexion.php">ici</a></div>
         </form>
     </div>
 </div>
 
 </body>
+</html>

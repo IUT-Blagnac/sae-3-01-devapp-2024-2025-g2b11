@@ -37,7 +37,7 @@ if (isset($_POST["connec"]) && isset($_POST["login"]) && isset($_POST["mdp"])) {
 
 
             //Vérification des droits du compte
-            $adminCheck = $conn->prepare("SELECT estAdmin FROM Comptes WHERE identifiant = :login");
+            $adminCheck = $conn->prepare("SELECT estAdmin, estInactif FROM Comptes WHERE identifiant = :login");
             $adminCheck->execute(['login' => htmlentities($login)]);
 
             if ($adminCheck->rowCount() >= 1) {
@@ -45,6 +45,12 @@ if (isset($_POST["connec"]) && isset($_POST["login"]) && isset($_POST["mdp"])) {
                 if ($verif['estAdmin'] == 1) {
                     $_SESSION['Sadmin'] = true;
                 }
+            }
+
+            if ($verif['estInactif'] == 1) {
+                session_destroy();
+                header("Location: FormConnexion.php?msgErreur=Votre compte est inactif, veuillez contacter un administrateur");
+                exit();
             }
             header("Location: accueil.php");
             exit();

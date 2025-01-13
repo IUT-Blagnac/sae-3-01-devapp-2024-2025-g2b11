@@ -1,25 +1,99 @@
-.radio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Style des cercles colorés */
+.color-circle {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #fff; /* Bordure blanche par défaut */
+    margin: 2% 2%;
+    text-align: center;
     cursor: pointer;
-    margin: 2%; /* Add spacing between radio buttons */
+    transition: transform 0.2s ease-in-out;
 }
 
-.radio-container input[type="radio"] {
+.color-circle:hover {
+    transform: scale(1.2); /* Agrandit légèrement le cercle lors du survol */
+}
+
+/* Ajout de la bordure blanche autour du cercle sélectionné */
+.color-circle.selected {
+    border: 4px solid #fff; /* Bordure blanche plus épaisse pour le cercle sélectionné */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Effet d'ombre pour rendre le cercle plus visible */
+}
+
+.color-circle span {
+    visibility: hidden; /* Cache le texte du cercle */
+}
+
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card .fa-star {
+    margin-right: 4px;
+}
+
+/* Styles pour la scrollbar horizontale des avis */
+.avis-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    gap: 1rem; /* Espace entre les avis */
+    max-width: 100%; /* S'adapte à la largeur disponible */
+}
+
+.avis-container::-webkit-scrollbar {
+    height: 8px; /* Hauteur de la scrollbar */
+}
+
+.avis-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.avis-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* Style optionnel pour limiter la largeur d'affichage des cartes */
+.card {
+    flex: 0 0 auto; /* Empêche les cartes de s'étirer */
+}
+
+.product-card-img-top {
+    width: 100%;
+    height: 200px; /* Taille uniforme pour toutes les images */
+    object-fit: cover; /* Remplir la zone tout en gardant un bon ratio */
+}
+.product-card {
+    transition: transform 0.2s;
+}
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating input {
     display: none;
 }
 
-.radio-container .radio-checkmark {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--radio-color, #ccc);
-    border: 2px solid #333;
-    transition: all 0.3s ease;
+.rating label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
 }
 
-.radio-container input[type="radio"]:checked + .radio-checkmark {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
-    border-color: var(--radio-color, #333);
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+    color: gold;
 }

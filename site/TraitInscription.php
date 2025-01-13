@@ -42,7 +42,7 @@
 
         try{
             //Insertion du compte
-            $insert=$conn->prepare("INSERT INTO Comptes (nom, prenom, email, identifiant, mdp, estAdmin, numeroTelephone) VALUES (:nom, :prenom, :email, :identifiant, :mdp, false, :numeroTelephone)");
+            $insert=$conn->prepare("INSERT INTO Comptes (nom, prenom, email, identifiant, mdp, estAdmin, numeroTelephone,estInactif , pointF) VALUES (:nom, :prenom, :email, :identifiant, :mdp, false, :numeroTelephone,0,0)");
             $insert->execute(['nom'=>$nom, 'prenom'=>$prenom, 'email'=>$email, 'identifiant'=>$login, 'mdp'=>$mdp, 'numeroTelephone'=>$numero]);
 
             

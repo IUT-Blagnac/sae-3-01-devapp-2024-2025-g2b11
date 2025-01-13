@@ -1,0 +1,222 @@
+/* Conteneur principal */
+/* Personnalisation du style de la checkbox */
+.filtre-form .form-check input[type="checkbox"] {
+    appearance: none; /* Supprime l'apparence par défaut du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+    width: 18px; /* Largeur personnalisée */
+    height: 18px; /* Hauteur personnalisée */
+    border: 2px solid #000; /* Bordure noire */
+    border-radius: 4px; /* Coins arrondis */
+    position: relative; /* Nécessaire pour les pseudo-éléments */
+    cursor: pointer;
+    background-color: #fff; /* Fond blanc */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* État de la checkbox cochée */
+.filtre-form .form-check input[type="checkbox"]:checked {
+    background-color: #000; /* Fond noir lorsqu'elle est cochée */
+    border-color: #000; /* Bordure noire */
+}
+
+/* Ajout de la flèche de validation (check) en blanc sur fond noir */
+.filtre-form .form-check input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Caractère Unicode pour une coche (check) */
+    font-size: 14px; /* Taille de la flèche */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage de la coche */
+    color: white; /* Couleur de la coche */
+    font-weight: bold; /* Police plus épaisse */
+}
+
+/* Effet au survol */
+.filtre-form .form-check input[type="checkbox"]:hover {
+    background-color: #f1f1f1; /* Légère couleur de fond au survol */
+    border-color: #333; /* Bordure légèrement plus sombre au survol */
+}
+
+/* Améliorer l'apparence du label */
+.filtre-form .form-check label {
+    font-size: 14px; /* Taille de la police */
+    margin-left: 10px; /* Espacement entre la case à cocher et le texte */
+    color: #333; /* Couleur du texte */
+    cursor: pointer; /* Clic sur le label aussi */
+}
+
+.filtre-form .form-check {
+    display: flex;
+    align-items: center; /* Aligne la checkbox et le texte verticalement */
+    gap: 10px; /* Espacement entre la case à cocher et le texte */
+}
+
+
+.filtre-form {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 7px; /* Espacement uniforme entre les éléments */
+    align-items: center;
+}
+
+/* Champs de formulaire (input, select) */
+.filtre-form .form-group {
+    display: flex;
+    flex-direction: column; /* Label au-dessus du champ */
+    flex: 1 1 7%; /* Taille flexible avec minimum 200px */
+}
+
+.filtre-form select,
+.filtre-form input[type="number"] {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 42px; /* Hauteur standardisée */
+    transition: border-color 0.3s ease-in-out;
+}
+
+.filtre-form select:focus,
+.filtre-form input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Checkboxes */
+.filtre-form .form-check {
+    display: flex;
+    align-items: center; /* Aligne verticalement l'input et le label */
+    margin-bottom: 0; /* Supprime l'espacement par défaut */
+    flex: 0 0 auto; /* Ne prend pas tout l'espace disponible */
+}
+
+/* Bouton "Filtrer" */
+.filtre-form button[type="submit"] {
+    background-color: #3b3b3b;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    align-self: flex-start; /* Aligne le bouton en haut */
+    height: 42px; /* Hauteur alignée aux champs */
+}
+
+.filtre-form button[type="submit"]:hover {
+    background-color: #4b0000;
+}
+
+/* Uniformisation de tous les champs */
+.filtre-form select,
+.filtre-form input {
+    height: 42px; /* Assure une hauteur cohérente */
+}
+
+/* Responsive */
+/* Responsive pour tablettes */
+@media (max-width: 992px) {
+    .filtre-form {
+        flex-direction: row; /* Champs toujours alignés horizontalement */
+    }
+
+    .filtre-form .form-group {
+        flex: 1 1 calc(50% - 10px); /* Deux colonnes sur tablettes */
+    }
+
+    .filtre-form button[type="submit"] {
+        flex: 1 1 calc(50% - 10px); /* Le bouton prend une colonne */
+    }
+}
+
+/* Responsive pour mobiles (petits écrans) */
+@media (max-width: 768px) {
+    .filtre-form {
+        flex-direction: column; /* Empile les champs en colonne */
+    }
+
+    .filtre-form .form-group,
+    .filtre-form .form-check {
+        flex: 1 1 7%; /* Largeur complète */
+    }
+
+    .filtre-form button[type="submit"] {
+        width: 100%; /* Bouton pleine largeur */
+        margin-top: 10px; /* Espacement au-dessus du bouton */
+        align-self: stretch; /* S'étend horizontalement */
+    }
+}
+
+/* Responsive pour très petits écrans (ex. téléphones anciens) */
+/* Responsive pour tablettes */
+@media (max-width: 992px) {
+    .filtre-form .form-group {
+        flex: 1 1 calc(50% - 10px); /* Deux colonnes sur tablettes */
+    }
+
+    .filtre-form button[type="submit"] {
+        flex: 1 1 calc(50% - 10px); /* Largeur similaire aux champs */
+        align-self: stretch; /* S'étend horizontalement */
+    }
+}
+
+/* Responsive pour mobiles (petits écrans) */
+@media (max-width: 768px) {
+    .filtre-form {
+        flex-direction: column; /* Empile les champs en colonne */
+        align-items: stretch; /* Assure que tous les champs occupent la largeur complète */
+    }
+
+    .filtre-form .form-group,
+    .filtre-form .form-check {
+        flex: 1 1 7%; /* Champs et checkboxes en pleine largeur */
+        margin-bottom: 10px; /* Ajoute un espacement entre les éléments */
+    }
+
+    .filtre-form button[type="submit"] {
+        width: 100%; /* Le bouton prend toute la largeur */
+        height: auto; /* Laisse le navigateur gérer la hauteur */
+        padding: 10px; /* Taille standardisée pour les petits écrans */
+        margin-top: 10px; /* Espacement au-dessus du bouton */
+        align-self: stretch; /* S'étend pour correspondre aux autres champs */
+    }
+}
+
+/* Responsive pour très petits écrans (téléphones anciens) */
+@media (max-width: 480px) {
+    .filtre-form {
+        padding: 10px; /* Réduction des marges internes */
+        gap: 5px; /* Moins d'espacement entre les éléments */
+        align-items: stretch; /* Uniformise les largeurs des éléments */
+    }
+
+    .filtre-form .form-group,
+    .filtre-form .form-check {
+        flex: 1 1 7%; /* Un élément par ligne */
+        margin-bottom: 5px; /* Réduction des marges entre les champs */
+    }
+
+    .filtre-form .form-check {
+        justify-content: flex-start; /* Aligne les labels à gauche */
+        gap: 10px; /* Espace entre la checkbox et son label */
+    }
+
+    .filtre-form button[type="submit"] {
+        width: 100%; /* Largeur complète */
+        height: auto; /* Pas de hauteur fixe */
+        padding: 8px; /* Taille réduite pour petits écrans */
+        font-size: 12px; /* Réduction de la taille de la police */
+        margin-top: 10px; /* Ajoute de l'espacement au-dessus */
+    }
+}

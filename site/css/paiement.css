@@ -1,0 +1,304 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Boutons */
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Conteneur des cartes pour affichage horizontal */
+
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Ajout pour défilement horizontal si nécessaire */
+    padding: 10px 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Style individuel des cartes */
+.card-virtual {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 180px;
+    background: linear-gradient(135deg, #efbad3, #a254f2);
+    color: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-virtual:hover {
+    transform: translateY(-5px);
+}
+
+.card-virtual .card-number {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.card-virtual .card-expiration {
+    font-size: 0.9rem;
+}
+
+.card-virtual .card-holder {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-virtual input[type="radio"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Styles pour le bouton d’ajout de carte */
+.card-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 180px;
+    background: #f0f0f0;
+    color: #007bff;
+    border: 2px dashed #007bff;
+    border-radius: 12px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    
+}
+
+.card-add:hover {
+    background: #e6f7ff;
+    transform: translateY(-5px);
+    text-decoration: none;
+}
+
+/* PayPal option - visuel sélectionné */
+/* Conteneur pour PayPal */
+.paypal-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    width: 300px;
+    height: 180px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Effet hover */
+.paypal-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des boutons radio */
+.paypal-option input[type="radio"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform: scale(1.2); /* Taille du bouton */
+    cursor: pointer;
+}
+
+/* Style quand PayPal est sélectionné */
+.paypal-option input[type="radio"]:checked + .paypal-card {
+    border: 2px solid #28a745;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Carte PayPal */
+.paypal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.paypal-card img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.paypal-card span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.card-container {
+    display: flex;
+    gap: 20px; /* Espace entre les cartes */
+    overflow-x: auto; /* Active le défilement horizontal */
+    padding: 10px 0; /* Ajoute un peu de marge verticale */
+    max-width: 100%; /* Limite la largeur au conteneur parent */
+    scroll-behavior: smooth; /* Défilement fluide lors de l’utilisation de la scrollbar */
+}
+
+.card-container::-webkit-scrollbar {
+    height: 8px; /* Hauteur de la scrollbar */
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de la piste de la scrollbar */
+}
+
+.card-virtual, .card-add, .paypal-option {
+    flex: 0 0 auto; /* Empêche les éléments de s'étirer */
+    width: 300px; /* Largeur fixe pour les cartes */
+    height: 180px; /* Hauteur fixe pour les cartes */
+
+}
+
+
+
+
+
+/* -------------------- Media Queries -------------------- */
+
+/* Pour les tablettes (écrans entre 600px et 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container {
+        padding: 15px; /* Moins de padding sur les tablettes */
+    }
+
+    .card-container {
+        gap: 15px;
+    }
+
+    .card-virtual {
+        width: 45%; /* Utiliser 45% de la largeur de l'écran pour chaque carte */
+        height: auto; /* Laisser l'hauteur s'adapter au contenu */
+    }
+
+    .paypal-option {
+        width: 45%; /* Ajuster à 45% sur tablettes */
+        height: auto;
+    }
+
+    .card-add {
+        width: 45%; /* Même largeur pour la carte d'ajout */
+        font-size: 2rem; /* Réduire la taille de la police */
+    }
+}
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 600px) {
+    body {
+        padding: 0 10px; /* Réduire les marges sur les petits écrans */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card-container {
+        flex-direction: column; /* Disposer les cartes verticalement sur petits écrans */
+        gap: 10px; /* Réduire l'espace entre les cartes */
+    }
+
+    .card-virtual, .paypal-option, .card-add {
+        width: 100%; /* Les cartes prennent toute la largeur de l'écran */
+        max-width: 100%; /* Limite la largeur à 100% */
+    }
+
+    .paypal-card img {
+        max-width: 80px; /* Réduire la taille de l'image PayPal sur petits écrans */
+    }
+
+    .card-add {
+        font-size: 2rem; /* Ajuste la taille du texte pour le bouton "Ajouter une carte" */
+    }
+}

@@ -25,13 +25,13 @@ try {
             $idProduit = $produit['idProduit']; // Récupérer l'ID du produit
 
             // Générer un texte d'avis aléatoire (ou parfois null)
-            $texteAvis = rand(0, 1) ? $faker->realText(120) : null;
+            $texteAvis =  null;
 
             // Générer une note aléatoire entre 1 et 10
-            $note = rand(1, 10);
+            $note = rand(5, 10);
 
             // Générer une réponse uniquement si un texte d'avis existe
-            $reponse = $texteAvis ? $faker->realText(80) : null;
+            $reponse = null;
 
             // Insérer l'avis dans la base de données
             $stmtAvis = $conn->prepare("

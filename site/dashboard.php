@@ -9,45 +9,44 @@ if (!isset($_SESSION['Sadmin']) or $_SESSION["Sadmin"] != true) {
     header("location: FormConnexion.php");
     exit();
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur le Dashboard</h1>
-        <p>Vous êtes connecté en tant qu'administrateur.</p>
+    <?php require_once './includes/header.php'; ?>
+
+    <div class="dashboard-container">
+        <!-- Menu latéral -->
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="dashboard.php">Accueil</a></li>
+                    <li><a href="gestionProduits.php">Gérer les produits</a></li>
+                    <li><a href="gestionCategories.php">Gérer les catégories</a></li>
+                    <li><a href="comptes.php">Gérer les comptes</a></li>
+                    <li><a href="communicationEquipe.php">Communiquer avec l'équipe</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main class="dashboard-content">
+            <h1>Dashboard Admin</h1>
+            <section>
+                <h2>Bienvenue, Administrateur</h2>
+                <p>Utilisez le menu latéral pour naviguer entre les différentes sections du tableau de bord.</p>
+            </section>
+        </main>
     </div>
+
+    <?php include './includes/footer.php'; ?>
 </body>
 </html>
 <?php

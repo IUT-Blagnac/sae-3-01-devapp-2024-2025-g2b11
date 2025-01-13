@@ -13,7 +13,8 @@ $idCompte = $_SESSION['Suser'];
 // Requête pour récupérer les informations personnelles de l'utilisateur
 $query = "
     SELECT c.prenom, c.nom, c.email, c.numeroTelephone,
-           a.adresse, a.codePostal, a.pays
+           a.adresse, a.codePostal, a.ville, a.pays,
+           c.pointF
     FROM Comptes c
     LEFT JOIN Resider r ON c.idCompte = r.idCompte
     LEFT JOIN Adresses a ON r.idAdresse = a.idAdresse
@@ -24,20 +25,20 @@ $stmt = $conn->prepare($query);
 $stmt->execute(['idCompte' => $idCompte]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Requête pour récupérer les points de fidélité (exemple fictif)
-$query_points = "
-    SELECT SUM(nbCommandee) AS pointsFidelite
-    FROM Quantites q
-    JOIN Commandes cmd ON q.idCommande = cmd.idCommande
-    WHERE cmd.idCompte = :idCompte AND cmd.estPanier = 0
-";
+// Points de fidélité de l'utilisateur
+$pointF = $user['pointF'];
 
-$stmt_points = $conn->prepare($query_points);
-$stmt_points->execute(['idCompte' => $idCompte]);
-$result_points = $stmt_points->fetch(PDO::FETCH_ASSOC);
-$points_fidelite = $result_points['pointsFidelite'] ?? 0;
-$seuil_points = 1000; // Seuil de fidélité par défaut
-
+// Calcul des remises disponibles
+$remisesDisponibles = [];
+if ($pointF >= 20) {
+    $remisesDisponibles[] = "20 points = -5%";
+}
+if ($pointF >= 50) {
+    $remisesDisponibles[] = "50 points = -15%";
+}
+if ($pointF >= 100) {
+    $remisesDisponibles[] = "100 points = -35%";
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +48,11 @@ $seuil_points = 1000; // Seuil de fidélité par défaut
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Compte</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-content h2{
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
@@ -57,18 +63,16 @@ $seuil_points = 1000; // Seuil de fidélité par défaut
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Modifier mes informations</a></li>
-                    <li><a href="#">Historique des commandes</a></li>
-                    <li><a href="#">Offres personnalisées</a></li>
-                    <li><a href="#">Paramètres de compte</a></li>
+                    <li><a href="monCompte.php">Accueil</a></li>
+                    <li><a href="modifMesinfos.php">Modifier mes informations</a></li>
+                    <li><a href="historiqueCommandes.php">Historique des commandes</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Contenu principal -->
         <main class="dashboard-content">
-            <h1>Mon Compte</h1>
+            <h1 style="align-content: center;">Mon Compte</h1>
 
             <!-- Informations personnelles -->
             <section>
@@ -78,6 +82,7 @@ $seuil_points = 1000; // Seuil de fidélité par défaut
                 <p><strong>Email :</strong> <?= htmlspecialchars($user['email']) ?></p>
                 <p><strong>Adresse :</strong> <?= htmlspecialchars($user['adresse'] ?? 'Non définie') ?></p>
                 <p><strong>Code postal :</strong> <?= htmlspecialchars($user['codePostal'] ?? 'Non défini') ?></p>
+                <p><strong>Ville :</strong> <?= htmlspecialchars($user['ville'] ?? 'Non définie') ?></p>
                 <p><strong>Pays :</strong> <?= htmlspecialchars($user['pays'] ?? 'Non défini') ?></p>
                 <p><strong>Téléphone :</strong> <?= htmlspecialchars($user['numeroTelephone']) ?></p>
             </section>
@@ -85,8 +90,17 @@ $seuil_points = 1000; // Seuil de fidélité par défaut
             <!-- Programme de fidélité -->
             <section>
                 <h2>Programme de fidélité</h2>
-                <p><strong>Points :</strong> <?= htmlspecialchars($points_fidelite) ?> / <?= htmlspecialchars($seuil_points) ?></p>
-                <p><strong>Prochaine récompense :</strong> <?= htmlspecialchars($seuil_points - $points_fidelite) ?> points restants</p>
+                <p><strong>Points de fidélité :</strong> <?= htmlspecialchars($pointF) ?> / 100</p>
+                <h3>Remises disponibles :</h3>
+                <ul>
+                    <?php if (empty($remisesDisponibles)): ?>
+                        <li>Aucune remise disponible</li>
+                    <?php else: ?>
+                        <?php foreach ($remisesDisponibles as $remise): ?>
+                            <li><?= htmlspecialchars($remise) ?></li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
             </section>
         </main>
     </div>
