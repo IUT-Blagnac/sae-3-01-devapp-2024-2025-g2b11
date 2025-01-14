@@ -96,10 +96,8 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/réunions/Sprint6_ODJ%2BCR%2BAnalyse_Equipedev_2B.pdf[Lien vers l'ODJ, le CR et l'Analyse du 09/12/2024 (Semaine 50)]
 - link:doc/r%C3%A9unions/Sprint7_ODJ_G2B11.pdf[Lien vers l'ODJ du 19/12/2024 (Semaine 51)]
 - link:doc/réunions/Sprint7_CR%2BAnalyse_G2B11.pdf[Lien vers le Compte Rendu et l'analyse du sprint 7 du 19/12/2024 (Semaine 51)]
+- link:doc/r%C3%A9unions/ODJ_15_01-Simul8_Rockworld_2B.pdf[Lien vers l'ODJ du 15/01/2025 (Semaine 3)]
 
-
-
-Prochaine release le 16/12/2024
 
 == Evaluation communication
 
