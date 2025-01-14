@@ -34,7 +34,7 @@ Le diagramme de séquence ci-dessous illustre le déroulement des interactions e
 * **Paiement** : L'utilisateur procède au paiement, que le système traite.
 * **Déconnexion** : L'utilisateur se déconnecte, et le système met fin à la session.
 
-image::diag/dss.png[Diagramme de Séquence Système]
+image::./GestionDeProjet/dss.png[Diagramme de Séquence Système]
 
 == Cas d'utilisation  
 
