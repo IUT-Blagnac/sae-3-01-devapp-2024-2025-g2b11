@@ -78,7 +78,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 
 == Gestion de projet & Qualité
 
-- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.7[v0.0.7]
+- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.8[v0.0.8]
 - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/PHP/Document%20Utilisateur%20Simul8.pdf[Lien vers la doc utilisateur]
 - https://github.com/orgs/IUT-Blagnac/projects/262/views/1[Lien vers le backlog du sprint]
 - link:doc/BD/docConception.adoc[Lien vers la doc de Conception] 
