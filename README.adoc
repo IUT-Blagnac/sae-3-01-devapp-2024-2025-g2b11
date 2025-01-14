@@ -119,6 +119,10 @@ note : 2/3
 CF. Remarques semaine précédente, il manque toujours le point client et l'analyse réussites et difficultés ! Pensez à m'envoyer l'ODJpour la semaine prochaine.
 note : 2/3
 
+== Retour fiche conseil
+
+Il manque la fin du documents (3 à 4 !!) Attention il ne faut pas modéliser ce que fait le système en BPMN ! C'est le job d'UML en conception ! 
+note = 6/20
 
 === Voici un exemple d'évaluation :
 
