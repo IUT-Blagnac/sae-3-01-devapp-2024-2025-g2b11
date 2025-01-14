@@ -78,7 +78,7 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 
 == Gestion de projet & Qualité
 
-- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.7[v0.0.7]
+- Version courante : https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/releases/tag/v0.0.8[v0.0.8]
 - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/PHP/Document%20Utilisateur%20Simul8.pdf[Lien vers la doc utilisateur]
 - https://github.com/orgs/IUT-Blagnac/projects/262/views/1[Lien vers le backlog du sprint]
 - link:doc/BD/docConception.adoc[Lien vers la doc de Conception] 
@@ -86,7 +86,8 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/PHP/cahier_de_recette.adoc[Lien vers le cahier de recette] 
 - link:doc/PHP/schema_denchainement_des_pages.png[Lien vers le schéma d'enchainement des pages]
 - https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/blob/master/doc/droit/Fiche%20de%20Conseils%20Juridiques%20et%20de%20S%C3%A9curit%C3%A9%20-%20Simul8.pdf[Fiche de Conseils Juridiques et de Sécurité]
-- https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/tree/master/site[Version finale du site]
+- https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2b11/tree/master/site[Version finale des pages du site]
+- http://193.54.227.208/~R2024SAE3001/[Lien du site]
 
 == Réunions
 
@@ -95,10 +96,8 @@ Fondée en 1999 par Matthias Lionardo, Simul8 est née d’une passion pour le b
 - link:doc/réunions/Sprint6_ODJ%2BCR%2BAnalyse_Equipedev_2B.pdf[Lien vers l'ODJ, le CR et l'Analyse du 09/12/2024 (Semaine 50)]
 - link:doc/r%C3%A9unions/Sprint7_ODJ_G2B11.pdf[Lien vers l'ODJ du 19/12/2024 (Semaine 51)]
 - link:doc/réunions/Sprint7_CR%2BAnalyse_G2B11.pdf[Lien vers le Compte Rendu et l'analyse du sprint 7 du 19/12/2024 (Semaine 51)]
+- link:doc/r%C3%A9unions/ODJ_15_01-Simul8_Rockworld_2B.pdf[Lien vers l'ODJ du 15/01/2025 (Semaine 3)]
 
-
-
-Prochaine release le 16/12/2024
 
 == Evaluation communication
 
